@@ -1,23 +1,31 @@
+import React from 'react';
 import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import HeroHome from "./components/HeroHome";
-import Specials from "./components/Specials";
-import Testimonials from "./components/Testimonials";
-import AboutSection from "./components/AboutSection";
+import Home from "./routes/Home";
+import Reservations from "./routes/Reservations";
+import About from "./routes/About";
+import Menu from "./routes/Menu";
+import CustomerInfoPage from "./routes/CustomerInfoPage";
+import OrderOnline from "./routes/OrderOnline";
+import Login from "./routes/Login";
+
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Header />
-      <main>
-        <HeroHome />
-        <Specials />
-        <Testimonials />
-        <AboutSection />
-      </main>
-      <Footer />
-      </>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/reservations" element={<Reservations />} />
+        <Route path="/order-online" element={<OrderOnline />} />
+        <Route path="/login" element={<Login />} />
+        <Route
+          path="/reservations/customerinfo"
+          element={<CustomerInfoPage />}
+        />
+      </Routes>
+    </>
   );
 }
 

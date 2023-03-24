@@ -2,25 +2,25 @@ import "./FooterNavigationStyles.css";
 
 const FooterNavigation = () => {
   return (
-    <nav>
+    <nav className="footer-nav">
       <ul>
         <li>
-          <a href="/">Home</a>
+          <a href="/" className="footer-nav-item">Home</a>
         </li>
         <li>
-          <a href="/about">About</a>
+          <a href="/about" className="footer-nav-item">About</a>
         </li>
         <li>
-          <a href="/menu">Menu</a>
+          <a href="/menu" className="footer-nav-item">Menu</a>
         </li>
         <li>
-          <a href="/reservations">Reservations</a>
+          <a href="/reservations" className="footer-nav-item">Reservations</a>
         </li>
         <li>
-          <a href="/order-online">Order Online</a>
+          <a href="/order-online" className="footer-nav-item">Order Online</a>
         </li>
         <li>
-          <a href="/login">Login</a>
+          <a href="/login" className="footer-nav-item">Login</a>
         </li>
       </ul>
     </nav>
