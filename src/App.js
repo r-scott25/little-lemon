@@ -1,5 +1,6 @@
 import React from 'react';
 import "./App.css";
+import homepageOGimage from './assets/homepageOGimage.png';
 import Home from "./routes/Home";
 import Reservations from "./routes/Reservations";
 import About from "./routes/About";
