@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import HomepageHeroStyles from './HomepageHeroStyles.css';
+import './HomepageHeroStyles.css';
 import restaurantfood from "../assets/restaurantfood.jpg";
 
 const HomepageHero = () => {

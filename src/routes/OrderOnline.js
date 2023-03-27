@@ -1,5 +1,5 @@
 import React from 'react';
-import OrderOnlineStyles from "./OrderOnlineStyles.css";
+import "./OrderOnlineStyles.css";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
 

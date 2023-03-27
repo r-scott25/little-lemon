@@ -1,5 +1,5 @@
 import React from "react";
-import SpecialsStyles from "./SpecialsStyles.css";
+import "./SpecialsStyles.css";
 import MenuCard from "./MenuCard.js";
 import MenuCardData from "./MenuCardData.js";
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuStyles from "./MenuStyles.css";
+import "./MenuStyles.css";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
 

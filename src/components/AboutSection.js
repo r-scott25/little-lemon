@@ -1,4 +1,4 @@
-import AboutSectionStyles from "./AboutSectionStyles.css";
+import "./AboutSectionStyles.css";
 import MarioAndAdrianA from "../assets/MarioAndAdrianA.jpg"
 import MarioAndAdrianB from "../assets/MarioAndAdrianB.jpg"
 

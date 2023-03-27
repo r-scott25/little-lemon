@@ -1,17 +1,19 @@
 import React from 'react';
 import "./App.css";
-import homepageOGimage from './assets/homepageOGimage.png';
 import Home from "./routes/Home";
-import Reservations from "./routes/Reservations";
+import Reservations, {reservationData} from "./routes/Reservations";
 import About from "./routes/About";
 import Menu from "./routes/Menu";
-import CustomerInfoPage from "./routes/CustomerInfoPage";
+import CustomerContactPage from "./routes/CustomerContactPage";
 import OrderOnline from "./routes/OrderOnline";
 import Login from "./routes/Login";
+import ResConfirm from "./components/ResConfirm";
 
 import { Routes, Route } from "react-router-dom";
 
 function App() {
+
+
   return (
     <>
       <Routes>
@@ -22,10 +24,12 @@ function App() {
         <Route path="/order-online" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
         <Route
-          path="/reservations/customerinfo"
-          element={<CustomerInfoPage />}
+          path="/reservations/customercontact"
+          element={<CustomerContactPage reservationData={reservationData}/>}
         />
+        <Route path="/res-confirm" element={<ResConfirm reservationData={reservationData} />} />
       </Routes>
+
     </>
   );
 }

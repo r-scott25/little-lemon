@@ -1,6 +1,6 @@
 import React from "react";
 import TestimonialCardData from "./TestimonialCardData.js";
-import TestimonialCardStyles from "./TestimonialCardStyles.css";
+import "./TestimonialCardStyles.css";
 
 const TestimonialCard = (props) => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import TestimonialsStyles from "./TestimonialsStyles.css";
+import "./TestimonialsStyles.css";
 import TestimonialCard from "./TestimonialCard.js";
 import TestimonialCardData from "./TestimonialCardData.js";
 

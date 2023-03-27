@@ -1,5 +1,5 @@
 import React from "react";
-import FooterStyles from "./FooterStyles.css";
+import "./FooterStyles.css";
 import FooterNavigation from "./FooterNavigation.js";
 import logoGreenLemon from "../assets/logoGreenLemon.png";
 import instagram from "../assets/instagram.svg";

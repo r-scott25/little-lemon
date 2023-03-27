@@ -1,6 +1,6 @@
 import React from "react";
 import MenuCardStyles from "./MenuCardStyles.css";
-import MenuCardData from "./MenuCardData.js";
+import "./MenuCardData.js";
 import scooter from "../assets/scooter.svg";
 
 const MenuCard = (props) => {
