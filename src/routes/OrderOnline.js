@@ -5,13 +5,13 @@ import Footer from "../components/Footer.js";
 
 const OrderOnline = () => {
   return (
-    <>
+    <body>
       <Header />
       <main>
         <h1>Order Online Page</h1>
       </main>
       <Footer />
-    </>
+    </body>
   );
 };
 

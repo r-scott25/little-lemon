@@ -43,7 +43,7 @@ const CustomerContactPage = (props) => {
   };
 
   return (
-    <>
+    <body>
       <Header />
       <main className="contactInfo-main-container">
         <HeroSection
@@ -155,7 +155,7 @@ const CustomerContactPage = (props) => {
         </section>
       </main>
       <Footer />
-    </>
+    </body>
   );
 };
 

@@ -5,13 +5,13 @@ import Footer from "../components/Footer";
 
 const Login = () => {
   return (
-    <>
+    <body>
     <Header />
     <main>
       <h1>Login Page</h1>
     </main>
     <Footer />
-    </>
+    </body>
   );
 }
 

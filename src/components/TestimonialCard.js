@@ -10,7 +10,7 @@ const TestimonialCard = (props) => {
           <img key={index} src={star} alt="star" />
         ))}
       </div>
-      <img src={props.imgsrc} alt={props.custName} />
+      <img className=" cust-image" src={props.imgsrc} alt={props.custName} />
       <h3 className="custName">{props.custName}</h3>
       <div className="review">
         <p>{props.review}</p>

@@ -9,7 +9,7 @@ import twitter from "../assets/twitter.svg";
 const Footer = () => {
   return (
     <footer>
-      <img src={logoGreenLemon} alt="logo" />
+      <img className="footer-logo" src={logoGreenLemon} alt="logo" />
       <FooterNavigation />
       <section id="contactInfo">
         <h5 id="contactTitle">Contact</h5>
@@ -19,7 +19,7 @@ const Footer = () => {
         <p id="lemonPhone">(312) 555-5555</p>
         <p id="lemonEmail">lemon@email.com</p>
       </section>
-      <section id="socialMedia">
+      <section className="socialMedia">
         <h4 id="let'sConnectTitle">Let's Connect!</h4>
         <ul id="socialMediaList">
           <li id="instagramLink">

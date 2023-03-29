@@ -6,9 +6,9 @@ const HeroSection = (props) => {
  return (
   <>
   <section className="hero-section-container">
-  <div className="hero-image">
+  {/* <div className="hero-image">
     <img src={props.heroImage} alt={props.imageAlt} />
-  </div>
+  </div> */}
   <div className="hero-title">
     <h1>{props.title}</h1>
     <h2>{props.subtitle}</h2>

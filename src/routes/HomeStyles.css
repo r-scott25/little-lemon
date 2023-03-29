@@ -1,0 +1,34 @@
+.home-body-container {
+  display: grid;
+  grid-template-rows: 130px 2575px 200px;
+  margin-top: 20px;
+}
+
+
+header {
+  background-color: #ffffff;
+}
+
+.home-main-container {
+  display: grid;
+  grid-template-rows: 475px 850px 500px 750px;
+}
+
+.hero-section {
+  background-color: #495e57;
+}
+.specials-section {
+  background-color: #ffffff;
+}
+
+.testimonials-section {
+  background-color: #495e57;
+}
+
+.about-section {
+  background-color: #ffffff;
+}
+
+footer {
+  background-color: #495e57;
+}

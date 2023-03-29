@@ -1,0 +1,15 @@
+.nav-container{
+  display: flex;
+  gap: 5px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

@@ -6,10 +6,10 @@ import Basket from "../assets/Basket.svg";
 
 const Header = () => {
   return (
-    <header>
-      <img src={Logo} alt="Logo" />
+    <header className="header-container">
+      <img className="logo" src={Logo} alt="Logo" />
       <Navbar />
-      <img src={Basket} alt="basket" />
+      <img className="basket" src={Basket} alt="basket" />
     </header>
   );
 };

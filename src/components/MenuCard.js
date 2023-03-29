@@ -6,7 +6,7 @@ import scooter from "../assets/scooter.svg";
 const MenuCard = (props) => {
   return (
     <div className="menu-card">
-      <img src={props.imgsrc} alt={props.dishName} />
+      <img className="dish-image" src={props.imgsrc} alt={props.dishName} />
       <h3 className="dishName">{props.dishName}</h3>
       <h4 className="dishPrice">{props.dishPrice}</h4>
       <div className="dishDescription">

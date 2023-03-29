@@ -5,13 +5,13 @@ import Footer from "../components/Footer.js";
 
 const Menu = () => {
   return (
-    <>
+    <body>
       <Header />
       <main>
         <h1>Menu Page</h1>
       </main>
       <Footer />
-    </>
+    </body>
   );
 };
 
