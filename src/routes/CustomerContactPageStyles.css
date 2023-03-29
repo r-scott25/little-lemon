@@ -1,0 +1,29 @@
+.contact-body-container {
+  display: grid;
+  grid-template-rows: 130px 2575px 200px;
+  margin-top: 20px;
+}
+
+.contact-main-container {
+  display: grid;
+  grid-template-rows: 470px 200px 800px 1275px;
+}
+
+.dinner-img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.contact-hero-section {
+  background-color: #495e57;
+}
+
+.selected-res-section {
+  margin-top: 50px;
+}
+
+.contact-form-section {
+  margin-top: 50px;
+}

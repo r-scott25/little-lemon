@@ -7,21 +7,6 @@ import Specials from "../components/Specials";
 import Testimonials from "../components/Testimonials";
 import AboutSection from "../components/AboutSection";
 
-// const Home = () => {
-//   return (
-//     <div className="home-container">
-//       <Header />
-//       <main className="home-main-container">
-//         <HomepageHero />
-//         <Specials />
-//         <Testimonials />
-//         <AboutSection />
-//       </main>
-//       <Footer />
-//     </div>
-//   );
-// };
-
 const Home = () => {
   return (
     <body className="home-body-container">

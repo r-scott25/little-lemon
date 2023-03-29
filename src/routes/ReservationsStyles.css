@@ -4,14 +4,10 @@
   margin-top: 20px;
 }
 
-.res-header {
-  background-color: #ffffff;
-}
 
 .res-main-container {
   display: grid;
   grid-template-rows: 470px 200px 2075px;
-  margin-top: 20px;
 }
 
 .restaurant-img {
@@ -20,6 +16,11 @@
   object-fit: cover;
   overflow: hidden;
 }
+
+.res-hero-section {
+background-color: #495e57;
+}
+
 
 .reservations-section {
   background-color: #ffffff;
