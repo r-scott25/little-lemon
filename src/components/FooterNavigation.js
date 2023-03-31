@@ -1,6 +1,6 @@
 import "./FooterNavigationStyles.css";
 
-const FooterNavigation = () => {
+function FooterNavigation() {
   return (
     <nav className="footer-nav">
       <ul>

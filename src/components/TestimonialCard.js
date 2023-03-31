@@ -2,7 +2,7 @@ import React from "react";
 import TestimonialCardData from "./TestimonialCardData.js";
 import "./TestimonialCardStyles.css";
 
-const TestimonialCard = (props) => {
+function TestimonialCard(props) {
   return (
     <div className="testimonial-card">
       <div className="rating-stars">

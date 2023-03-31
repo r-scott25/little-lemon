@@ -1,6 +1,6 @@
 import "./NavbarStyles.css";
 
-const Navbar = () => {
+function Navbar() {
   return (
     <nav className="nav-container">
       <ul className="links-container">

@@ -6,7 +6,7 @@ import instagram from "../assets/instagram.svg";
 import facebook from "../assets/facebook.svg";
 import twitter from "../assets/twitter.svg";
 
-const Footer = () => {
+function Footer() {
   return (
     <footer>
       <img className="footer-logo" src={logoGreenLemon} alt="logo" />

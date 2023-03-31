@@ -3,7 +3,7 @@ import "./OrderOnlineStyles.css";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
 
-const OrderOnline = () => {
+function OrderOnline() {
   return (
     <body>
       <Header />

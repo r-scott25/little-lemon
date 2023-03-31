@@ -3,7 +3,7 @@ import "./TestimonialsStyles.css";
 import TestimonialCard from "./TestimonialCard.js";
 import TestimonialCardData from "./TestimonialCardData.js";
 
-const Testimonials = () => {
+function Testimonials() {
   return (
     <section className="testimonials-container">
       <h2 id="testimonials-heading">Testimonials</h2>

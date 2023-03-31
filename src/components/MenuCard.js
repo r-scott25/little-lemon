@@ -3,7 +3,7 @@ import MenuCardStyles from "./MenuCardStyles.css";
 import "./MenuCardData.js";
 import scooter from "../assets/scooter.svg";
 
-const MenuCard = (props) => {
+function MenuCard(props) {
   return (
     <div className="menu-card">
       <img className="dish-image" src={props.imgsrc} alt={props.dishName} />

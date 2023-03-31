@@ -11,15 +11,13 @@ export const reservationData = {
 
 
 function ReservationForm() {
-
-const [date, setDate] = useState("");
+  const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [occasion, setOccasion] = useState("");
-  const [guests, setGuests] = useState("");
+  const [guestCount, setGuestCount] = useState(0);
   const [seating, setSeating] = useState("");
   const [specialRequests, setSpecialRequests] = useState("");
 
-  const [guestCount, setGuestCount] = useState(0);
 
   const increment = () => {
     if (guestCount < 20) {

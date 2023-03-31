@@ -2,9 +2,8 @@ import React from 'react';
 import "./HeroSectionStyles.css";
 
 
-const HeroSection = (props) => {
+function HeroSection(props) {
  return (
- 
   <section className="hero-section-container">
   <div className="hero-title">
     <h1>{props.title}</h1>

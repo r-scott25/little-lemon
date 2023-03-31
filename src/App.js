@@ -7,7 +7,7 @@ import Menu from "./routes/Menu";
 import CustomerContactPage from "./routes/CustomerContactPage";
 import OrderOnline from "./routes/OrderOnline";
 import Login from "./routes/Login";
-import ResConfirm from "./routes/ResConfirm";
+import ResConfirm from "./components/ResConfirm";
 
 import { Routes, Route } from "react-router-dom";
 

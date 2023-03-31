@@ -8,7 +8,7 @@ import Footer from "../components/Footer.js";
 import HeroSection from "../components/HeroSection.js";
 import dinnerTableFifty from "../assets/dinnerTable-50.jpg";
 
-const CustomerContactPage = (props) => {
+function CustomerContactPage(props) {
   return (
     <body className="contact-body-container">
       <header>
@@ -29,7 +29,7 @@ const CustomerContactPage = (props) => {
           />
         </section>
         <section className="selected-res-section">
-          <SelectedReservations reservationData={reservationData} />
+          <SelectedReservations reservationData={props.reservationData} />
         </section>
         <section className="contact-form-section">
           <CustomerContactForm />

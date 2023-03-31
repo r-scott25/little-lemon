@@ -1,0 +1,10 @@
+.confirm-modal-container {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+}
+
+.reservation-details img {
+  width: 6%;
+}

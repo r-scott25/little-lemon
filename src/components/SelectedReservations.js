@@ -1,5 +1,6 @@
 import React from "react";
 import "./SelectedReservationsStyles.css";
+import reservationData from "../routes/Reservations.js";
 import calendar from "../assets/calendar.svg";
 import clock from "../assets/clock.svg";
 import guests from "../assets/guests.svg";

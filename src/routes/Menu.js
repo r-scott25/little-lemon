@@ -3,7 +3,7 @@ import "./MenuStyles.css";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
 
-const Menu = () => {
+function Menu() {
   return (
     <body>
       <Header />

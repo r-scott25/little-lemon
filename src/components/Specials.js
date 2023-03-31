@@ -3,7 +3,7 @@ import "./SpecialsStyles.css";
 import MenuCard from "./MenuCard.js";
 import MenuCardData from "./MenuCardData.js";
 
-const Specials = () => {
+function Specials() {
   return (
     <section id="specials-container">
   <h1>This week's specials!</h1>

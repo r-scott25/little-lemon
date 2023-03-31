@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./HomepageHeroStyles.css";
 import restaurantfood from "../assets/restaurantfood.jpg";
 
-const HomepageHero = () => {
+function HomepageHero() {
   return (
     <section className="heroHome-container">
 

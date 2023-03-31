@@ -15,7 +15,7 @@ export const reservationData = {
   specialRequests: "",
 };
 
-const Reservations = (props) => {
+function Reservations(props) {
   return (
     <body className="res-body-container">
       <header>

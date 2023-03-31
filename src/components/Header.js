@@ -4,7 +4,7 @@ import "./HeaderStyles.css";
 import Logo from "../assets/Logo.svg";
 import Basket from "../assets/Basket.svg";
 
-const Header = () => {
+function Header() {
   return (
     <header className="header-container">
       <img className="logo" src={Logo} alt="Logo" />
