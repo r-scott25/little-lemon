@@ -2,18 +2,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-align-items: center;
+  align-items: center;
   gap: 20%;
   margin-left: 40px;
   margin-right: 40px;
 }
 
 .logo {
- width: 25%;
-
+  width: 20%;
 }
 
 .basket {
   width: 4%;
-
 }
