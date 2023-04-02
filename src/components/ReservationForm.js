@@ -1,71 +1,105 @@
 import React, { useState } from "react";
-
-export const reservationData = {
-  date: "",
-  time: "",
-  occasion: "",
-  guests: "",
-  seating: "",
-  specialRequests: "",
-};
+import { useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import { reservationSchema } from "../Validations/ReservationValidation";
 
 
 function ReservationForm() {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [occasion, setOccasion] = useState("");
-  const [guestCount, setGuestCount] = useState(0);
-  const [seating, setSeating] = useState("");
-  const [specialRequests, setSpecialRequests] = useState("");
+  const navigate = useNavigate();
 
+  const onSubmit = async (values, actions, history) => {
+    console.log(values);
+    console.log(actions);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Submit the form data here using an API call or any other method
+
+    navigate("/reservations/customerContact");
+  };
+
+  const {
+    values,
+    errors,
+    touched,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+    actions,
+  } = useFormik({
+    initialValues: {
+      date: "",
+      time: "",
+      occasion: "",
+      guests: 0,
+      seating: "",
+      specialRequests: "",
+    },
+    validationSchema: reservationSchema,
+    onSubmit,
+  });
+  console.log(errors);
+
+  const reservationData = {
+    date: values.date,
+    time: values.time,
+    occasion: values.occasion,
+    guests: values.guests,
+    seating: values.seating,
+    specialRequests: values.specialRequests,
+  };
 
   const increment = () => {
-    if (guestCount < 20) {
-      setGuestCount(guestCount + 1);
+    if (values.guests < 20) {
+      handleChange({
+        target: {
+          name: "guests",
+          value: values.guests + 1,
+        },
+      });
     }
   };
 
   const decrement = () => {
-    if (guestCount > 0) {
-      setGuestCount(guestCount - 1);
+    if (values.guests > 0) {
+      handleChange({
+        target: {
+          name: "guests",
+          value: values.guests - 1,
+        },
+      });
     }
-  };
-
-  const handleReservationSubmit = (reservationData) => {
-    const queryParams = new URLSearchParams(reservationData).toString();
-    window.location.href = `/reservations/customerContact?${queryParams}`;
   };
 
   return (
     <div>
       <section className="reservation-form-container">
         <h2>Reservation Details</h2>
-        <form className="reservations-form" onSubmit={handleReservationSubmit}>
+        <form className="reservations-form" onSubmit={handleSubmit}>
           <div className="date">
             <label htmlFor="date">Date</label>
             <input
-              value={date}
               type="date"
-              onChange={(reservationData) =>
-                setDate(reservationData.target.value)
-              }
+              value={values.date}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={errors.date && touched.date ? "input-error" : ""}
               id="date"
               name="date"
-              className="form-control"
-              required
             />
+            {errors.date && touched.date && (
+              <p className="error">{errors.date}</p>
+            )}
           </div>
           <div className="time">
             <label htmlFor="time">Time</label>
             <select
-              value={time}
+              type="text"
+              value={values.time}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={errors.time && touched.time ? "input-error" : ""}
               id="time"
-              onChange={(reservationData) =>
-                setTime(reservationData.target.value)
-              }
               name="time"
-              className="form-control"
-              required
             >
               <option value="select-time">Select a Time</option>
               <option value="11:00 AM">11:00 AM</option>
@@ -91,18 +125,22 @@ function ReservationForm() {
               <option value="9:00 PM">9:00 PM</option>
               <option value="9:30 PM">9:30 PM</option>
             </select>
+            {errors.time && touched.time && (
+              <p className="error">{errors.time}</p>
+            )}
           </div>
           <div className="occasion">
             <label htmlFor="occasion">Occasion</label>
             <select
-              value={occasion}
-              onChange={(reservationData) =>
-                setOccasion(reservationData.target.value)
+              type="text"
+              value={values.occasion}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={
+                errors.occasion && touched.occasion ? "input-error" : ""
               }
               id="occasion"
               name="occasion"
-              className="form-control"
-              required
             >
               <option value="select-occasion">Select an Occasion</option>
               <option value="birthday">Birthday</option>
@@ -110,6 +148,9 @@ function ReservationForm() {
               <option value="engagement">Engagement</option>
               <option value="other">Other</option>
             </select>
+            {errors.occasion && touched.occasion && (
+              <p className="error">{errors.occasion}</p>
+            )}
           </div>
           <div className="guests">
             <label htmlFor="guests">Guests</label>
@@ -119,50 +160,67 @@ function ReservationForm() {
               </button>
               <input
                 type="text"
+                value={values.guests}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={errors.guests && touched.guests ? "input-error" : ""}
                 id="guests"
                 name="guests"
-                value={guestCount}
-                onChange={(event) => setGuestCount(event.target.value)}
-                className="form-control"
               />
+
               <button type="button" onClick={increment}>
                 +
               </button>
             </span>
+            {errors.guests && touched.guests && (
+              <p className="error">{errors.guests}</p>
+            )}
           </div>
           <div className="seating-radio-buttons">
             <label htmlFor="seating">Seating</label>
             <span
-              value={seating}
-              onChange={(reservationData) =>
-                setSeating(reservationData.target.value)
-              }
+              value={values.seating}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={errors.seating && touched.seating ? "input-error" : ""}
               id="seating"
               name="seating"
-              className="form-control"
-              required
             >
               <input type="radio" name="seating" id="indoor" value="indoor" />
               <label htmlFor="indoor">Indoor</label>
               <input type="radio" name="seating" id="outdoor" value="outdoor" />
               <label htmlFor="outdoor">Outdoor</label>
+              <input
+                type="radio"
+                name="seating"
+                id="noPreference"
+                value="noPreference"
+              />
+              <label htmlFor="noPreference">No Preference</label>
             </span>
+            {errors.seating && touched.seating && (
+              <p className="error">{errors.seating}</p>
+            )}
           </div>
-          <div className="special-requests">
-            <label htmlFor="special-requests">Special Requests</label>
+          <div className="specialRequests">
+            <label htmlFor="specialRequests">Special Requests</label>
             <div>
               <textarea
-                value={specialRequests}
-                id="special-requests"
-                onChange={(reservationData) =>
-                  setSpecialRequests(reservationData.target.value)
-                }
-                name="special-requests"
+                value={values.specialRequests}
+                onChange={handleChange}
+                id="specialRequests"
+                name="specialRequests"
+                className="form-control"
               ></textarea>
             </div>
           </div>
           <div className="save-continue">
-            <button type="submit">
+            <button
+              onClick={handleSubmit}
+              type="submit"
+              className="save-btn"
+              id="save-btn"
+            >
               <a href="/reservations/customerContact">Save and Continue</a>
             </button>
           </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./CustomerContactPageStyles.css";
 import SelectedReservations from "../components/SelectedReservations.js";
 import CustomerContactForm from "../components/CustomerContactForm.js";
-import { reservationData } from "./Reservations.js";
+// import { reservationData } from "./Reservations.js";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
 import HeroSection from "../components/HeroSection.js";
@@ -10,7 +10,7 @@ import dinnerTableFifty from "../assets/dinnerTable-50.jpg";
 
 function CustomerContactPage(props) {
   return (
-    <body className="contact-body-container">
+    <div className="contact-body-container">
       <header>
         <Header />
       </header>
@@ -38,8 +38,8 @@ function CustomerContactPage(props) {
       <footer>
         <Footer />
       </footer>
-    </body>
+    </div>
   );
-};
+}
 
 export default CustomerContactPage;

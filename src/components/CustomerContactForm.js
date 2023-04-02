@@ -1,123 +1,157 @@
 import React, { useState } from "react";
+import { ErrorMessage, useFormik } from "formik";
 import "./CustomerContactFormStyles.css";
-import ResConfirm from "./ResConfirm.js";
-import homeIcon from "../assets/homeIcon.svg";
+import { customerContactSchema } from "../Validations/CustomerContactValidation.js";
+import ConfirmationModal from "./ConfirmationModal.js";
 import Logo from "../assets/Logo.svg";
 import calendarEE9972 from "../assets/calendar-EE9972.svg";
 import clockEE9972 from "../assets/clock-EE9972.svg";
 import guestsEE9972 from "../assets/guests-EE9972.svg";
 import seatingEE9972 from "../assets/seating-EE9972.svg";
 import occasionEE9972 from "../assets/occasion-EE9972.svg";
+import Error from "next/error";
 
 function CustomerContactForm(props) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [textUpdates, setTextUpdates] = useState(false);
-  const [errors, setErrors] = useState({});
+  const onSubmit = async (values, actions) => {
+    if (Object.keys(errors).length > 0) {
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
+    }
+    console.log(values);
+    console.log(actions);
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    actions.resetForm();
+  };
+
+  const {
+    values,
+    errors,
+    touched,
+    handleBlur,
+    handleChange,
+    handleSubmit,
+  } = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      textUpdates: false,
+    },
+    validationSchema: customerContactSchema,
+    onSubmit,
+  });
+
+  console.log(errors);
+
+  const handleCheckboxChange = (event) => {
+    const { name, checked } = event.target;
+    handleChange({
+      target: {
+        name,
+        value: checked ? true : false,
+      },
+    });
+  };
+
+  const customerContactData = {
+    firstName: values.firstName,
+    lastName: values.lastName,
+    email: values.email,
+    phone: values.phone,
+    textUpdates: values.textUpdates,
+  };
 
   //// useState for Confirm Reservation Modal ////
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const errors = {};
-    if (firstName === "") {
-      errors.firstName = "Please enter your first name.";
-    }
-    if (lastName === "") {
-      errors.lastName = "Please enter your last name.";
-    }
-    if (email === "") {
-      errors.email = "Please enter your email address.";
-    }
-    if (phone === "") {
-      errors.phone = "Please enter your phone number.";
-    } else if (!/^\d{10}$/.test(phone)) {
-      errors.phone = "Please enter a valid 10-digit phone number.";
-    }
-    setErrors(errors);
-    if (Object.keys(errors).length === 0) {
-      // Submit the form data
-    }
-    setErrors(errors);
-    if (Object.keys(errors).length === 0) {
-      setIsOpen(true);
-    }
-  };
-
   return (
-    <section className="contact-info">
+    <section className="contact-info-container">
       <h2>Your Details</h2>
-      <form onSubmit={handleSubmit} className="contact-form">
-        <div className="first-name">
-          <label htmlFor="first-name">First Name</label>
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <div className="firstName">
+          <label htmlFor="firstName">First Name</label>
           <input
             type="text"
-            value={firstName}
-            onChange={(event) => setFirstName(event.target.value)}
-            name="first-name"
-            id="first-name"
+            value={values.firstName}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={
+              errors.firstName && touched.firstName ? "input-error" : ""
+            }
+            name="firstName"
+            id="firstName"
             placeholder="First Name"
-            required
           />
+          {errors.firstName && touched.firstName && (
+            <p className="error">{errors.firstName}</p>
+          )}
         </div>
-        <div className="last-name">
-          <label htmlFor="last-name">Last Name</label>
+        <div className="lastName">
+          <label htmlFor="lastName">Last Name</label>
           <input
             type="text"
-            value={lastName}
-            onChange={(event) => setLastName(event.target.value)}
-            name="last-name"
-            id="last-name"
+            value={values.lastName}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={errors.lastName && touched.lastName ? "input-error" : ""}
+            name="lastName"
+            id="lastName"
             placeholder="Last Name"
-            required
           />
+          {errors.lastName && touched.lastName && (
+            <p className="error">{errors.lastName}</p>
+          )}
         </div>
         <div className="email">
           <label htmlFor="email">Email</label>
           <input
             type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
+            value={values.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={errors.email && touched.email ? "input-error" : ""}
             name="email"
             id="email"
             placeholder="Email"
-            required
           />
+          {errors.email && touched.email && (
+            <p className="error">{errors.email}</p>
+          )}
         </div>
         <div className="phone">
           <label htmlFor="phone">Phone</label>
           <input
             type="tel"
-            value={phone}
-            onChange={(event) => setPhone(event.target.value)}
+            value={values.phone}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            className={errors.phone && touched.phone ? "input-error" : ""}
             name="phone"
             id="phone"
             placeholder="Phone Number"
-            required
           />
+          {errors.phone && touched.phone && (
+            <p className="error">{errors.phone}</p>
+          )}
         </div>
-        <div className="text-updates">
+        <div className="textUpdates">
           <input
             type="checkbox"
-            value={textUpdates}
-            // onChange={(event) => setTextUpdates(event.target.value)}
-            onChange={(event) =>
-              setTextUpdates(event.target.checked ? "Yes" : "No")
-            }
-            name="text-updates"
-            id="text-updates"
+            checked={values.textUpdates === true}
+            onChange={handleCheckboxChange}
+            name="textUpdates"
+            id="textUpdates"
           />
-          <label htmlFor="text-updates">
+          <label htmlFor="textUpdates">
             Yes, I want to receive text updates and reminders about my
             reservation.
           </label>
         </div>
         <div className="reserve-btn">
           <button
-            onClick={() => setIsOpen(true)}
+            onClick={handleSubmit}
             type="submit"
             className="reserve-btn"
             id="reserve-btn"
@@ -126,21 +160,18 @@ function CustomerContactForm(props) {
           </button>
         </div>
         <div>
-          <ResConfirm open={isOpen}>
+          <ConfirmationModal open={isOpen}>
             <div className="confirm-modal-container" id="modal">
               <div className="confirm-header">
-                {/* <a href="/">
-                  <img src={homeIcon} alt="home icon" />
-                </a> */}
                 <div>
                   <h1>Reservation Confirmed</h1>
                   <h2>A confirmation email has been sent.</h2>
                 </div>
               </div>
               <div className="confirm-main">
-                <hero>
+                <div>
                   <img src={Logo} alt="Little Lemon Logo" />
-                </hero>
+                </div>
                 <section className="reservation-details">
                   <h2>We look forward to dining with you!</h2>
                   <div className="confirm-selected">
@@ -182,7 +213,7 @@ function CustomerContactForm(props) {
                 </section>
               </div>
             </div>
-          </ResConfirm>
+          </ConfirmationModal>
         </div>
       </form>
     </section>

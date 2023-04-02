@@ -1,13 +1,14 @@
 import React from "react";
 import "./App.css";
 import Home from "./routes/Home";
-import Reservations, { reservationData } from "./routes/Reservations";
+import Reservations from "./routes/Reservations";
+// import { reservationData }from "./components/ReservationForm.js";
 import About from "./routes/About";
 import Menu from "./routes/Menu";
 import CustomerContactPage from "./routes/CustomerContactPage";
 import OrderOnline from "./routes/OrderOnline";
 import Login from "./routes/Login";
-import ResConfirm from "./components/ResConfirm";
+import ConfirmationModal from "./components/ConfirmationModal";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -23,11 +24,13 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route
           path="/reservations/customercontact"
-          element={<CustomerContactPage reservationData={reservationData} />}
+          // element={<CustomerContactPage reservationData={reservationData} />}
+          element={<CustomerContactPage />}
         />
         <Route
           path="/res-confirm"
-          element={<ResConfirm reservationData={reservationData} />}
+          // element={<ResConfirm reservationData={reservationData} />}
+          element={<ConfirmationModal />}
         />
       </Routes>
     </>
