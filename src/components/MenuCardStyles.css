@@ -1,3 +1,22 @@
-.dish-image {
-  width: 400px;
+.menu-card {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 400px;
+  background-color: #EDEDED;
+  border-radius: 16px;
+ /* margin-top: 200px; */
 }
+
+
+
+.dish-image {
+  width: 425px;
+  height: 250px;
+  border-radius: 16px;
+}
+
+#scooterIcon {
+  width: 40px;
+}
+

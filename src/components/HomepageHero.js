@@ -8,10 +8,10 @@ function HomepageHero() {
     <section className="heroHome-container">
       <div>
         <article className="heroIntro">
-          <h1>Little Lemon</h1>
-          <h2>Chicago</h2>
-          <p>
-            We are a family owned Mediterranean restaurant focused <br/> on 
+          <h1 className="lemon-title">Little Lemon</h1>
+          <h2 className="chicago-subtitle">Chicago</h2>
+          <p className="lemon-blurb">
+            We are a family owned Mediterranean restaurant focused <br/> on
             traditional recipes served with a modern twist.
           </p>
           <div>

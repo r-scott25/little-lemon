@@ -1,58 +1,121 @@
 .heroHome-container {
   position: relative;
+  justify-content: space-around;
   display: flex;
 }
 
 .heroIntro {
   position: relative;
-  margin-left: 16rem;
-  margin-top: 2rem;
-  padding: 50px;
+  margin-left: 8rem;
+  padding-top: 50px;
   flex: 1;
   z-index: 1;
 }
+
 .server-image {
   position: absolute;
   top: 50px;
-  margin-left: 4rem;
   width: 350px;
   z-index: 2;
   border-radius: 16px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-@media screen and (max-width: 992px) {
-  .heroIntro {
-    /* position: relative;
+#smallReserveTableBtn {
+  margin-top: 3rem;
+  background-color:#F4CE14;
+  color: #495E57 !important;
+  font-family: "Karla", normal;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 16px;
+  border-width: 0;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+}
 
-    margin-left: 8rem;
-    /* align-items: center;
-    justify-content: center; */ 
-    position: relative;
-    margin-left: 4rem;
-    margin-top: 2rem;
-    flex: 1;
-    z-index: 1;
-    min-width: 90%; /* or width: 50%; */
+#smallReserveTableBtn:active {
+  background-color: #495E57;
+  color: #FFFFFF !important;
+}
+
+.lemon-title {
+  color: #F4CE14;
+}
+
+.chicago-subtitle {
+  color: #EDEFEE;
+}
+
+.lemon-blurb {
+  color: #EDEFEE;
+  max-width: 60%;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .heroIntro {
+    margin-left: 2rem;
+  }
+  .lemon-blurb {
+    max-width: 50%;
   }
   .server-image {
-    position: relative;
-    align-items: center;
-    margin-left: 10rem;
-    width: 45%;
+    width: 40%;
+    left: 55%;
+    top: 30%;
   }
 }
 
-@media screen and (max-width: 600px) {
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
   .heroIntro {
-    position: relative;
-    margin-left: 8rem;
-    align-items: center;
+    margin-left: 2rem;
+  }
+  .lemon-blurb {
+    max-width: 50%;
   }
   .server-image {
-    position: relative;
-    align-items: center;
-    /* margin-top: 50px; */
-    width: 50%;
+    width: 40%;
+    left: 55%;
+    top: 30%;
   }
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .heroIntro {
+    margin-left: 2rem;
+  }
+  .server-image {
+    width: 40%;
+    left: 55%;
+    top: 35%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .heroIntro {
+    margin-left: 2rem;
+  }
+  .server-image {
+    width: 35%;
+    left: 55%;
+    top: 30%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px){
+  .heroIntro {
+    margin-left: 12rem;
+  }
+  .server-image {
+    width: 28rem;
+    left: 50%;
+    top:  2rem;
+  }
+}
+

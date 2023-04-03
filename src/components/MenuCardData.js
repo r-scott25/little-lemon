@@ -1,6 +1,6 @@
 import React from 'react';
 import greekSalad from "../assets/greekSalad.jpg";
-import bruschetta from "../assets/bruschetta.svg";
+import bruschetta from "../assets/bruschetta.jpg";
 import lemonDessert from "../assets/lemonDessert.jpg";
 
 const MenuCardData = [

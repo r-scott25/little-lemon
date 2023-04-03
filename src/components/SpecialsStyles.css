@@ -1,0 +1,15 @@
+/* .menu-card-container {
+  display: flex;
+  flex-direction: row;
+} */
+
+#menu-card-container {
+
+  left: 20%;
+  right: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 150px;
+}

@@ -11,6 +11,7 @@ function Specials() {
     <div id="menu-card-container">
     {MenuCardData.map((value, index) => {
       return (
+        <div className="menu-card-container">
         <MenuCard
         key= {index}
         imgsrc={value.imgsrc}
@@ -18,6 +19,7 @@ function Specials() {
         dishPrice={value.dishPrice}
         dishDescription={value.dishDescription}
         />
+        </div>
       )
     })}
     </div>

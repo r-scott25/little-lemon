@@ -1,13 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+
+@font-face {
+  font-family: "Markazi Text";
+  src: url("../public/fonts/MarkaziText-Regular.ttf") format("truetype");
+  src: url("../public/fonts/MarkaziText-Medium.ttf") format("truetype");
+  src: url("../public/fonts/MarkaziText-SemiBold.ttf") format("truetype");
+  src: url("../public/fonts/MarkaziText-Bold.ttf") format("truetype");
+  font-style: serif;
+}
+
+@font-face {
+  font-family: "Karla";
+  src: url("../public/fonts/Karla-Light.ttf") format("truetype");
+  src: url("../public/fonts/Karla-Regular.ttf") format("truetype");
+  src: url("../public/fonts/Karla-Medium.ttf") format("truetype");
+  src: url("../public/fonts/Karla-SemiBold.ttf") format("truetype");
+  src: url("../public/fonts/Karla-Bold.ttf") format("truetype");
+  font-style: normal;
+}
+
+h1 {
+  font-family: "Markazi Text", serif;
+  font-size: 64px;
+  font-weight: medium;
+  margin-bottom: -1rem;
+}
+
+h2 {
+  font-family: "Markazi Text", serif;
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-family: "Karla", normal;
+  font-size: 20px;
+  font-weight:normal;
+  line-height: 1.5;
 }

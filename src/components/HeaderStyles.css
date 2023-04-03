@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  gap: 20%;
+  gap: 15%;
   margin-left: 40px;
   margin-right: 40px;
 }
@@ -11,6 +11,7 @@
 .logo {
   width: 20%;
 }
+
 
 .basket {
   width: 4%;
