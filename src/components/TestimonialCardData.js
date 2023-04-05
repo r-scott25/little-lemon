@@ -3,11 +3,11 @@ import Chris from "../assets/Chris.jpg";
 import Joseph from "../assets/Joseph.jpg";
 import Rose from "../assets/Rose.jpg";
 import yellowStar from "../assets/yellowStar.svg";
-import starBorder from  "../assets/starBorder.svg";
+import starBorder from "../assets/starBorder.svg";
 
 const TestimonialCardData = [
-
- {
+  {
+    id: 1,
     rating: 5,
     ratingStars: Array(5).fill(starBorder).fill(yellowStar, 0, 5),
     imgsrc: Talia,
@@ -16,6 +16,7 @@ const TestimonialCardData = [
   },
 
   {
+    id: 2,
     rating: 5,
     ratingStars: Array(5).fill(starBorder).fill(yellowStar, 0, 5),
     imgsrc: Chris,
@@ -24,7 +25,8 @@ const TestimonialCardData = [
   },
 
   {
-    rating:  5,
+    id: 3,
+    rating: 5,
     ratingStars: Array(5).fill(starBorder).fill(yellowStar, 0, 5),
     imgsrc: Joseph,
     custName: "Joseph",
@@ -32,6 +34,7 @@ const TestimonialCardData = [
   },
 
   {
+    id: 4,
     rating: 5,
     ratingStars: Array(5).fill(starBorder).fill(yellowStar, 0, 5),
     imgsrc: Rose,
@@ -40,6 +43,7 @@ const TestimonialCardData = [
   },
 
   // {
+  // id: number,
   //   rating: 1 to 5,
   //   ratingStars: Array(5).fill(starIcon).fill(filledStarIcon, 0, rating),
   //   imgsrc: imageName,

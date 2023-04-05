@@ -1,7 +1,6 @@
 .res-body-container {
   display: grid;
   grid-template-rows: 130px 2575px 200px;
-  margin-top: 20px;
 }
 
 

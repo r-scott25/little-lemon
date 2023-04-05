@@ -10,14 +10,15 @@ function Testimonials() {
       <div className="testimonial-card-container">
         {TestimonialCardData.map((value, index) => {
           return (
+            <div className="testimonial-card-container" key={value.id}>
             <TestimonialCard
-              key={index}
               rating={value.rating}
               ratingStars={value.ratingStars}
               imgsrc={value.imgsrc}
               custName={value.custName}
               review={value.review}
             />
+            </div>
           );
         })}
       </div>

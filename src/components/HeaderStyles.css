@@ -1,18 +1,273 @@
-.header-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  gap: 15%;
-  margin-left: 40px;
-  margin-right: 40px;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
 }
 
-.logo {
-  width: 20%;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    gap: 20%;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    margin-bottom: 0;
+    flex: 1;
+    z-index: 999;
+  }
+  .logo-container .logo {
+    width: 400px;
+    margin-left: 2rem;
+    align-self: center;
+    flex: 1;
+  }
+  .nav-container {
+    display: flex;
+    margin-top: .5rem;
+    margin-right: 24rem;
+    flex: 2;
+  }
+  .basket {
+    width: 50px;
+    margin-bottom: 60%;
+    margin-left: 1rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    list-style: none;
+    align-items: center;
+  }
+  ul li:nth-child(5) a {
+    white-space: nowrap;
+  }
+  ul li:nth-child(7) a img{
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    font-family: "Karla", normal;
+    font-size: 16px;
+    color: #495e57;
+  }
 }
 
 
-.basket {
-  width: 4%;
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    gap: 24%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    flex: 1;
+    z-index: 999;
+  }
+  .logo-container .logo {
+    width: 200px;
+    margin-left: 2rem;
+    align-self: center;
+    flex: 1;
+  }
+  .nav-container {
+    display: flex;
+    margin-top: .5rem;
+    flex: 2;
+  }
+  .basket {
+    width: 30px;
+    margin-bottom: 50%;
+    margin-left: 1rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    list-style: none;
+    align-items: center;
+  }
+  ul li:nth-child(5) a {
+    white-space: nowrap;
+  }
+  ul li:nth-child(7) a img{
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    font-family: "Karla", normal;
+    font-size: 20px;
+    color: #495e57;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    gap: 24%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    flex: 1;
+    z-index: 999;
+  }
+  .logo-container .logo {
+    width: 250px;
+    margin-left: 2rem;
+    align-self: center;
+    flex: 1;
+  }
+  .nav-container {
+    display: flex;
+    margin-top: .5rem;
+    flex: 2;
+  }
+  .basket {
+    width: 32px;
+    margin-bottom: 50%;
+    margin-left: 1rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+    list-style: none;
+    align-items: center;
+  }
+  ul li:nth-child(5) a {
+    white-space: nowrap;
+  }
+  ul li:nth-child(7) a img{
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    font-family: "Karla", normal;
+    font-size: 22px;
+    color: #495e57;
+  }
+}
+
+/* Extra Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 2000px) {
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    gap: 20%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    flex: 1;
+    z-index: 999;
+  }
+  .logo-container .logo {
+    width: 400px;
+    margin-left: 2rem;
+    align-self: center;
+    flex: 1;
+  }
+  .nav-container {
+    display: flex;
+    margin-top: .5rem;
+    flex: 2;
+  }
+  .basket {
+    width: 50px;
+    margin-bottom: 35%;
+    margin-left: 4rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    list-style: none;
+    align-items: center;
+  }
+  ul li:nth-child(5) a {
+    white-space: nowrap;
+  }
+  ul li:nth-child(7) a img{
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    font-family: "Karla", normal;
+    font-size: 32px;
+    color: #495e57;
+  }
+}
+
+/* Extra Extra Extra large devices (large laptops and desktops, 2500px and up) */
+@media only screen and (min-width: 2500px) {
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    gap: 20%;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    flex: 1;
+    z-index: 999;
+  }
+  .logo-container .logo {
+    display: flex;
+    flex: 1;
+    width: 500px;
+    margin-left: 2rem;
+    align-self: center;
+  }
+  .nav-container {
+    display: flex;
+    margin-top: .5rem;
+    flex: 2;
+  }
+  .basket {
+    width: 65px;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    list-style: none;
+    align-items: center;
+    width: 100%;
+  }
+  ul li:nth-child(5) a {
+    white-space: nowrap;
+  }
+  ul li:nth-child(7) a img{
+    margin: 0;
+  }
+
+
+  a {
+    text-decoration: none;
+    font-family: "Karla", normal;
+    font-size: 40px;
+    color: #495e57;
+  }
 }

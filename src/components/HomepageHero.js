@@ -11,15 +11,13 @@ function HomepageHero() {
           <h1 className="lemon-title">Little Lemon</h1>
           <h2 className="chicago-subtitle">Chicago</h2>
           <p className="lemon-blurb">
-            We are a family owned Mediterranean restaurant focused <br/> on
+            We are a family owned Mediterranean restaurant focused <br /> on
             traditional recipes served with a modern twist.
           </p>
           <div>
-            <Link to="/reservations">
-              <button className="btn" id="smallReserveTableBtn">
-                <a href="/reservations">Reserve a Table</a>
-              </button>
-            </Link>
+            <button className="btn" id="smallReserveTableBtn">
+              <a href="/reservations">Reserve a Table</a>
+            </button>
           </div>
         </article>
       </div>

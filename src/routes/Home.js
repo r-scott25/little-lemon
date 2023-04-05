@@ -9,7 +9,7 @@ import AboutSection from "../components/AboutSection";
 
 function Home() {
   return (
-    <body className="home-body-container">
+    <div className="home-body-container">
       <header>
         <Header />
       </header>
@@ -30,8 +30,8 @@ function Home() {
       <footer>
         <Footer />
       </footer>
-    </body>
+    </div>
   );
-};
+}
 
 export default Home;

@@ -1,6 +1,6 @@
-.nav-container{
+/* .nav-container {
   display: flex;
-
+  margin-top: .5rem;
 }
 
 ul {
@@ -8,18 +8,91 @@ ul {
   flex-direction: row;
   gap: 48px;
   list-style: none;
-
 }
 
 ul li:nth-child(5) a {
-
   white-space: nowrap;
 }
+
 
 a {
   text-decoration: none;
   font-family: "Karla", normal;
   font-size: 28px;
-  color: #495E57;
+  color: #495e57;
+} */
 
-}
+/* 
+@media only screen and (min-width: 768px) {
+  .nav-container {
+    margin-left: -16rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+  }
+  a {
+    font-size: 18px;
+  }
+} */
+
+/* @media only screen and (min-width: 992px) {
+  .nav-container {
+    margin-left: -10rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+  }
+  a {
+    font-size: 18px;
+  }
+} */
+/* @media only screen and (min-width: 1200px) {
+  .nav-container {
+    margin-left: -10rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    list-style: none;
+  }
+  a {
+    font-size: 20px;
+  }
+} */
+
+/* @media only screen and (min-width: 2000px) {
+  .nav-container {
+    margin-left: -10rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 28px;
+    list-style: none;
+  }
+  a {
+    font-size: 36px;
+  }
+} */
+
+/* @media only screen and (min-width: 2500px) {
+  .nav-container {
+    margin-left: -10rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 4em;
+    list-style: none;
+  }
+  a {
+    font-size: 40px;
+  }
+} */
