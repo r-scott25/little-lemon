@@ -141,23 +141,22 @@ a {
   }
 } */
 
-.links-container.hidden {
-  display: none;
-}
+  .links-container.hidden {
+    display: none;
+  }
 
-.links-container:not(.hidden) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5rem;
-  margin-right: 2rem;
-}
+  .links-container:not(.hidden) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    margin-right: 2rem;
+  }
 
   .links-container ul {
     flex-direction: column;
     justify-content: flex-end;
   }
-
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -249,6 +248,7 @@ a {
     gap: 16px;
     list-style: none;
     align-items: center;
+    margin-bottom: .25rem;
   }
   ul li:nth-child(5) a {
     white-space: nowrap;
@@ -301,6 +301,7 @@ a {
     gap: 28px;
     list-style: none;
     align-items: center;
+    margin-bottom: .75rem;
   }
   ul li:nth-child(5) a {
     white-space: nowrap;
@@ -322,7 +323,7 @@ a {
     display: flex;
     flex-direction: row;
     position: fixed;
-    gap: 28%;
+    gap: 25%;
     justify-content: space-between;
     align-items: center;
     padding-top: 2rem;
@@ -332,7 +333,7 @@ a {
     z-index: 999;
   }
   .logo-container .logo {
-    width: 250px;
+    width: 275px;
     margin-left: 2rem;
     align-self: center;
     flex: 1;
@@ -350,9 +351,10 @@ a {
   ul {
     display: flex;
     flex-direction: row;
-    gap: 36px;
+    gap: 40px;
     list-style: none;
     align-items: center;
+    margin-bottom: 1rem;
   }
   ul li:nth-child(5) a {
     white-space: nowrap;
@@ -363,13 +365,13 @@ a {
   a {
     text-decoration: none;
     font-family: "Karla", normal;
-    font-size: 32px;
+    font-size: 28px;
     color: #495e57;
   }
 }
 
 /* Extra Extra large devices (large laptops and desktops, 2000px and up) */
-@media only screen and (min-width: 2000px) {
+/* @media only screen and (min-width: 2000px) {
   .header-container {
     display: flex;
     flex-direction: row;
@@ -418,4 +420,4 @@ a {
     font-size: 32px;
     color: #495e57;
   }
-}
+} */
