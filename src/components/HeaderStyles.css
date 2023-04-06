@@ -69,11 +69,13 @@ a {
 .toggle-button .bar {
   height: 5px;
   width: 100%;
-  /* width: 100%; */
   background-color: #495e57;
   border-radius: 10px;
 }
 
+.toggle-button:hover {
+  filter: brightness(175%);
+}
 
 /* Extra Extra small devices (phones, 480px and down) */
 @media only screen and (max-width: 480px) {
@@ -109,7 +111,7 @@ a {
   }
   ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 16px;
     list-style: none;
     align-items: center;
@@ -130,7 +132,6 @@ a {
     display: flex;
   }
 
-
   .links-container.hidden {
     display: none;
   }
@@ -149,7 +150,7 @@ a {
   }
 }
 
-/* Extra Extra small devices (phones, 480px and up) */
+/* Extra Extra small devices (phones, 480px and down) */
 @media only screen and (min-width: 480px) {
   .header-container {
     display: flex;
@@ -183,7 +184,7 @@ a {
   }
   ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 16px;
     list-style: none;
     align-items: center;
@@ -204,7 +205,6 @@ a {
     display: flex;
   }
 
-
   .links-container.hidden {
     display: none;
   }
@@ -222,7 +222,6 @@ a {
     justify-content: flex-end;
   }
 }
-
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -297,9 +296,14 @@ a {
     align-self: center;
     flex: 1;
   }
-  .nav-container {
+  .nav-container .links-container {
     display: flex;
-    margin-top: 0.25rem;
+    flex-direction: row;
+    list-style: none;
+    margin-right: 3rem;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-end;
     flex: 2;
   }
   .basket {
@@ -313,7 +317,7 @@ a {
     gap: 16px;
     list-style: none;
     align-items: center;
-    margin-bottom: .25rem;
+    margin-bottom: 0.25rem;
   }
   ul li:nth-child(5) a {
     white-space: nowrap;
@@ -350,9 +354,15 @@ a {
     align-self: center;
     flex: 1;
   }
-  .nav-container {
+
+  .nav-container .links-container {
     display: flex;
-    margin-top: 0.5rem;
+    flex-direction: row;
+    list-style: none;
+    margin-right: 3rem;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-end;
     flex: 2;
   }
   .basket {
@@ -366,7 +376,7 @@ a {
     gap: 28px;
     list-style: none;
     align-items: center;
-    margin-bottom: .75rem;
+    margin-bottom: 0.75rem;
   }
   ul li:nth-child(5) a {
     white-space: nowrap;
@@ -379,6 +389,9 @@ a {
     font-family: "Karla", normal;
     font-size: 24px;
     color: #495e57;
+  }
+  .toggle-button {
+    display: none;
   }
 }
 
@@ -403,10 +416,15 @@ a {
     align-self: center;
     flex: 1;
   }
-  .nav-container {
+
+  .nav-container .links-container {
     display: flex;
-    margin-top: 0.5rem;
+    flex-direction: row;
+    list-style: none;
+    margin-right: 4rem;
     flex: 2;
+    padding: 0;
+    align-items: center;
   }
   .basket {
     width: 50px;
@@ -433,56 +451,7 @@ a {
     font-size: 28px;
     color: #495e57;
   }
+  .toggle-button {
+    display: none;
+  }
 }
-
-/* Extra Extra large devices (large laptops and desktops, 2000px and up) */
-/* @media only screen and (min-width: 2000px) {
-  .header-container {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    gap: 30%;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: 0;
-    flex: 1;
-    z-index: 999;
-  }
-  .logo-container .logo {
-    width: 400px;
-    margin-left: 2rem;
-    align-self: center;
-    flex: 1;
-  }
-  .nav-container {
-    display: flex;
-    margin-top: 0.5rem;
-    flex: 2;
-  }
-  .basket {
-    width: 50px;
-    margin-bottom: 35%;
-    margin-left: 4rem;
-  }
-  ul {
-    display: flex;
-    flex-direction: row;
-    gap: 48px;
-    list-style: none;
-    align-items: center;
-  }
-  ul li:nth-child(5) a {
-    white-space: nowrap;
-  }
-  ul li:nth-child(7) a img {
-    margin: 0;
-  }
-  a {
-    text-decoration: none;
-    font-family: "Karla", normal;
-    font-size: 32px;
-    color: #495e57;
-  }
-} */

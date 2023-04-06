@@ -1,17 +1,101 @@
-footer {
+.footer-container {
   display: flex;
-  justify-content:space-around;
-  /* align-content: center; */
-  background-color: #495E57;
-
-
+  flex-direction: row;
+  justify-content: left;
+  background-color: #495e57;
+  box-sizing: border-box;
+  flex: 1;
+  width: 100%;
 }
 
 .footer-logo {
- height: 70%;
+  height: 80%;
+  margin-top: 0.5rem;
+  margin-left: 1.5rem;
+}
+.footer-nav-container {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: space-between;
+  gap: 0%;
 }
 
-.social-media {
+ul {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
+.footer-nav-container a {
+  color: #edefee;
+  font-size: 1rem;
+  padding-bottom: 2px;
+}
+
+.contact-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8%;
+  font-family: "Karla";
+  color: #edefee;
+  margin-top: 0.5rem;
+}
+
+.contact-info-container p {
+  color: #edefee;
+}
+.social-media-container {
+  display: flex;
+  flex-direction: row;
+  color: #edefee;
+  margin-top: 0.5rem;
+}
+
+/* Extra-Extra small devices (phones,480px and down) */
+@media only screen and (max-width: 480px) {
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #495e57;
+    gap: 10%;
+    box-sizing: border-box;
+    flex: 1;
+    width: 100%;
+  }
+
+  .footer-logo {
+    height: 80%;
+    margin-top: 2.5rem;
+    margin-left: 1.5rem;
+  }
+  .contact-info-container {
+    font-family: "Karla";
+    color: #edefee;
+  }
+  .social-media {
+    display: flex;
+    flex-direction: column;
+    color: #edefee;
+    font-family: "Karla";
+  }
+}
+
+/* Extra small devices (phones, 480px and up) */
+@media only screen and (min-width: 480px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra Large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }

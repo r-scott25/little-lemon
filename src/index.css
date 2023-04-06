@@ -9,7 +9,6 @@
 }
 
 
-
 @font-face {
   font-family: "Markazi Text";
   src: url("../public/fonts/MarkaziText-Regular.ttf") format("truetype");
@@ -43,9 +42,30 @@ h2 {
   margin-bottom: 1rem;
 }
 
-p {
+h3 {
   font-family: "Karla", normal;
-  font-size: 20px;
+  font-size: 32px;
   font-weight:normal;
   line-height: 1.5;
 }
+
+h4 {
+  font-family: "Karla", normal;
+  font-size: 1.25rem;
+  font-weight:normal;
+  line-height: 1.5;
+}
+h5 {
+  font-family: "Karla", normal;
+  font-size: 24px;
+  font-weight:normal;
+  line-height: 1.5;
+}
+
+p {
+  font-family: "Karla", normal;
+  font-size: 1rem;
+  font-weight:normal;
+  line-height: 1;
+}
+
