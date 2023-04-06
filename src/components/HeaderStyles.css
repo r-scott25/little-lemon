@@ -73,8 +73,10 @@ a {
   background-color: #495e57;
   border-radius: 10px;
 }
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+
+
+/* Extra Extra small devices (phones, 480px and down) */
+@media only screen and (max-width: 480px) {
   .header-container {
     display: flex;
     flex-direction: row;
@@ -128,18 +130,6 @@ a {
     display: flex;
   }
 
-  /* .links-container {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5rem;
-    margin-right: 2rem;
-  }
-
-  .links-container:active {
-    display: flex;
-  }
-} */
 
   .links-container.hidden {
     display: none;
@@ -158,6 +148,81 @@ a {
     justify-content: flex-end;
   }
 }
+
+/* Extra Extra small devices (phones, 480px and up) */
+@media only screen and (min-width: 480px) {
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    gap: 4%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2.25rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    flex: 1;
+    z-index: 999;
+  }
+  .logo-container .logo {
+    width: 225px;
+    margin-left: 2rem;
+    align-self: center;
+    flex: 1;
+  }
+  .nav-container {
+    display: flex;
+    margin-top: 0.25rem;
+    flex: 2;
+    justify-content: flex-end;
+  }
+  .basket {
+    width: 30px;
+    margin-bottom: 50%;
+    margin-left: 0.5rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    list-style: none;
+    align-items: center;
+  }
+  ul li:nth-child(5) a {
+    white-space: nowrap;
+  }
+  ul li:nth-child(7) a img {
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+    font-family: "Karla", normal;
+    font-size: 20px;
+    color: #495e57;
+  }
+  .toggle-button {
+    display: flex;
+  }
+
+
+  .links-container.hidden {
+    display: none;
+  }
+
+  .links-container:not(.hidden) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    margin-right: 2rem;
+  }
+
+  .links-container ul {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
