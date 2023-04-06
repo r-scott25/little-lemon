@@ -1,26 +1,23 @@
 .heroHome-container {
+  display: flex;
   position: relative;
   justify-content: space-around;
-  display: flex;
 }
-
 .heroIntro {
   position: relative;
   flex: 1;
   z-index: 1;
 }
-
 .server-image {
   position: relative;
   z-index: 2;
   border-radius: 16px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
 }
-
 #smallReserveTableBtn {
   margin-top: 3rem;
   background-color: #f4ce14;
-  color: #495e57 !important;
+  color: #495e57;
   font-family: "Karla", normal;
   font-size: 18px;
   padding: 8px 16px;
@@ -28,20 +25,16 @@
   border-width: 0;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
 }
-
 #smallReserveTableBtn:active {
   background-color: #495e57;
   color: #ffffff !important;
 }
-
 .lemon-title {
   color: #f4ce14;
 }
-
 .chicago-subtitle {
   color: #edefee;
 }
-
 .lemon-blurb {
   color: #edefee;
   max-width: 60%;
