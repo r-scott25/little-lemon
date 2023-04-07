@@ -1,3 +1,5 @@
+/* Initial layout/sizes based on 480px wide screen. */
+
 .footer-container {
   display: flex;
   flex-direction: row;
@@ -14,11 +16,10 @@
 .footer-logo {
   height: 80%;
   margin-left: 1rem;
-  background-color: transparent;
 }
 
 .footer-logo-nav:hover {
-  filter:brightness(115%);
+  filter: brightness(115%);
   border-radius: 16px;
 }
 
@@ -61,10 +62,14 @@
   gap: 20%;
   margin-right: 3rem;
 }
-
 .contact-info-container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Karla";
+  margin-left: 1.5rem;
   padding-bottom: 0.25rem;
 }
+
 .contact-info-container #contactTitle {
   padding-bottom: 0.75rem;
   color: #f4ce14;
@@ -107,15 +112,49 @@
   border-radius: 16px;
 }
 
-/* Extra-Extra small devices (phones,480px and down) */
+/* Extra-Extra small devices (phones,480px and down)
 @media only screen and (max-width: 480px) {
 }
-/* Extra small devices (phones, 480px and up) */
+Extra small devices (phones, 480px and up)
 @media only screen and (min-width: 480px) {
-}
+} */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0.5%;
+    background-color: #495e57;
+    box-sizing: border-box;
+    flex: 1;
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 1rem;
+  }
+  .footer-logo {
+    height: 90%;
+    margin-right: 4rem;
+    margin-left: 4rem;
+  }
+  .footer-nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    padding-bottom: 2rem;
+
+    margin-right: 4rem;
+  }
+  .contact-and-social-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+    margin-right: 112rem;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
