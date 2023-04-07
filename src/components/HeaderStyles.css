@@ -40,10 +40,11 @@ ul li:nth-child(5) a {
 ul li:nth-child(7) a img {
   margin: 0;
 }
-a {
+.links-container .link a {
   text-decoration: none;
-  font-family: "Karla", normal;
-  font-size: 32px;
+  font-family: "Karla";
+  font-weight: 600;
+  font-size: 24px;
   color: #495e57;
 }
 
@@ -122,12 +123,7 @@ a {
   ul li:nth-child(7) a img {
     margin: 0;
   }
-  a {
-    text-decoration: none;
-    font-family: "Karla", normal;
-    font-size: 20px;
-    color: #495e57;
-  }
+
   .toggle-button {
     display: flex;
   }
@@ -177,6 +173,7 @@ a {
     flex: 2;
     justify-content: flex-end;
   }
+
   .basket {
     width: 30px;
     margin-bottom: 50%;
@@ -195,12 +192,7 @@ a {
   ul li:nth-child(7) a img {
     margin: 0;
   }
-  a {
-    text-decoration: none;
-    font-family: "Karla", normal;
-    font-size: 20px;
-    color: #495e57;
-  }
+
   .toggle-button {
     display: flex;
   }
@@ -267,12 +259,7 @@ a {
   ul li:nth-child(7) a img {
     margin: 0;
   }
-  a {
-    text-decoration: none;
-    font-family: "Karla", normal;
-    font-size: 20px;
-    color: #495e57;
-  }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up  - iPad,iPad Mini = 768) */
@@ -281,7 +268,7 @@ a {
     display: flex;
     flex-direction: row;
     position: fixed;
-    gap: 6%;
+    gap: 4%;
     justify-content: space-between;
     align-items: center;
     padding-top: 2.25rem;
@@ -296,6 +283,53 @@ a {
     align-self: center;
     flex: 1;
   }
+  .nav-container {
+    display: flex;
+    margin-top: 0.25rem;
+    flex: 2;
+  }
+  .basket {
+    width: 30px;
+    margin-bottom: 50%;
+    margin-left: 0.75rem;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    list-style: none;
+    align-items: center;
+  }
+  ul li:nth-child(5) a {
+    white-space: nowrap;
+  }
+  ul li:nth-child(7) a img {
+    margin: 0;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    gap: 6%;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    flex: 1;
+    z-index: 999;
+  }
+  .logo-container .logo {
+    width: 225px;
+    margin-left: 1.5rem;
+    align-self: center;
+    flex: 1;
+  }
+
   .nav-container .links-container {
     display: flex;
     flex-direction: row;
@@ -309,12 +343,12 @@ a {
   .basket {
     width: 30px;
     margin-bottom: 50%;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
   }
   ul {
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    gap: 5%;
     list-style: none;
     align-items: center;
     margin-bottom: 0.25rem;
@@ -325,21 +359,23 @@ a {
   ul li:nth-child(7) a img {
     margin: 0;
   }
-  a {
-    text-decoration: none;
-    font-family: "Karla", normal;
-    font-size: 20px;
-    color: #495e57;
+
+  .links-container .link a {
+    font-size: 1.15rem;
+  }
+
+  .toggle-button {
+    display: none;
   }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
   .header-container {
     display: flex;
     flex-direction: row;
     position: fixed;
-    gap: 8%;
+    gap: 6%;
     justify-content: space-between;
     align-items: center;
     padding-top: 2.5rem;
@@ -350,7 +386,7 @@ a {
   }
   .logo-container .logo {
     width: 225px;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
     align-self: center;
     flex: 1;
   }
@@ -373,10 +409,10 @@ a {
   ul {
     display: flex;
     flex-direction: row;
-    gap: 28px;
+    gap: 5%;
     list-style: none;
     align-items: center;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.25rem;
   }
   ul li:nth-child(5) a {
     white-space: nowrap;
@@ -384,35 +420,34 @@ a {
   ul li:nth-child(7) a img {
     margin: 0;
   }
-  a {
-    text-decoration: none;
-    font-family: "Karla", normal;
-    font-size: 24px;
-    color: #495e57;
+
+  .links-container .link a {
+    font-size: 1.5rem;
   }
+
   .toggle-button {
     display: none;
   }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1800px) {
   .header-container {
     display: flex;
     flex-direction: row;
     position: fixed;
-    gap: 25%;
+    /* gap: 4%; */
     justify-content: space-between;
     align-items: center;
-    padding-top: 2rem;
+    padding-top: 2.5rem;
     padding-bottom: 1rem;
     margin-bottom: 0;
     flex: 1;
     z-index: 999;
   }
   .logo-container .logo {
-    width: 275px;
-    margin-left: 2rem;
+    width: 250px;
+    margin-left: 5rem;
     align-self: center;
     flex: 1;
   }
@@ -421,23 +456,24 @@ a {
     display: flex;
     flex-direction: row;
     list-style: none;
-    margin-right: 4rem;
-    flex: 2;
+    margin-right: 5rem;
     padding: 0;
     align-items: center;
+    justify-content: flex-end;
+    flex: 2;
   }
   .basket {
-    width: 50px;
+    width: 35px;
     margin-bottom: 50%;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
   }
   ul {
     display: flex;
     flex-direction: row;
-    gap: 40px;
+    gap: 8%;
     list-style: none;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.25rem;
   }
   ul li:nth-child(5) a {
     white-space: nowrap;
@@ -445,13 +481,13 @@ a {
   ul li:nth-child(7) a img {
     margin: 0;
   }
-  a {
-    text-decoration: none;
-    font-family: "Karla", normal;
-    font-size: 28px;
-    color: #495e57;
+
+  .links-container .link a {
+    font-size: 1.5rem;
   }
+
   .toggle-button {
     display: none;
   }
 }
+

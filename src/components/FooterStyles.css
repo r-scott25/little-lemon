@@ -38,9 +38,10 @@
   margin-top: 0.5rem;
 }
 .footer-nav-container a {
+  text-decoration: none;
   color: #edefee;
-  font-size: 1rem;
-  font-weight: 200;
+  font-family: "Karla";
+  font-weight: 600;
 }
 
 .footer-nav-container a:hover {
@@ -50,6 +51,7 @@
   display: flex;
   flex-direction: column;
   font-family: "Karla";
+  font-weight: 600;
   margin-left: 1.5rem;
 }
 
@@ -73,6 +75,7 @@
 .contact-info-container #contactTitle {
   padding-bottom: 0.75rem;
   color: #f4ce14;
+  font-weight: 700;
 }
 .contact-info-container p {
   padding-bottom: 1rem;
@@ -89,6 +92,8 @@
 #letsConnectTitle {
   margin-bottom: 0.5rem;
   color: #f4ce14;
+  font-family: "Karla";
+  font-weight: 700;
 }
 
 .social-media-links-container ul {
@@ -96,7 +101,6 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 2%;
-  /* margin-left: .75rem; */
 }
 #instagramLink img,
 #facebookLink img,
@@ -143,7 +147,6 @@ Extra small devices (phones, 480px and up)
     justify-content: space-between;
     gap: 2%;
     padding-bottom: 2rem;
-
     margin-right: 4rem;
   }
   .contact-and-social-container {
@@ -153,12 +156,68 @@ Extra small devices (phones, 480px and up)
     align-items: center;
     justify-content: space-between;
     gap: 10%;
-    margin-right: 112rem;
+    margin-right: 14rem;
   }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0.5%;
+    background-color: #495e57;
+    box-sizing: border-box;
+    flex: 1;
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 1rem;
+  }
+  .footer-logo {
+    height: 90%;
+    margin-right: 4rem;
+    margin-left: 4rem;
+  }
+  .footer-nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2%;
+    padding-bottom: 2rem;
+    margin-right: 4rem;
+  }
+  .contact-and-social-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20%;
+    margin-right: 12rem;
+  }
+
+  .social-media-container {
+    display: flex;
+    flex-direction: column;
+    color: #edefee;
+    justify-content: center;
+    margin-left: 0.5rem;
+    padding-right: 2rem;
+    /* width:80%; */
+    flex-grow: 2;
+  }
+
+  .social-media-links-container ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8%;
+  }
+  #instagramLink img,
+  #facebookLink img,
+  #twitterLink img {
+    width: 140%;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
