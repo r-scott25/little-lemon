@@ -81,17 +81,9 @@ ul li:nth-child(7) a img {
 /* Extra Extra small devices (phones, 480px and down) */
 @media only screen and (max-width: 480px) {
   .header-container {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
     gap: 4%;
-    justify-content: space-between;
-    align-items: center;
     padding-top: 2.25rem;
-    padding-bottom: 1rem;
-    margin-bottom: 0;
-    flex: 1;
-    z-index: 999;
+
   }
   .logo-container .logo {
     width: 225px;
@@ -116,6 +108,7 @@ ul li:nth-child(7) a img {
     gap: 16px;
     list-style: none;
     align-items: center;
+   
   }
   ul li:nth-child(5) a {
     white-space: nowrap;
@@ -124,8 +117,13 @@ ul li:nth-child(7) a img {
     margin: 0;
   }
 
+  .links-container .link a {
+    font-size: 18px;
+  }
+
   .toggle-button {
     display: flex;
+   margin-right: -.5rem;
   }
 
   .links-container.hidden {
@@ -140,32 +138,17 @@ ul li:nth-child(7) a img {
     margin-right: 2rem;
   }
 
-  .links-container ul {
-    flex-direction: column;
-    justify-content: flex-end;
-  }
 }
 
 /* Extra Extra small devices (phones, 480px and down) */
 @media only screen and (min-width: 480px) {
   .header-container {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
     gap: 4%;
-    justify-content: space-between;
-    align-items: center;
     padding-top: 2.25rem;
-    padding-bottom: 1rem;
-    margin-bottom: 0;
-    flex: 1;
-    z-index: 999;
   }
   .logo-container .logo {
     width: 225px;
     margin-left: 2rem;
-    align-self: center;
-    flex: 1;
   }
   .nav-container {
     display: flex;

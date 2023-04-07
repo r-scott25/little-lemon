@@ -166,7 +166,7 @@ Extra small devices (phones, 480px and up)
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 0.5%;
+    gap: 0.25%;
     background-color: #495e57;
     box-sizing: border-box;
     flex: 1;
@@ -192,7 +192,7 @@ Extra small devices (phones, 480px and up)
     align-content: center;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 20%;
+    gap: 15%;
     margin-right: 12rem;
   }
 
@@ -201,22 +201,21 @@ Extra small devices (phones, 480px and up)
     flex-direction: column;
     color: #edefee;
     justify-content: center;
-    margin-left: 0.5rem;
-    padding-right: 2rem;
-    /* width:80%; */
     flex-grow: 2;
   }
-
+  #letsConnectTitle {
+    white-space: nowrap;
+  }
   .social-media-links-container ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 8%;
+    gap: 12%;
   }
   #instagramLink img,
   #facebookLink img,
   #twitterLink img {
-    width: 140%;
+    width: 120%;
   }
 }
 
