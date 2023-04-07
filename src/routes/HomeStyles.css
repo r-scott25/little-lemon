@@ -1,6 +1,8 @@
 .home-body-container {
   display: grid;
   grid-template-rows: 130px 2575px 200px;
+  max-width: 100%;
+  /* overflow-x: hidden; */
 }
 
 
@@ -33,4 +35,5 @@ header {
 footer {
   background-color: #495e57;
   width: 100%;
+  max-width: 100%
 }

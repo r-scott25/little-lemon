@@ -8,7 +8,11 @@ import twitter from "../assets/twitter.svg";
 function Footer() {
   return (
     <footer className="footer-container">
-        <img className="footer-logo" src={logoGreenLemon} alt="logo" />
+      <div className="footer-logo-nav">
+        <a href="/">
+          <img className="footer-logo" src={logoGreenLemon} alt="logo" />
+        </a>
+      </div>
       <div>
         <nav className="footer-nav-container">
           <ul>
@@ -45,27 +49,37 @@ function Footer() {
           </ul>
         </nav>
       </div>
-      <div className="contact-info-container">
-        <h4 id="contactTitle">Contact</h4>
-        <p id="lemonAddress">
-          123 Lemon St. <br /> Chicago, IL 60654
-        </p>
-        <p id="lemonPhone">(312) 555-5555</p>
-        <p id="lemonEmail">lemon@email.com</p>
-      </div>
-      <div className="social-media-container">
-        <h4 id="let'sConnectTitle">Let's Connect!</h4>
-        <ul id="socialMediaList">
-          <li id="instagramLink">
-            <img src={instagram} alt="instagram logo" />
-          </li>
-          <li id="facebookLink">
-            <img src={facebook} alt="facebook logo" />
-          </li>
-          <li id="twitterLink">
-            <img src={twitter} alt="twitter logo" />
-          </li>
-        </ul>
+      <div className="contact-and-social-container">
+        <div className="contact-info-container">
+          <h5 id="contactTitle">Little Lemon</h5>
+          <p id="lemonAddress">
+            123 Lemon St. <br /> Chicago, IL 60654
+          </p>
+          <p id="lemonPhone">(312) 555-5555</p>
+          <p id="lemonEmail">lemon@email.com</p>
+        </div>
+        <div className="social-media-container">
+          <h5 id="letsConnectTitle">Let's Connect!</h5>
+          <div className="social-media-links-container">
+            <ul id="socialMediaList">
+              <li id="instagramLink">
+                <a href="https://www.instagram.com/">
+                  <img src={instagram} alt="instagram logo" />
+                </a>
+              </li>
+              <li id="facebookLink">
+                <a href="https://www.facebook.com/">
+                  <img src={facebook} alt="facebook logo" />
+                </a>
+              </li>
+              <li id="twitterLink">
+                <a href="https://twitter.com/">
+                  <img src={twitter} alt="twitter logo" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
   );
