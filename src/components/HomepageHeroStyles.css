@@ -129,15 +129,6 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
     white-space: nowrap;
   }
-  #smallReserveTableBtn:hover {
-    background-color: #495e57;
-    color: #ffffff !important;
-  }
-  
-  #smallReserveTableBtn:active {
-    background-color: #EE9972;
-    color: #ffffff !important;
-  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -186,7 +177,7 @@
     width: 40%;
     height: 110%;
     left: 47%;
-    top: 10%;
+    top: 12%;
   }
   #smallReserveTableBtn {
     margin-top: 3rem;
@@ -201,19 +192,71 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
     white-space: nowrap;
   }
-  #smallReserveTableBtn:hover {
-    background-color: #495e57;
-    color: #ffffff !important;
-  }
-  
-  #smallReserveTableBtn:active {
-    background-color: #EE9972;
-    color: #ffffff !important;
-  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+  .heroHome-container {
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    padding-top: 2rem;
+  }
+
+  .heroIntro {
+    position: relative;
+    flex: 1;
+    z-index: 1;
+    margin-top: 2rem;
+    margin-left: -.5rem;
+  }
+
+  .lemon-title {
+    font-family: "Markazi Text";
+    font-size: 64px;
+    color: #f4ce14;
+    white-space: nowrap;
+    margin-bottom: -1rem;
+  }
+  .chicago-subtitle {
+    color: #edefee;
+    font-family: "Markazi Text";
+    font-size: 40px;
+    margin-bottom: 2rem;
+  }
+  .lemon-blurb {
+    font-family: "Karla";
+    color: #edefee;
+    font-size: 1.25rem;
+    font-weight: 500;
+    max-width: 40%;
+    min-width: 40%;
+    line-height: 1.8rem;
+  }
+  .heroHome-container .server-image {
+    position:absolute;
+    z-index: 2;
+    border-radius: 16px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+    width: 35%;
+    height: 110%;
+    left: 47%;
+    top: 16%;
+  }
+  #smallReserveTableBtn {
+    margin-top: 1.5rem;
+    background-color: #f4ce14;
+    border-color: #f4ce14;
+    color: #495e57 !important;
+    font-family: "Karla", normal;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 16px;
+    border-width: 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+  }
+}
 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
