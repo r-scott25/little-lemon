@@ -122,9 +122,10 @@
 .copyright {
   font-family: karla;
   color:#edefee;
+  font-size: 12px;
   font-weight: 500;
   margin-top: 250px;
-  margin-left: -500px;
+  margin-left: -225px;
   white-space: nowrap;
 }
 
