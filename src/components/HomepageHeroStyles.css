@@ -8,6 +8,8 @@
   flex: 1;
   z-index: 1;
   margin-top: 2rem;
+  margin-left: 2rem;
+
 }
 
 .lemon-title {
@@ -37,15 +39,16 @@
   z-index: 2;
   border-radius: 16px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-  margin-top: 2.75rem;
-  margin-left: -.05rem;
-  width: 192px;
+  width: 40%;
+  height: 60%;
+  left: 56%;
+  top: 34%;
 }
 #smallReserveTableBtn {
   margin-top: 3rem;
   background-color: #f4ce14;
   border-color: #f4ce14;
-  color: #495e57;
+  color: #495e57 !important;
   font-family: "Karla", normal;
   font-size: 18px;
   padding: 8px 16px;
@@ -54,104 +57,35 @@
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
   white-space: nowrap;
 }
-#smallReserveTableBtn:active {
+#smallReserveTableBtn:hover {
   background-color: #495e57;
   color: #ffffff !important;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .heroIntro {
-    margin-left: 2rem;
-  }
-  .lemon-blurb {
-    max-width: 50%;
-  }
-  .server-image {
-    width: 40%;
-    left: 55%;
-    top: 30%;
-  }
+#smallReserveTableBtn:active {
+  background-color: #EE9972;
+  color: #ffffff !important;
 }
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  .heroIntro {
-    margin-top: 3rem;
-    margin-left: 8rem;
-  }
-  .lemon-blurb {
-    max-width: 50%;
-  }
-  .server-image {
-    width: 28rem;
-    left: -8rem;
-    top: 3rem;
-  }
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-  .heroIntro {
-    margin-top: 3rem;
-    margin-left: 8rem;
-  }
-  .server-image {
-    width: 28rem;
-    left: -8rem;
-    top: 3rem;
-  }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .heroIntro {
-    margin-top: 3rem;
-    margin-left: 10rem;
-  }
-  .server-image {
-    width: 28rem;
-    left: -10rem;
-    top: 3rem;
-  }
-}
+@media only screen and (min-width: 992px) {}
+
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  .heroIntro {
-    margin-left: 10rem;
-  }
-  .server-image {
-    width: 28rem;
-    left: -10rem;
-    top: 3rem;
-  }
+
 }
 
-/* Extra Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 2000px) {
-  .heroIntro {
-    margin-left: 22rem;
-  }
-  .server-image {
-    width: 28rem;
-    left: -22rem;
-    top: 3rem;
-  }
-}
-/* Extra Extra Extra large devices (large laptops and desktops, 2500px and up) */
-@media only screen and (min-width: 2500px) {
-  .heroHome-container {
-    padding-top: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-  .heroIntro {
-    margin-top: 4rem;
-    margin-left: 30rem;
-  }
-  .server-image {
-    width: 28rem;
-    left: -30rem;
-    top: 4rem;
-  }
+/* Extra Extra large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1800px) {
+ 
 }
