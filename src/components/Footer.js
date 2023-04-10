@@ -15,7 +15,7 @@ function Footer() {
       </div>
       <div>
         <nav className="footer-nav-container">
-          <ul>
+          <ul className="footer-nav-list">
             <li>
               <a href="/" className="footer-nav-item">
                 Home
@@ -80,6 +80,9 @@ function Footer() {
             </ul>
           </div>
         </div>
+      </div>
+      <div>
+        <p className="copyright">© 2023 Rachel Scott</p>
       </div>
     </footer>
   );

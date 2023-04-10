@@ -10,12 +10,13 @@
   flex: 1;
   width: 100%;
   align-items: flex-start;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: .5rem;
 }
 
 .footer-logo {
   height: 80%;
-  margin-left: 1rem;
+  margin-left: 4rem;
 }
 
 .footer-logo-nav:hover {
@@ -36,6 +37,8 @@
   align-items: flex-start;
   justify-content: center;
   margin-top: 0.5rem;
+  list-style: none;
+  gap: 20px;
 }
 .footer-nav-container a {
   text-decoration: none;
@@ -61,7 +64,7 @@
   align-content: center;
   align-items: center;
   justify-content: space-between;
-  gap: 20%;
+  gap: 16px;
   margin-right: 3rem;
 }
 .contact-info-container {
@@ -100,6 +103,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  list-style: none;
   gap: 2%;
 }
 #instagramLink img,
@@ -115,6 +119,14 @@
   padding: 0.25rem;
   border-radius: 16px;
 }
+.copyright {
+  font-family: karla;
+  color:#edefee;
+  font-weight: 500;
+  margin-top: 250px;
+  margin-left: -500px;
+  white-space: nowrap;
+}
 
 /* Extra-Extra small devices (phones,480px and down)
 @media only screen and (max-width: 480px) {
@@ -129,7 +141,7 @@ Extra small devices (phones, 480px and up)
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap: 0.5%;
+    gap: 2%;
     background-color: #495e57;
     box-sizing: border-box;
     flex: 1;
@@ -156,7 +168,15 @@ Extra small devices (phones, 480px and up)
     align-items: center;
     justify-content: space-between;
     gap: 10%;
-    margin-right: 14rem;
+    margin-right: 12rem;
+  }
+  .copyright {
+    font-family: karla;
+    color:#edefee;
+    font-weight: 500;
+    margin-top: 250px;
+    margin-left: -350px;
+    white-space: nowrap;
   }
 }
 
@@ -172,20 +192,25 @@ Extra small devices (phones, 480px and up)
     flex: 1;
     width: 100%;
     align-items: flex-start;
-    padding-top: 1rem;
+    padding-top: 1.5rem;
+    margin-right: -4rem;
   }
-  .footer-logo {
-    height: 90%;
+  .footer-logo-nav .footer-logo {
+    height: 150px;
     margin-right: 4rem;
     margin-left: 4rem;
   }
-  .footer-nav-container {
+  .footer-nav-container ul {
     display: flex;
     justify-content: space-between;
-    gap: 2%;
-    padding-bottom: 2rem;
-    margin-right: 4rem;
+    padding-bottom: .5rem;
+    margin-right: 0rem;
+    gap: 16px;
   }
+  .footer-nav-item {
+    padding-bottom: 1.5rem;
+  }
+
   .contact-and-social-container {
     display: flex;
     flex-direction: row;
@@ -193,7 +218,7 @@ Extra small devices (phones, 480px and up)
     align-items: flex-start;
     justify-content: space-between;
     gap: 15%;
-    margin-right: 12rem;
+    margin-right: 14rem;
   }
 
   .social-media-container {
@@ -217,12 +242,283 @@ Extra small devices (phones, 480px and up)
   #twitterLink img {
     width: 120%;
   }
+  .copyright {
+    font-family: karla;
+    color:#edefee;
+    font-weight: 500;
+    margin-top: 215px;
+    margin-left: -300px;
+    white-space: nowrap;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0.25%;
+    background-color: #495e57;
+    box-sizing: border-box;
+    flex: 1;
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 1.5rem;
+    margin-right: 3rem;
+  }
+  .footer-logo {
+    height: 90%;
+    margin-top: 2rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
+  }
+  .footer-nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-right: 3rem;
+    margin-left: 1rem;
+    font-size: 18px;
+    line-height: 1.5rem;
+  }
+
+  .footer-nav-container ul {
+    gap: 8px;
+  }
+
+  .contact-and-social-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10%;
+    margin-top: 2rem;
+  }
+
+  .contact-info-container {
+    margin-left: 3rem;
+  }
+  #contactTitle {
+    font-size: 20px;
+  }
+
+  .contact-info-container p {
+    font-size: 18px;
+  }
+  .social-media-container {
+    display: flex;
+    flex-direction: column;
+    color: #edefee;
+    justify-content: center;
+    flex-grow: 2;
+    margin-left: 4rem;
+  }
+  #letsConnectTitle {
+    white-space: nowrap;
+    font-size: 20px;
+  }
+  .social-media-links-container ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15%;
+  }
+  #instagramLink img,
+  #facebookLink img,
+  #twitterLink img {
+    width: 120%;
+  }
+  .copyright {
+    font-family: karla;
+    color:#edefee;
+    font-weight: 500;
+    margin-top: 200px;
+    margin-left: -335px;
+    white-space: nowrap;
+  }
 }
 
 /* Extra Large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* gap: 4%; */
+    background-color: #495e57;
+    box-sizing: border-box;
+    flex: 1;
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 1.5rem;
+  }
+  .footer-logo {
+    height: 90%;
+    margin-top: 2rem;
+    margin-right: 4rem;
+    margin-left: 4rem;
+  }
+  .footer-nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-right: 3rem;
+    margin-left: 1rem;
+    font-size: 18px;
+    line-height: 1.5rem;
+  }
+
+  .footer-nav-container ul {
+    gap: 8px;
+  }
+
+  .contact-and-social-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10%;
+    margin-top: 2rem;
+  }
+
+  .contact-info-container {
+    margin-left: 3rem;
+  }
+  #contactTitle {
+    font-size: 20px;
+  }
+
+  .contact-info-container p {
+    font-size: 18px;
+  }
+  .social-media-container {
+    display: flex;
+    flex-direction: column;
+    color: #edefee;
+    justify-content: center;
+    flex-grow: 2;
+    margin-left: rem;
+  }
+  #letsConnectTitle {
+    white-space: nowrap;
+    font-size: 20px;
+  }
+  .social-media-links-container ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15%;
+  }
+  #instagramLink img,
+  #facebookLink img,
+  #twitterLink img {
+    width: 120%;
+  }
+
+  .copyright {
+    font-family: karla;
+    color:#edefee;
+    font-weight: 500;
+    margin-top: 200px;
+    margin-left: -150px;
+    white-space: nowrap;
+  }
+}
+
+/* Extra Extra large devices (large desktops, 1800px and up) */
+@media only screen and (min-width: 1800px) {
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0px;
+    background-color: #495e57;
+    box-sizing: border-box;
+    flex: 1;
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 1.5rem;
+    margin-left:0px;
+  }
+  .footer-logo {
+    height: 90%;
+    margin-top: 2rem;
+    margin-right: rem;
+    margin-left: 4rem;
+  }
+  .footer-nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-left: 8rem;
+    font-size: 18px;
+    line-height: 1.5rem;
+  }
+
+  .footer-nav-container ul {
+    gap: 8px;
+    
+  }
+
+  .contact-and-social-container {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 52%;
+    margin-top: 2rem;
+    margin-left: 1rem;
+  }
+
+  .contact-info-container {
+    margin-left: 3rem;
+  }
+  #contactTitle {
+    font-size: 20px;
+  }
+
+  .contact-info-container p {
+    font-size: 18px;
+  }
+  .social-media-container {
+    display: flex;
+    flex-direction: column;
+    color: #edefee;
+    justify-content: center;
+    flex-grow: 2;
+    margin-left: 4rem;
+  }
+  #letsConnectTitle {
+    white-space: nowrap;
+    font-size: 20px;
+  }
+  .social-media-links-container ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 15%;
+  }
+  #instagramLink img,
+  #facebookLink img,
+  #twitterLink img {
+    width: 120%;
+  }
+
+  .copyright {
+    font-family: karla;
+    color:#edefee;
+    font-weight: 500;
+    margin-top: 200px;
+    margin-right: 75px;
+  }
 }

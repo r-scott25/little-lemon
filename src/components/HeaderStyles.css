@@ -27,17 +27,17 @@
   margin-bottom: 35%;
   margin-left: 4rem;
 }
-ul {
+.nav-container ul {
   display: flex;
   flex-direction: row;
   gap: 48px;
   list-style: none;
   align-items: center;
 }
-ul li:nth-child(5) a {
+.nav-container ul li:nth-child(5) a {
   white-space: nowrap;
 }
-ul li:nth-child(7) a img {
+.nav-container ul li:nth-child(7) a img {
   margin: 0;
 }
 .links-container .link a {
@@ -102,19 +102,13 @@ ul li:nth-child(7) a img {
     margin-bottom: 50%;
     margin-left: 0.5rem;
   }
-  ul {
+  .nav-container ul {
     display: flex;
     flex-direction: column;
     gap: 16px;
     list-style: none;
     align-items: center;
    
-  }
-  ul li:nth-child(5) a {
-    white-space: nowrap;
-  }
-  ul li:nth-child(7) a img {
-    margin: 0;
   }
 
   .links-container .link a {
@@ -162,18 +156,12 @@ ul li:nth-child(7) a img {
     margin-bottom: 50%;
     margin-left: 0.5rem;
   }
-  ul {
+  .nav-container ul {
     display: flex;
     flex-direction: column;
     gap: 16px;
     list-style: none;
     align-items: center;
-  }
-  ul li:nth-child(5) a {
-    white-space: nowrap;
-  }
-  ul li:nth-child(7) a img {
-    margin: 0;
   }
 
   .toggle-button {
@@ -229,20 +217,13 @@ ul li:nth-child(7) a img {
     margin-bottom: 50%;
     margin-left: 0.75rem;
   }
-  ul {
+  .nav-container ul {
     display: flex;
     flex-direction: row;
     gap: 16px;
     list-style: none;
     align-items: center;
   }
-  ul li:nth-child(5) a {
-    white-space: nowrap;
-  }
-  ul li:nth-child(7) a img {
-    margin: 0;
-  }
-
 }
 
 /* Medium devices (landscape tablets, 768px and up  - iPad,iPad Mini = 768) */
@@ -276,18 +257,12 @@ ul li:nth-child(7) a img {
     margin-bottom: 50%;
     margin-left: 0.75rem;
   }
-  ul {
+  .nav-container ul {
     display: flex;
     flex-direction: row;
     gap: 16px;
     list-style: none;
     align-items: center;
-  }
-  ul li:nth-child(5) a {
-    white-space: nowrap;
-  }
-  ul li:nth-child(7) a img {
-    margin: 0;
   }
 }
 
@@ -328,19 +303,13 @@ ul li:nth-child(7) a img {
     margin-bottom: 50%;
     margin-left: 0.5rem;
   }
-  ul {
+  .nav-container  ul {
     display: flex;
     flex-direction: row;
     gap: 5%;
     list-style: none;
     align-items: center;
     margin-bottom: 0.25rem;
-  }
-  ul li:nth-child(5) a {
-    white-space: nowrap;
-  }
-  ul li:nth-child(7) a img {
-    margin: 0;
   }
 
   .links-container .link a {
@@ -389,19 +358,13 @@ ul li:nth-child(7) a img {
     margin-bottom: 50%;
     margin-left: 0.5rem;
   }
-  ul {
+  .nav-container ul {
     display: flex;
     flex-direction: row;
     gap: 5%;
     list-style: none;
     align-items: center;
     margin-bottom: 0.25rem;
-  }
-  ul li:nth-child(5) a {
-    white-space: nowrap;
-  }
-  ul li:nth-child(7) a img {
-    margin: 0;
   }
 
   .links-container .link a {
@@ -413,7 +376,7 @@ ul li:nth-child(7) a img {
   }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Extra Extra large devices (large desktops, 1800px and up) */
 @media only screen and (min-width: 1800px) {
   .header-container {
     display: flex;
@@ -450,19 +413,13 @@ ul li:nth-child(7) a img {
     margin-bottom: 50%;
     margin-left: 1.5rem;
   }
-  ul {
+  .nav-container ul {
     display: flex;
     flex-direction: row;
-    gap: 8%;
+    gap: 48px;
     list-style: none;
     align-items: center;
     margin-bottom: 0.25rem;
-  }
-  ul li:nth-child(5) a {
-    white-space: nowrap;
-  }
-  ul li:nth-child(7) a img {
-    margin: 0;
   }
 
   .links-container .link a {
