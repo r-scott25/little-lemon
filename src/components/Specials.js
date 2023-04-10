@@ -6,11 +6,14 @@ import MenuCardData from "./MenuCardData.js";
 function Specials() {
   return (
     <section id="specials-container">
-      <h1>This week's specials!</h1>
-      <button id="menuButton">
-        <a href="/menu">Online Menu</a>
-      </button>
-      <div id="menu-card-container">
+      <div className="specialsTitle-and-menuButton"> <h1 className="specialsTitle">This week's specials!</h1>
+      <div>
+        <a className="btn" id="menuButton" href="/menu">
+          Online Menu
+        </a>
+      </div></div>
+     
+      <div className="menu-card-container">
         {MenuCardData.map((value) => {
           return (
             <div className="menu-card-container" key={value.id}>

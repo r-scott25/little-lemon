@@ -1,22 +1,96 @@
 .menu-card {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-around;
-  max-width: 400px;
-  background-color: #EDEDED;
+  margin-bottom: 2rem;
+  min-width: 25rem;
+  max-width: 10rem;
+  min-height: 525px;
+  background-color: #ededed;
   border-radius: 16px;
- /* margin-top: 200px; */
+  justify-content: flex-start;
+  
 }
 
-
-
-.dish-image {
-  width: 425px;
-  height: 250px;
-  border-radius: 16px;
+.dishImage {
+  width: 25rem;
+  height: 15rem;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+  margin-bottom: 1.5rem;
 }
 
-#scooterIcon {
-  width: 40px;
+.name-and-price {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
 }
 
+.dishName {
+  font-family: "Karla", Normal;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #495e57;
+  white-space: nowrap;
+  min-width: 15rem;
+  max-width: 15rem;
+}
+
+.dishPrice {
+  font-family: "Karla", Normal;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ee8e61;
+}
+.dishDescription {
+  margin-left: 1.5rem;
+  margin-right: 1rem;
+  min-height: 11rem;
+  max-width: 22rem;
+  font-family: "Karla", Normal;
+  font-size: 1.25rem;
+  color: #333333;
+  line-height: 1.75rem;
+}
+.deliveryLink-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+
+.orderDeliveryLink {
+  font-family: "Karla", Normal;
+  color: #495e57;
+  font-weight: 700;
+}
+
+.orderDeliveryLink:hover {
+  filter: brightness(175%);
+}
+
+.orderDeliveryLink:active {
+  color: #ee9972;
+}
+.scooterIcon {
+  width: 1.5rem;
+}
+
+.scooterIcon:hover {
+  background-color: #495e57;
+  filter: brightness(175%);
+  border-radius: 50%;
+}
+
+.scooterIcon:active {
+  background-color: #ee9972;
+  filter: brightness(175%);
+  border-radius: 50%;
+}

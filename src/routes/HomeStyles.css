@@ -1,8 +1,7 @@
 .home-body-container {
   display: grid;
-  grid-template-rows: 130px 2575px 200px;
+  grid-template-rows: 130px auto 200px;
   max-width: 100%;
-  /* overflow-x: hidden; */
 }
 
 
@@ -13,7 +12,8 @@ header {
 
 .home-main-container {
   display: grid;
-  grid-template-rows: 475px 850px 500px 750px;
+  grid-template-rows: 475px auto;
+  /* grid-template-rows: 475px 850px 500px 750px; */
 
 }
 
