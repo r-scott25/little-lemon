@@ -129,12 +129,6 @@
   white-space: nowrap;
 }
 
-/* Extra-Extra small devices (phones,480px and down)
-@media only screen and (max-width: 480px) {
-}
-Extra small devices (phones, 480px and up)
-@media only screen and (min-width: 480px) {
-} */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
