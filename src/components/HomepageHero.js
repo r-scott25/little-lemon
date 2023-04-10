@@ -15,9 +15,7 @@ function HomepageHero() {
             traditional recipes served with a modern twist.
           </p>
           <div>
-            <button className="btn" id="smallReserveTableBtn">
-              <a href="/reservations">Reserve a Table</a>
-            </button>
+              <a  className="btn" id="smallReserveTableBtn" href="/reservations">Reserve a Table</a>
           </div>
         </article>
       </div>

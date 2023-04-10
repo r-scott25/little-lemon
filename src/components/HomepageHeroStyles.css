@@ -35,6 +35,7 @@
   max-width: 50%;
   min-width: 50%;
   line-height: 1.8rem;
+  margin-bottom: 2rem;
 }
 .heroHome-container .server-image {
   position:absolute;
@@ -53,6 +54,7 @@
   color: #495e57 !important;
   font-family: "Karla", normal;
   font-size: 18px;
+  font-weight: 600;
   padding: 8px 16px;
   border-radius: 16px;
   border-width: 0;
@@ -62,6 +64,7 @@
 #smallReserveTableBtn:hover {
   background-color: #495e57;
   color: #ffffff !important;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 #smallReserveTableBtn:active {
@@ -111,9 +114,9 @@
     z-index: 2;
     border-radius: 16px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    width: 40%;
-    height: 90%;
-    left: 38%;
+    width: 36%;
+    height: 94%;
+    left: 40%;
     top: 32%;
   }
   #smallReserveTableBtn {
@@ -168,6 +171,7 @@
     max-width: 40%;
     min-width: 40%;
     line-height: 1.8rem;
+    margin-bottom: 3rem;
   }
   .heroHome-container .server-image {
     position:absolute;
@@ -175,7 +179,7 @@
     border-radius: 16px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
     width: 40%;
-    height: 110%;
+    height: 114%;
     left: 47%;
     top: 12%;
   }
@@ -200,7 +204,6 @@
     display: flex;
     position: relative;
     justify-content: space-around;
-    padding-top: 2rem;
   }
 
   .heroIntro {
@@ -265,8 +268,7 @@
     display: flex;
     position: relative;
     justify-content: space-around;
-    padding-top: 2rem;
-    margin-left: 2rem;
+    margin-left: 4rem;
   }
 
   .heroIntro {
@@ -304,10 +306,10 @@
     z-index: 2;
     border-radius: 16px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    width: 35%;
-    height: 110%;
+    width: 36%;
+    height: 120%;
     left: 50%;
-    top: 16%;
+    top: 10%;
   }
   #smallReserveTableBtn {
     margin-top: 1.5rem;
