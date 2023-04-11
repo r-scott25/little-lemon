@@ -20,7 +20,7 @@
   font-family: "Markazi Text", serif;
   font-size: 2.75rem;
   color: #495e57;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
   margin-bottom: -0.5rem;
 }
@@ -28,7 +28,7 @@
 .about-subtitle {
   font-family: "Markazi Text", serif;
   font-size: 1.75rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #333333;
   margin-bottom: 1rem;
 }
@@ -36,7 +36,7 @@
 .about-paragraph {
   font-family: "Karla", normal;
   font-size: 1.15rem;
-  font-weight: 500;
+  font-weight: 600;
   color: #333333;
   line-height: 1.5rem;
   max-width: 14rem;
@@ -166,3 +166,33 @@
     border-radius: 8px;
   }
 }
+
+@media only screen and (min-width: 1800px) {
+  .about-container {
+    margin-top: 4rem;
+    margin-left: 26rem;
+    margin-right: 14rem;
+  }
+  .about-subtitle {
+    margin-bottom: 1.5rem;
+  }
+  .about-paragraph {
+    font-size: 1.25rem;
+    line-height: 2.75rem;
+    max-width: 18rem;
+  }
+  .about-images-container {
+    margin-top: .5rem;
+  }
+  #mario-and-adrian-b {
+    margin-left: -50px;
+    margin-bottom: 250px;
+  }
+  #mario-and-adrian-a,
+  #mario-and-adrian-b {
+    width: 20rem;
+    height: auto;
+    border-radius: 8px;
+  }
+}
+
