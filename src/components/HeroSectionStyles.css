@@ -32,15 +32,11 @@
   }
 
   .hero-title {
-    font-family: "Markazi Text", serif;
     font-size: 3rem;
-    color: #f4ce14;
   }
 
   .hero-subtitle {
-    font-family: "Markazi Text", serif;
     font-size: 1.75rem;
-    color: #edefee;
   }
 }
 
@@ -51,14 +47,25 @@
   }
 
   .hero-title {
-    font-family: "Markazi Text", serif;
     font-size: 3rem;
-    color: #f4ce14;
   }
 
   .hero-subtitle {
-    font-family: "Markazi Text", serif;
     font-size: 2rem;
-    color: #edefee;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .hero-title-container {
+    margin-top: 2.5rem;
+    margin-left: 8rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
   }
 }
