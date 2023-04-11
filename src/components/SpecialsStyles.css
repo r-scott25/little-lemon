@@ -16,7 +16,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.specialsTitle-and-menuButton {
+.specials-title-and-menu-button{
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -24,7 +24,7 @@
   margin: 3rem 0 3rem 1.5rem;
 }
 
-.specialsTitle {
+.specials-title {
   font-family: "Markazi Text", serif;
   font-size: 2.25rem;
   font-weight: 525;
@@ -32,7 +32,7 @@
   white-space: nowrap;
 }
 
-.specialsTitle-and-menuButton .btn {
+.specials-title-and-menu-button .btn {
   margin-left: 1.5rem;
   background-color: #f4ce14;
   border-color: #f4ce14;
@@ -46,13 +46,13 @@
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
   white-space: nowrap;
 }
-.specialsTitle-and-menuButton .btn:hover {
+.specials-title-and-menu-button .btn:hover {
   background-color: #495e57;
   color: #ffffff !important;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.specialsTitle-and-menuButton .btn:active {
+.specials-title-and-menu-button .btn:active {
   background-color: #EE9972;
   color: #ffffff !important;
 }
@@ -62,12 +62,12 @@
   .menu-card-container {
     margin-right: 5rem;
   }
-  .specialsTitle-and-menuButton {
+  .specials-title-and-menu-button {
     margin: 6rem 0 3rem 1.5rem;
     gap: 4rem;
   }
 
-  .specialsTitle {
+  .specials-title {
     font-size: 2.5rem;
   }
 }
@@ -76,11 +76,11 @@
   .menu-card-container {
     margin-right: 2rem;
   }
-  .specialsTitle-and-menuButton {
+  .specials-title-and-menu-button {
     margin: 8rem 0 4rem 2rem;
     gap: 14rem;
   }
-  .specialsTitle {
+  .specials-title {
     font-size: 2.5rem;
   }
 }
@@ -89,11 +89,11 @@
   .menu-card-container {
     margin-right: 3.5rem;
   }
-  .specialsTitle-and-menuButton {
+  .specials-title-and-menu-button {
     margin: 8rem 0 4rem 4rem;
     gap: 18rem;
   }
-  .specialsTitle {
+  .specials-title {
     font-size: 3rem;
 }
 }
@@ -105,20 +105,19 @@
     margin-bottom: 1rem;
   }
 
-  .specialsTitle-and-menuButton {
+  .specials-title-and-menu-button {
     margin: 10rem 0 4rem 4rem;
     gap: 28rem;
   }
 }
 
   @media only screen and (min-width: 1800px) {
-    .specialsTitle-and-menuButton {
-
+    .specials-title-and-menu-button {
       margin: 12rem 0 8rem 14rem;
       gap: 38rem;
     }
 
-    .specialsTitle {
+    .specials-title {
       font-size: 3.25rem;
       font-weight: 525;
     }

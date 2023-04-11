@@ -5,33 +5,35 @@ import MarioAndAdrianB from "../assets/MarioAndAdrianB.jpg";
 function AboutSection() {
   return (
     <section className="about-container">
-      <div className="aboutHeading">
-        <h1 className="aboutTitle">Little Lemon</h1>
-        <h2 className="aboutSubtitle">Chicago</h2>
+      <div className="about-text-container">
+        <div className="about-heading">
+          <h1 className="about-title">Little Lemon</h1>
+          <h2 className="about-subtitle">Chicago</h2>
+        </div>
+        <div className="about-paragraph">
+          <p>
+            Brothers Mario and Adrian opened Little Lemon to bring a taste of
+            the Mediterranean to Chicago. Born and raised in Italy, the brothers
+            draw on family recipes for inspiration. Adding to their traditional
+            Italian dishes, the brothers have included Greek and Turkish
+            cuisines on the menu.
+          </p>
+        </div>
       </div>
-      <div className="aboutText">
-        <p>
-          Brothers Mario and Adrian opened Little Lemon to bring a taste of the
-          Mediterranean to Chicago. Born and raised in Italy, the brothers draw
-          on family recipes for inspiration. Adding to their traditional Italian
-          dishes, the brothers have included Greek and Turkish cuisines on the
-          menu.
-        </p>
-      </div>
-      <div className="aboutImages">
+      <div className="about-images-container">
         <img
-          id="MarioAndAdrianA"
+          id="mario-and-adrian-a"
           src={MarioAndAdrianA}
           alt="Little Lemon Owners, Mario and Adrian, working in the kitchen"
         />
         <img
-          id="MarioAndAdrianB"
+          id="mario-and-adrian-b"
           src={MarioAndAdrianB}
           alt="Little Lemon Owners, Mario and Adrian, working in the kitchen"
         />
       </div>
     </section>
   );
-};
+}
 
 export default AboutSection;

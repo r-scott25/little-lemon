@@ -5,9 +5,9 @@ import restaurantfood from "../assets/restaurantfood.jpg";
 
 function HomepageHero() {
   return (
-    <section className="heroHome-container">
+    <section className="hero-home-container">
       <div>
-        <article className="heroIntro">
+        <article className="hero-intro">
           <h1 className="lemon-title">Little Lemon</h1>
           <h2 className="chicago-subtitle">Chicago</h2>
           <p className="lemon-blurb">
@@ -15,7 +15,7 @@ function HomepageHero() {
             traditional recipes served with a modern twist.
           </p>
           <div>
-              <a  className="btn" id="smallReserveTableBtn" href="/reservations">Reserve a Table</a>
+              <a  className="btn" id="small-res-table-btn" href="/reservations">Reserve a Table</a>
           </div>
         </article>
       </div>

@@ -1,11 +1,41 @@
 /* Initial layout/sizes based on 480px wide screen. */
 
+.about-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4rem;
+  margin-bottom: -4rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
 
+.about-text-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.about
 
+.about-images-container {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: right;
+  margin-top: 4rem;
+}
 
-#MarioAndAdrianA,
-#MarioAndAdrianB {
-  width: 20rem;
+#mario-and-adrian-a{
+  z-index: 1;
+}
+
+#mario-and-adrian-b {
+  z-index: 2;
+  margin-left: -85px;
+  margin-bottom: 260px;
+}
+#mario-and-adrian-a,
+#mario-and-adrian-b {
+  width: 10rem;
   height: auto;
-  border-radius: 16px;
+  border-radius: 8px;
 }
