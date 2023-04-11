@@ -66,3 +66,24 @@ line-height: 1.5rem;
   height: auto;
   border-radius: 8px;
 }
+
+@media only screen and (min-width: 600px) {
+  .about-container {
+    margin-left: 2.5rem;
+    margin-right: 10rem;
+  }
+
+  .about-images-container {
+    margin-top: 1rem;
+  }
+  #mario-and-adrian-b {
+    margin-left: -50px;
+    margin-bottom: 250px;
+  }
+  #mario-and-adrian-a,
+#mario-and-adrian-b {
+  width: 11rem;
+  height: auto;
+  border-radius: 8px;
+}
+}
