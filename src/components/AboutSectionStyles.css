@@ -113,3 +113,31 @@
     border-radius: 8px;
   }
 }
+
+@media only screen and (min-width: 992px) {
+  .about-container {
+    margin-top: 4rem;
+    margin-left: 7rem;
+    margin-right: 8rem;
+  }
+  .about-subtitle {
+    margin-bottom: 1.5rem;
+  }
+  .about-paragraph {
+    line-height: 2.25rem;
+    max-width: 18rem;
+  }
+  .about-images-container {
+    margin-top: 0rem;
+  }
+  #mario-and-adrian-b {
+    margin-left: -50px;
+    margin-bottom: 250px;
+  }
+  #mario-and-adrian-a,
+  #mario-and-adrian-b {
+    width: 16rem;
+    height: auto;
+    border-radius: 8px;
+  }
+}
