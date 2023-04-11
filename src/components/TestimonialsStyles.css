@@ -32,3 +32,19 @@
     padding-top: 3rem;
   }
 }
+
+@media only screen and (min-width: 768px) {
+
+  .heading-and-testimonials {
+    padding-top: 2.5rem;
+    margin-left: 5rem;
+  }
+  .testimonials-heading {
+    margin-bottom: .5rem;
+    margin-left: 13rem;
+  }
+  .testimonials-container {
+    padding-top: 3rem;
+  }
+}
+
