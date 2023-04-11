@@ -26,7 +26,7 @@
   }
   .testimonials-heading {
     margin-bottom: .5rem;
-    margin-left: 12rem;
+    margin-left: 13rem;
   }
   .testimonials-container {
     padding-top: 3rem;
@@ -48,3 +48,47 @@
   }
 }
 
+@media only screen and (min-width: 992px) {
+
+  .heading-and-testimonials {
+    padding-top: 2.5rem;
+    margin-left: 3.5rem;
+  }
+  .testimonials-heading {
+    margin-bottom: .5rem;
+    margin-left: 22rem;
+  }
+  .testimonials-container {
+    padding-top: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+
+  .heading-and-testimonials {
+    padding-top: 4.5rem;
+    margin-left: -1.5rem;
+  }
+  .testimonials-heading {
+    margin-bottom: .5rem;
+    margin-left: 33rem;
+  }
+  .testimonials-container {
+    padding-top: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+
+  .heading-and-testimonials {
+    padding-top: 2.5rem;
+    margin-left: -1.5rem;
+  }
+  .testimonials-heading {
+    margin-bottom: .5rem;
+    margin-left: 33rem;
+  }
+  .testimonials-container {
+    padding-top: 3rem;
+  }
+}

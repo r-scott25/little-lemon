@@ -43,6 +43,24 @@ const TestimonialCardData = [
   },
 
   // {
+  //   id: 5,
+  //   rating: 5,
+  //   ratingStars: Array(5).fill(starBorder).fill(yellowStar, 0, 5),
+  //   imgsrc: Rose,
+  //   custName: "Rose",
+  //   review: "Will definitely be back!",
+  // },
+
+  // {
+  //   id: 6,
+  //   rating: 5,
+  //   ratingStars: Array(5).fill(starBorder).fill(yellowStar, 0, 5),
+  //   imgsrc: Rose,
+  //   custName: "Rose",
+  //   review: "Will definitely be back!",
+  // },
+
+  // {
   // id: number,
   //   rating: 1 to 5,
   //   ratingStars: Array(5).fill(starIcon).fill(filledStarIcon, 0, rating),
