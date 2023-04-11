@@ -69,3 +69,19 @@
     font-size: 2rem;
   }
 }
+
+@media only screen and (min-width: 1200px) {
+  .hero-title-container {
+    margin-top: 2.5rem;
+    margin-left: 10rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+}
+
