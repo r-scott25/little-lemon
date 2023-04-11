@@ -1,3 +1,80 @@
+/* Initial layout/sizes based on 480px wide screen. */
+
+.testimonial-card-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-card {
+  min-width: 18rem;
+  max-width: 18rem;
+  min-height: 22rem;
+  max-height: 22rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding-top: 1rem;
+  padding-left: 1.25rem;
+  padding-right: 4rem;
+}
+
+.rating-stars {
+  margin-bottom: 0.25rem;
+}
+.rating-stars img {
+  width: 1.75rem;
+}
+.name-and-image {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
 .cust-image {
-  width: 200px;
+  width: 150px;
+  border-radius: 16px;
+}
+
+.cust-name {
+  font-family: "Karla", normal;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333333;
+}
+
+.review {
+  font-family: "Karla", normal;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333333;
+}
+
+@media only screen and (min-width: 600px) {
+  .testimonial-card-container {
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0.5rem;
+    gap: .5rem;
+  }
+
+  .testimonial-card {
+    min-width: 16rem;
+    max-width: 16rem;
+    min-height: 22rem;
+    max-height: 22rem;
+  }
+
+  .cust-name {
+    font-size: 1.20rem;
+
+  }
+
+  .review {
+    font-size: 1.25rem;
+  }
 }

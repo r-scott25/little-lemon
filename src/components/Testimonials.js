@@ -5,8 +5,10 @@ import TestimonialCardData from "./TestimonialCardData.js";
 
 function Testimonials() {
   return (
+    <div className="heading-and-testimonials">
+    <h2 className="testimonials-heading">Testimonials</h2>
     <section className="testimonials-container">
-      <h2 id="testimonials-heading">Testimonials</h2>
+      
       <div className="testimonial-card-container">
         {TestimonialCardData.map((value, index) => {
           return (
@@ -23,6 +25,7 @@ function Testimonials() {
         })}
       </div>
     </section>
+    </div>
   );
 };
 
