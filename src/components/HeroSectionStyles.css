@@ -1,3 +1,45 @@
+/* Initial layout/sizes based on 480px wide screen. */
+
 .hero-section-container {
-  background-color: #495E57;
+  background-color: #495e57;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-left: 1rem;
+}
+
+.hero-title {
+  font-family: "Markazi Text", serif;
+  font-size: 3rem;
+  color: #f4ce14;
+}
+
+.hero-subtitle {
+  font-family: "Markazi Text", serif;
+  font-size: 1.55rem;
+  color: #edefee;
+}
+
+@media only screen and (min-width: 600px) {
+  .hero-title-container {
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+
+  .hero-title {
+    font-family: "Markazi Text", serif;
+    font-size: 3rem;
+    color: #f4ce14;
+  }
+
+  .hero-subtitle {
+    font-family: "Markazi Text", serif;
+    font-size: 1.75rem;
+    color: #edefee;
+  }
 }
