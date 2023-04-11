@@ -3,15 +3,16 @@
   display: flex;
   flex-direction: column;
   padding-top: 2rem;
+  align-items: center;
 }
-.testimonials-heading {
+.heading-and-testimonials .testimonials-heading {
   font-family: "Markazi Text", serif;
   font-size: 2.75rem;
   color: #edefee;
   margin-bottom: 2rem;
-  margin-left: 9rem;
+  
 }
-.testimonials-container {
+.heading-and-testimonials .testimonials-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

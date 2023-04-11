@@ -3,9 +3,9 @@
 .about-container {
   display: flex;
   flex-direction: row;
-  margin-top: 4rem;
+  margin-top: 3rem;
   margin-bottom: -4rem;
-  margin-left: 2rem;
+  margin-left: 1.25rem;
   margin-right: 2rem;
 }
 
@@ -13,6 +13,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-right: 1rem;
+
 }
 
 .about-title {
@@ -35,8 +37,10 @@
 .about-paragraph {
   font-family: "Karla", normal;
   font-size: 1.15rem;
-  font-weight: 400;
+  font-weight: 500;
   color: #333333;
+line-height: 1.5rem;
+  max-width: 14rem;
 }
 .about-images-container {
   display: flex;
@@ -52,13 +56,13 @@
 
 #mario-and-adrian-b {
   z-index: 2;
-  margin-left: -85px;
+  margin-left: -60px;
   margin-bottom: 260px;
 }
 
 #mario-and-adrian-a,
 #mario-and-adrian-b {
-  width: 10rem;
+  width: 9rem;
   height: auto;
   border-radius: 8px;
 }
