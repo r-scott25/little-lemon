@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   min-width: 25rem;
   max-width: 10rem;
   min-height: 525px;
@@ -36,8 +36,8 @@
   font-weight: 700;
   color: #495e57;
   white-space: nowrap;
-  min-width: 15rem;
-  max-width: 15rem;
+  min-width: 8rem;
+  max-width: 8rem;
 }
 
 .dishPrice {
@@ -64,6 +64,7 @@
   align-content: center;
   gap: 1rem;
   margin-left: 2rem;
+  padding-bottom: 1rem;
 }
 
 .orderDeliveryLink {
@@ -93,4 +94,82 @@
   background-color: #ee9972;
   filter: brightness(175%);
   border-radius: 50%;
+}
+
+@media only screen and (min-width: 992px) {
+  .menu-card{
+    min-width: 17rem;
+    max-width: 17rem;
+    min-height: 475px;
+    max-height: 475px;
+  }
+  .dishImage {
+    width: 17rem;
+    height: 12rem;
+  }
+
+  .name-and-price {
+    gap: 1.5rem;
+  }
+  .dishName {
+    font-size: 1.15rem;
+    min-width: 9rem;
+    max-width: 9rem;
+  }
+  
+  .dishPrice {
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  .dishDescription {
+    font-size: 1rem;
+    line-height: 1.65rem;
+    font-weight: 500;
+    margin-bottom: -.5rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .menu-card{
+    min-width: 18rem;
+    max-width: 18rem;
+    min-height: 525px;
+    max-height: 525px;
+  }
+  .dishImage {
+    width: 18rem;
+    height: 12rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .name-and-price {
+    gap: 3rem;
+  }
+  .dishDescription {
+    font-size: 1.15rem;
+    line-height: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .menu-card{
+    min-width: 24rem;
+    max-width: 24rem;
+    min-height: 550px;
+    max-height: 550px;
+  }
+  .dishImage {
+    width: 24rem;
+    min-height: 16rem;
+  }
+  .name-and-price {
+    gap: 6rem;
+  }
+
+  .dishDescription {
+    font-size: 1.15rem;
+    line-height: 1.75rem;
+    margin-bottom: 0rem;
+  }
 }
