@@ -1,18 +1,25 @@
-import React from 'react';
+import React from "react";
 import "./MenuStyles.css";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
 
 function Menu() {
   return (
-    <body>
-      <Header />
-      <main>
-        <h1>Menu Page</h1>
+    <div className="menu-body-container">
+      <header>
+        <Header />
+      </header>
+
+      <main className="menu-main-container">
+        <div className="menu-title">
+          <h1>Menu</h1>
+        </div>
       </main>
-      <Footer />
-    </body>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   );
-};
+}
 
 export default Menu;

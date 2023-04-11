@@ -8,7 +8,7 @@ function MenuCard(props) {
     <div className="menu-card">
       <img className="dishImage" src={props.imgsrc} alt={props.dishName} />
       <div className="name-and-price">
-        <h3 className="dishName">{props.dishName}</h3>
+        <a href="/menu"><h3 className="dishName">{props.dishName}</h3></a>
         <h4 className="dishPrice">{props.dishPrice}</h4>
       </div>
       <div className="dishDescription">

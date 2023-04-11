@@ -16,7 +16,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.specials-title-and-menu-button{
+.specials-title-and-menu-button {
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -53,10 +53,9 @@
 }
 
 .specials-title-and-menu-button .btn:active {
-  background-color: #EE9972;
+  background-color: #ee9972;
   color: #ffffff !important;
 }
-
 
 @media only screen and (min-width: 600px) {
   .menu-card-container {
@@ -95,7 +94,7 @@
   }
   .specials-title {
     font-size: 3rem;
-}
+  }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -111,31 +110,34 @@
   }
 }
 
-  @media only screen and (min-width: 1800px) {
-    .specials-container {
-      display: flex;
-      height: auto;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-left: 14rem;
-    }
-    .menu-card-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    margin-right: .5rem;
-    }
-    .specials-title-and-menu-button {
-      margin: 12rem 0 8rem 4rem;
-      gap: 36rem;
-    }
+@media only screen and (min-width: 1800px) {
+  .specials-container {
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 14rem;
+  }
+  .menu-card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 0.5rem;
+  }
+  .specials-title-and-menu-button {
+    margin: 12rem 0 8rem 4rem;
+    gap: 36rem;
+    margin-bottom: 3rem;
+    margin-top: 10rem;
 
-    .specials-title {
-      font-size: 3.25rem;
-      font-weight: 525;
-    }
+  }
+
+  .specials-title {
+    font-size: 3.25rem;
+    font-weight: 525;
+  }
 }

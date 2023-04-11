@@ -1,0 +1,19 @@
+.menu-body-container {
+  display: grid;
+  grid-template-rows: 130px auto 200px;
+  max-width: 100%;
+  min-height: 100vh
+}
+
+.menu-main-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin-top: 4rem;
+
+}
+.menu-title {
+  font-family: "Markazi Text", serif;
+  font-size: 3rem;
+}

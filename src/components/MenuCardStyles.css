@@ -40,6 +40,13 @@
   max-width: 8rem;
 }
 
+.dishName:hover {
+  filter: brightness(175%);
+}
+
+.dishName:active {
+  color: #ee9972;
+}
 .dishPrice {
   font-family: "Karla", Normal;
   font-size: 1.25rem;
