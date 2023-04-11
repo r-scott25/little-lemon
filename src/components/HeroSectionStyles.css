@@ -43,3 +43,22 @@
     color: #edefee;
   }
 }
+
+@media only screen and (min-width: 768px) {
+  .hero-title-container {
+    margin-top: 2.5rem;
+    margin-left: 4rem;
+  }
+
+  .hero-title {
+    font-family: "Markazi Text", serif;
+    font-size: 3rem;
+    color: #f4ce14;
+  }
+
+  .hero-subtitle {
+    font-family: "Markazi Text", serif;
+    font-size: 2rem;
+    color: #edefee;
+  }
+}
