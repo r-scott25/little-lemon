@@ -1,26 +1,28 @@
 .res-body-container {
   display: grid;
-  grid-template-rows: 130px 2575px 200px;
+  grid-template-rows: 130px auto 200px;
 }
-
 
 .res-main-container {
   display: grid;
-  grid-template-rows: 470px 200px 2075px;
+  grid-template-rows: auto auto auto;
 }
 
 .restaurant-img {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   overflow: hidden;
 }
 
 .res-hero-section {
-background-color: #495e57;
+  background-color: #495e57;
 }
-
 
 .reservations-section {
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
 }

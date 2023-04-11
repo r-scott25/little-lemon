@@ -1,3 +1,6 @@
+/* Initial layout/sizes based on 480px wide screen. */
+
+
 input.input-error,
 select.input-error {
   border-color:#ff0000;

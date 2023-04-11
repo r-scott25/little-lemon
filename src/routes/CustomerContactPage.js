@@ -6,7 +6,7 @@ import CustomerContactForm from "../components/CustomerContactForm.js";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
 import HeroSection from "../components/HeroSection.js";
-import dinnerTableFifty from "../assets/dinnerTable-50.jpg";
+import dinnerTableFifty from "../assets/dinnerTable-50-1387.jpg";
 
 function CustomerContactPage(props) {
   return (
@@ -16,8 +16,9 @@ function CustomerContactPage(props) {
       </header>
 
       <main className="contact-main-container">
-        <section className="dinner-img">
+        <section className="hero-image">
           <img
+          className="dinner-img"
             src={dinnerTableFifty}
             alt="birds-eye-view of diners at a table with dishes of Italian food"
           />
