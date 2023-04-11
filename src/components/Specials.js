@@ -5,7 +5,7 @@ import MenuCardData from "./MenuCardData.js";
 
 function Specials() {
   return (
-    <section id="specials-container">
+    <section className="specials-container">
       <div className="specials-title-and-menu-button"> <h1 className="specials-title">This week's specials!</h1>
       <div>
         <a className="btn" id="menu-button" href="/menu">

@@ -112,9 +112,26 @@
 }
 
   @media only screen and (min-width: 1800px) {
+    .specials-container {
+      display: flex;
+      height: auto;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-left: 14rem;
+    }
+    .menu-card-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    margin-right: .5rem;
+    }
     .specials-title-and-menu-button {
-      margin: 12rem 0 8rem 14rem;
-      gap: 38rem;
+      margin: 12rem 0 8rem 4rem;
+      gap: 36rem;
     }
 
     .specials-title {
