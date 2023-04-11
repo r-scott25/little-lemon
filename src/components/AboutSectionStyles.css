@@ -1,4 +1,11 @@
+/* Initial layout/sizes based on 480px wide screen. */
+
+
+
+
 #MarioAndAdrianA,
 #MarioAndAdrianB {
-  width: 258px;
+  width: 20rem;
+  height: auto;
+  border-radius: 16px;
 }

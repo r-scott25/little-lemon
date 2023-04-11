@@ -6,8 +6,8 @@ function AboutSection() {
   return (
     <section className="about-container">
       <div className="aboutHeading">
-        <h1 id="aboutTitle">Little Lemon</h1>
-        <h2 id="aboutSubtitle">Chicago</h2>
+        <h1 className="aboutTitle">Little Lemon</h1>
+        <h2 className="aboutSubtitle">Chicago</h2>
       </div>
       <div className="aboutText">
         <p>
