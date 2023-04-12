@@ -9,37 +9,61 @@ import occasion from "../assets/occasion.svg";
 
 function SelectedReservations(props) {
   return (
-    <div>
-      <section className="selected-reservations">
-        <div className="selected-date">
+    <>
+<div className= "selected-container">
+      <div className="selected-reservations-container">
+        <div className="selected-icon calendar-icon">
+          {" "}
           <img src={calendar} alt="calendar icon" />
-          <h3>{props.date} Date Placeholder</h3>
+        </div>
+        <div className="selected-date">
+          {" "}
+          <h3>{props.date} Date</h3>
+        </div>
+        <div className="selected-icon clock-icon">
+          {" "}
+          <img src={clock} alt="clock icon" />
         </div>
         <div className="selected-time">
-          <img src={clock} alt="clock icon" />
-          <h3>{props.time} Time Placeholder</h3>
+          <h3>{props.time} Time</h3>
+        </div>
+        <div className="selected-icon person-icon">
+          <img src={guests} alt="person icon" />
         </div>
         <div className="selected-guests">
-          <img src={guests} alt="person icon" />
-          <h3>{props.guests} Guests Placeholder</h3>
+          <h3>{props.guests} Guests</h3>
+        </div>
+        <div className="selected-icon table-chair-icon">
+          <img src={seating} alt="table and chair icon" />
         </div>
         <div className="selected-seating">
-          <img src={seating} alt="table and chair icon" />
-          <h3>{props.seating} Seating Placeholder</h3>
+          <h3>{props.seating} Seating</h3>
+        </div>
+        <div className="selected-icon party-horn-icon">
+          <img src={occasion} alt="party horn icon" />
         </div>
         <div className="selected-occasion">
-          <img src={occasion} alt="party horn icon" />
-          <h3>{props.occasion} Occasion Placeholder</h3>
+          <h3>{props.occasion} Occasion</h3>
         </div>
-        <div>
-          <h3>Special Requests</h3>
-          <p>{props.specialRequests}</p>
+      </div>
+      <div className="requests-and-edit-container">
+        <div className="special-requests">
+          <div className="special-requests-title">
+            <h3>Special Requests</h3>
+          </div>
+          <div className="special-requests-text">
+            <p className="special-requests-para">{props.specialRequests}Customer's text place holder for special requests</p>
+          </div>
         </div>
-        <button>
-          <a href="/reservations">Edit Reservation</a>
-        </button>
-      </section>
-    </div>
+        <div className="edit-button">
+            <a type="btn" className="edit-res-btn" href="/reservations">Edit Reservation</a>
+        </div>
+      </div>
+      </div>
+  
+    </>
+
+
   );
 }
 

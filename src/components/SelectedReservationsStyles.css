@@ -1,0 +1,76 @@
+/* Initial layout/sizes based on 480px wide screen. */
+
+
+/**** CONTAINERS FOR GRIDS AND FLEXBOX ****/
+.selected-container {
+  display: grid;
+ grid-template-columns: 3fr 4fr;
+ margin-bottom: 4rem;
+}
+
+.selected-reservations-container {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  grid-row-gap: 15px;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+
+.requests-and-edit-container {
+  display: grid;
+  grid-template-rows: 4fr 2fr;
+  margin-left: 1rem;
+}
+
+
+/***** ELEMENT RULES *****/
+
+.selected-reservations-container .selected-icon img {
+  width: 35px;
+  height: 35px;
+}
+
+.selected-container h3, .selected-container p, .edit-res-btn {
+  font-family: "Karla", normal;
+  color: #333333;
+}
+
+.selected-container h3 {
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  font-weight: 600;
+  
+}
+
+.special-requests-title {
+  margin-bottom: .5rem;
+}
+.special-requests-text {
+  background-color: #edefee;
+  max-width:12rem;
+min-height: 8rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.edit-button {
+  margin-top: 3rem;
+}
+.edit-res-btn {
+  background-color: #F4CE14;
+  font-weight: 600;
+  color: #495E57;
+  padding: 6px 33px;
+  border-radius: 8px;
+}
+
+.edit-res-btn:hover {
+  background-color:#495E57;
+  color: #ffffff;
+}
+
+.edit-res-btn:active {
+  background-color:#ee9972;
+  color: #ffffff;
+}
