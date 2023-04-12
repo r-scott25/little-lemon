@@ -1,9 +1,213 @@
 /* Initial layout/sizes based on 480px wide screen. */
+.reservations-page {
+  font-family: "Karla", normal;
+  margin-left: 2rem;
+}
 
+/* .reservation-form-container {
+  display: grid;
+  grid-template-columns: 15% 75%;
+  grid-template-rows: auto auto;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+} */
+
+.reservation-form-container {
+  display: grid;
+  grid-template-columns: 15% 75%;
+  grid-template-rows: repeat(5, auto) minmax(0, 1fr); /* 5 rows with 2 columns and 1 row with 1 column */
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.res-form-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 4rem;
+}
+label {
+  font-size: 1.1rem;
+  font-weight: 650;
+  color: #495e57;
+}
+
+#date {
+  font-weight: 600;
+  color: #495e57;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-width: 250px;
+  max-width: 250px;
+  border-radius: 8px;
+  border-color: #495e57;
+  border-width: 3px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding-left: 18%;
+}
+
+/* TIME & OCCASION DROP-DOWN MENUS */
+
+select {
+  font-weight: 600;
+  color: #495e57;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-width: 250px;
+  max-width: 250px;
+  border-radius: 8px;
+  border-color: #495e57;
+  border-width: 3px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+option {
+  font-weight: 600;
+  color: #495e57;
+}
+
+#time {
+  padding-left: 18%;
+}
+
+#occasion {
+  padding-left: 14%;
+}
+
+
+
+/**** GUESTS ****/
+
+.guests-counter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#guests {
+  max-width: 2rem;
+  border: transparent;
+  font-size: 1.85rem;
+  font-weight: 600;
+}
+
+.counter-button {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 16px;
+  background-color: #495e57;
+  border: #495e57;
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.counter-button:hover {
+  filter: brightness(175%);
+}
+
+.counter-button:active {
+  background-color: #EE9972;
+}
+
+.minus-btn-span {
+  margin-right: 1.5rem;
+}
+
+.plus-btn-span {
+  margin-left: 1rem;
+}
+#minus-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#plus-button {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+/**** SEATING ****/
+
+#indoor,
+#outdoor {
+  margin-bottom: 0.75rem;
+}
+#indoor,
+#outdoor,
+#noPreference {
+  margin-right: 0.5rem;
+}
+
+input[type="radio"] {
+  width: 1.2em;
+  height: 1.2em;
+  border-color:#495e57 !important;
+  border-width: 2px !important;
+  background-color:#495e57 !important;
+}
+
+ input[type="radio"]:checked::before {
+  background-color: #495e57 !important;
+}
+
+
+/**** SPECIAL REQUESTS ****/
+
+.special-requests-label {
+  white-space: nowrap;
+}
+
+.special-requests textarea {
+  margin-top: 0.5rem;
+  border-radius: 8px;
+  border-color: #495e57;
+  border-width: 2px;
+  box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+  width: 540%;
+  max-width: 540%;
+  height: 10rem;
+}
+
+
+
+/* SAVE AND CONTINUE BUTTON */
+
+.save-btn {
+  background-color: #F4CE14;
+  border-color:#F4CE14;
+  border-radius: 8px;
+  padding: 8px 20px;
+  margin-left: 6rem;
+  color:#495e57;
+  font-weight: 700;
+}
+.save-btn:hover {
+  background-color:#495e57;
+  border-color:#495e57;
+  color: #ffffff;
+}
+
+.save-btn:active {
+  background-color:#EE9972;
+  border-color:#EE9972;
+  color: #ffffff;
+}
+
+
+
+/**** ERROR STYLING ****/
 
 input.input-error,
 select.input-error {
-  border-color:#ff0000;
+  border-color: #ff0000;
 }
 
 .error {

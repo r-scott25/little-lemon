@@ -35,7 +35,7 @@ function Reservations(props) {
             subtitle="Delicious Cuisine and Unforgettable Ambience Await!"
           />
         </section>
-        <section className="reservations-section">
+        <section className="reservations-section-container">
           <ReservationForm />
         </section>
       </main>

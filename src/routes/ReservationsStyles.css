@@ -19,10 +19,11 @@
   background-color: #495e57;
 }
 
-.reservations-section {
+.reservations-section-container {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 4rem;
+  margin-bottom: 4rem;
 }
