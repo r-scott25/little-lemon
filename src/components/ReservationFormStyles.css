@@ -1,6 +1,5 @@
 /* Initial layout/sizes based on 480px wide screen. */
 
-
 .reservations-container {
   font-family: "Karla", normal;
   margin-left: 2rem;
@@ -42,7 +41,6 @@ label {
   align-content: center;
   padding-left: 18%;
 }
-
 
 /* TIME & OCCASION DROP-DOWN MENUS */
 
@@ -228,7 +226,6 @@ select.input-error {
   color: #ff0000;
 }
 
-
 /********** @MEDIA QUERIES FOR VARIOUS SCREEN SIZES **********/
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -236,9 +233,7 @@ select.input-error {
   .reservations-container {
     margin-left: -1.5rem;
   }
-  
 }
-
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
@@ -247,13 +242,18 @@ select.input-error {
   }
 }
 
-
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
-
+@media only screen and (min-width: 992px) {
+  /* CSS for 768px works for 992px */
+}
 
 /* Extra Large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px){}
+@media only screen and (min-width: 1200px) {
+  .reservations-container {
+    margin-left: 3rem;
+  }
+}
 
 /* Extra-Extra Large devices (large laptops and desktops, 1800px and up) */
-@media only screen and (min-width: 1800px){}
+@media only screen and (min-width: 1800px) {
+}
