@@ -241,7 +241,11 @@ select.input-error {
 
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+  .reservations-container {
+    margin-left: 0rem;
+  }
+}
 
 
 /* Large devices (laptops/desktops, 992px and up) */
