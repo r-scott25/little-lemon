@@ -1,16 +1,10 @@
 /* Initial layout/sizes based on 480px wide screen. */
-.reservations-page {
+
+
+.reservations-container {
   font-family: "Karla", normal;
   margin-left: 2rem;
 }
-
-/* .reservation-form-container {
-  display: grid;
-  grid-template-columns: 15% 75%;
-  grid-template-rows: auto auto;
-  gap: 3rem;
-  margin-bottom: 2.5rem;
-} */
 
 .reservation-form-container {
   display: grid;
@@ -32,6 +26,7 @@ label {
   color: #495e57;
 }
 
+/**** DATE ****/
 #date {
   font-weight: 600;
   color: #495e57;
@@ -47,6 +42,7 @@ label {
   align-content: center;
   padding-left: 18%;
 }
+
 
 /* TIME & OCCASION DROP-DOWN MENUS */
 
@@ -69,6 +65,27 @@ option {
   font-weight: 600;
   color: #495e57;
 }
+option:checked {
+  background-color: #fbdabd;
+}
+
+option:hover:not(:checked) {
+  background-color: #edefee;
+}
+
+option:checked:hover {
+  background-color: #ee9972;
+}
+
+#time:not(:focus) option:checked + select {
+  background-color: #495e57;
+  color: #ffffff;
+}
+
+#occasion:not(:focus) option:checked + select {
+  background-color: #495e57;
+  color: #ffffff;
+}
 
 #time {
   padding-left: 18%;
@@ -77,8 +94,6 @@ option {
 #occasion {
   padding-left: 14%;
 }
-
-
 
 /**** GUESTS ****/
 
@@ -111,7 +126,7 @@ option {
 }
 
 .counter-button:active {
-  background-color: #EE9972;
+  background-color: #ee9972;
 }
 
 .minus-btn-span {
@@ -130,16 +145,20 @@ option {
 #plus-button {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  padding-bottom: 0.25rem;
 }
-
 
 /**** SEATING ****/
 
-#indoor,
-#outdoor {
-  margin-bottom: 0.75rem;
+.seating-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 0.75rem;
 }
+
 #indoor,
 #outdoor,
 #noPreference {
@@ -149,15 +168,14 @@ option {
 input[type="radio"] {
   width: 1.2em;
   height: 1.2em;
-  border-color:#495e57 !important;
+  border-color: #495e57 !important;
   border-width: 2px !important;
-  background-color:#495e57 !important;
-}
-
- input[type="radio"]:checked::before {
   background-color: #495e57 !important;
 }
 
+input[type="radio"]:checked::before {
+  background-color: #495e57 !important;
+}
 
 /**** SPECIAL REQUESTS ****/
 
@@ -176,32 +194,28 @@ input[type="radio"] {
   height: 10rem;
 }
 
-
-
 /* SAVE AND CONTINUE BUTTON */
 
 .save-btn {
-  background-color: #F4CE14;
-  border-color:#F4CE14;
+  background-color: #f4ce14;
+  border-color: #f4ce14;
   border-radius: 8px;
   padding: 8px 20px;
   margin-left: 6rem;
-  color:#495e57;
+  color: #495e57;
   font-weight: 700;
 }
 .save-btn:hover {
-  background-color:#495e57;
-  border-color:#495e57;
+  background-color: #495e57;
+  border-color: #495e57;
   color: #ffffff;
 }
 
 .save-btn:active {
-  background-color:#EE9972;
-  border-color:#EE9972;
+  background-color: #ee9972;
+  border-color: #ee9972;
   color: #ffffff;
 }
-
-
 
 /**** ERROR STYLING ****/
 
@@ -213,3 +227,29 @@ select.input-error {
 .error {
   color: #ff0000;
 }
+
+
+/********** @MEDIA QUERIES FOR VARIOUS SCREEN SIZES **********/
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .reservations-container {
+    margin-left: -1.5rem;
+  }
+  
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+
+/* Extra Large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px){}
+
+/* Extra-Extra Large devices (large laptops and desktops, 1800px and up) */
+@media only screen and (min-width: 1800px){}

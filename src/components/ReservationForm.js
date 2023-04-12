@@ -72,14 +72,14 @@ function ReservationForm() {
 
   return (
     <div>
-      <section className="reservations-page">
+      <section className="reservations-container">
         <h2 className="res-form-title">Reservation Details</h2>
         <form onSubmit={handleSubmit}>
           <div className="reservation-form-container">
             <div className="input-label">
               <label htmlFor="date">DATE</label>
             </div>
-            <div className="data-input">
+            <div className="data-input date-container">
               <input
                 type="date"
                 value={values.date}
@@ -214,9 +214,9 @@ function ReservationForm() {
                 value={values.seating}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={
-                  errors.seating && touched.seating ? "input-error" : ""
-                }
+                className={`${
+                  errors.seating && touched.seating ? "input-error " : ""
+                }seating-container`}
                 id="seating"
                 name="seating"
               >
