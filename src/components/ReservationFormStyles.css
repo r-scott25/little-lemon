@@ -11,6 +11,7 @@
   grid-template-rows: repeat(5, auto) minmax(0, 1fr); /* 5 rows with 2 columns and 1 row with 1 column */
   gap: 3rem;
   margin-bottom: 2.5rem;
+  align-items: center;
 }
 
 .res-form-title {
@@ -256,4 +257,10 @@ select.input-error {
 
 /* Extra-Extra Large devices (large laptops and desktops, 1800px and up) */
 @media only screen and (min-width: 1800px) {
+  .reservations-container {
+    margin-left: 2rem;
+  }
+  .reservation-form-container {
+    gap: 5rem;
+  }
 }

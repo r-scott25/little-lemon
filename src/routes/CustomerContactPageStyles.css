@@ -10,7 +10,7 @@
 
 .dinner-img {
   width: 100%;
-  height:100%; 
+  height: 100%;
   object-fit: cover;
   overflow: hidden;
 }
@@ -23,6 +23,62 @@
   margin-top: 4rem;
 }
 
-.contact-form-section {
-  /* margin-top: 20px; */
+@media only screen and (min-width: 768px) {
+  .dinner-img {
+    height: 60%;
+  }
+
+  .contact-hero-section {
+    background-color: #495e57;
+    margin-top: -7.55rem;
+    margin-bottom: 2rem;
+  }
+  .selected-res-section {
+    margin-top: -4rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .dinner-img {
+    height: 60%;
+  }
+
+  .contact-hero-section {
+    background-color: #495e57;
+    margin-top: -9.75rem;
+  }
+  .selected-res-section {
+    margin-top: -16rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .dinner-img {
+    height: 60%;
+  }
+
+  .contact-hero-section {
+    background-color: #495e57;
+    margin-top: -10.75rem;
+    margin-bottom: 10rem;
+  }
+  .selected-res-section {
+    margin-top: -6rem;
+  }
+}
+
+
+@media only screen and (min-width: 1800px) {
+  .dinner-img {
+    height: 60%;
+  }
+
+  .contact-hero-section {
+    background-color: #495e57;
+    margin-top: -16.25rem;
+    margin-bottom: 6rem;
+  }
+  .selected-res-section {
+    margin-top: -2rem;
+  }
 }

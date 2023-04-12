@@ -28,7 +28,7 @@
 
 @media only screen and (min-width: 600px) {
   .hero-title-container {
-    margin-top: 2rem;
+    margin-top: 1.25rem;
     margin-left: 2rem;
   }
 
@@ -38,12 +38,13 @@
 
   .hero-subtitle {
     font-size: 1.75rem;
+    margin-bottom: -.5rem;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .hero-title-container {
-    margin-top: 2.5rem;
+    margin-top: 1rem;
     margin-left: 4rem;
   }
 
@@ -53,28 +54,30 @@
 
   .hero-subtitle {
     font-size: 2rem;
+    margin-bottom: -.5rem;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .hero-title-container {
-    margin-top: 2.5rem;
-    margin-left: 8rem;
+    margin-top: 2rem;
+    margin-left: 12rem;
   }
 
   .hero-title {
     font-size: 3rem;
+    margin-top: -1rem;
   }
 
   .hero-subtitle {
     font-size: 2rem;
+    margin-bottom: 3.5rem;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .hero-title-container {
-    margin-top: 2.5rem;
-    margin-left: 10rem;
+    margin-left: 14rem;
   }
 
   .hero-title {
@@ -83,20 +86,21 @@
 
   .hero-subtitle {
     font-size: 2rem;
+    margin-bottom: .25rem;
   }
 }
 
+
 @media only screen and (min-width: 1800px) {
   .hero-title-container {
-    margin-top: 2.5rem;
-    margin-left: 24rem;
+    margin-left: 36rem;
   }
-
   .hero-title {
     font-size: 3rem;
+    margin-top: -1rem;
   }
-
   .hero-subtitle {
     font-size: 2rem;
+    margin-bottom: .25rem;
   }
 }
