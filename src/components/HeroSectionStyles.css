@@ -38,7 +38,7 @@
 
   .hero-subtitle {
     font-size: 1.75rem;
-    margin-bottom: -.5rem;
+    margin-bottom: -0.5rem;
   }
 }
 
@@ -54,7 +54,7 @@
 
   .hero-subtitle {
     font-size: 2rem;
-    margin-bottom: -.5rem;
+    margin-bottom: -0.5rem;
   }
 }
 
@@ -71,7 +71,7 @@
 
   .hero-subtitle {
     font-size: 2rem;
-    margin-bottom: -.5rem;
+    margin-bottom: -0.5rem;
   }
 }
 
@@ -89,7 +89,6 @@
   }
 }
 
-
 @media only screen and (min-width: 1800px) {
   .hero-title-container {
     margin-left: 36rem;
@@ -100,6 +99,5 @@
   }
   .hero-subtitle {
     font-size: 2rem;
-    margin-bottom: .25rem;
   }
 }

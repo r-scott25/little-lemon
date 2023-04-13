@@ -176,6 +176,7 @@ input.input-error {
     max-width: 195px;
     min-width: 195px;
   }
+
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -210,6 +211,9 @@ input.input-error {
   max-width: 250px;
   min-width: 250px;
 }
+.contact-info-container .reserve-btn-container #reserve-btn {
+  margin-left: 14rem;
+}
   }
 
 
@@ -232,8 +236,46 @@ input.input-error {
     margin-left: 7rem;
     margin-bottom: 4rem;
   }
+
+  .contact-info-container .reserve-btn-container #reserve-btn {
+    margin-left: 15rem;
+  }
 }
 
 /* Extra-Extra Large devices (large laptops and desktops, 1800px and up) */
 @media only screen and (min-width: 1800px) {
+  .contact-info-container {
+    padding-bottom: 4rem;
+    margin-left: 31rem;
+  }
+
+  .contact-form-container {
+    grid-template-columns: 2fr 14fr;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .dividing-line {
+    width: 80%;
+    height: 3px;
+    margin-left: 10rem;
+    margin-bottom: 4rem;
+  }
+
+  .contact-form-container input[type="text"],
+.contact-form-container input[type="email"],
+.contact-form-container input[type="tel"],
+.contact-form-container input[type="checkbox"] {
+  padding: 8px;
+  padding-right: 200px;
+  padding-left: 16px;
+}
+
+.contact-form .text-updates-container .text-updates-label {
+  max-width: 300px;
+  min-width: 300px;
+}
+  .contact-info-container .reserve-btn-container #reserve-btn {
+    margin-left: 15rem;
+  }
+  
 }

@@ -145,4 +145,17 @@
 }
 
 /* Extra-Extra Large devices (large laptops and desktops, 1800px and up) */
-@media only screen and (min-width: 1800px){}
+@media only screen and (min-width: 1800px){
+  .selected-container {
+    grid-template-columns: 2fr 3.5fr;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    margin-left: 32rem;
+  }
+
+  .selected-reservations-container {
+    grid-template-columns: 2fr 7fr;
+    grid-row-gap: 15px;
+    margin-left: 2rem;
+  }
+}
