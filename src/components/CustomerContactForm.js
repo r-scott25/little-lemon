@@ -165,7 +165,6 @@ function CustomerContactForm(props) {
                 />
               </div>
               <div className="text-updates-label">
-                {" "}
                 <label htmlFor="textUpdates">
                   Yes, I want to receive text updates and reminders about my
                   reservation.

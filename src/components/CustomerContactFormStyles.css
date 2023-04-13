@@ -1,42 +1,6 @@
-.confirm-modal-container {
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  transition: 0.5s;
-}
+/* Initial layout/sizes based on 480px wide screen. */
 
-.dividing-line {
-  background-color:#f4ce14;
-  /* color:#495e57; */
-  border:none;
-  width: 80%;
-  height:3px;
-  margin-left: 3rem;
-  margin-bottom: 3rem;
-}
-
-.reservation-details img {
-  width: 6%;
-}
-
-/**** ERROR STYLING ****/
-
-input.input-error {
-  border-color: #ff0000 !important;
-}
-
-.error {
-  color: #ff0000 !important;
-  font-size: 14px;
-}
-
-.contact-form-title {
-  font-family: "Karla", normal;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #333333;
-  margin-bottom: 2rem;
-}
+/***** Containers *****/
 
 .contact-info-container {
   margin-bottom: 4rem;
@@ -47,7 +11,6 @@ input.input-error {
   grid-template-rows: repeat(5, auto) minmax(0, 1fr);
   gap: 2.5rem;
   margin-bottom: 2.5rem;
-
   align-items: center;
 }
 
@@ -58,10 +21,36 @@ input.input-error {
   align-items: center;
 }
 
-#textUpdates {
-  width: 18px;
-  height: 18px;
+.confirm-modal-container {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
 }
+
+/***** Element Styling *****/
+
+.dividing-line {
+  background-color: #f4ce14;
+  border: none;
+  width: 80%;
+  height: 3px;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+}
+
+.reservation-details img {
+  width: 6%;
+}
+
+.contact-form-title {
+  font-family: "Karla", normal;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 2rem;
+}
+
 .contact-form .text-updates-container .text-updates-label label {
   white-space: normal;
 }
@@ -73,6 +62,13 @@ input.input-error {
   white-space: nowrap;
 }
 
+#textUpdates {
+  width: 18px;
+  height: 18px;
+}
+
+/***** Input Boxes *****/
+
 .contact-form-container input[type="text"],
 .contact-form-container input[type="email"],
 .contact-form-container input[type="tel"],
@@ -83,6 +79,8 @@ input.input-error {
   border-width: 3px;
 }
 
+/***** Complete Reservation Button *****/
+
 .contact-info-container .reserve-btn-container #reserve-btn {
   background-color: #f4ce14;
   color: #495e57;
@@ -91,14 +89,68 @@ input.input-error {
   border-radius: 16px;
   padding: 8px 20px;
   margin-left: 7rem;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .contact-info-container .reserve-btn-container #reserve-btn:hover {
-  background-color:#495e57;
+  background-color: #495e57;
   color: #ffffff;
 }
 .contact-info-container .reserve-btn-container #reserve-btn:active {
-  background-color:#ee9972;
+  background-color: #ee9972;
   color: #ffffff;
+}
+
+/***** ERROR STYLING *****/
+
+input.input-error {
+  border-color: #ff0000 !important;
+}
+
+.error {
+  color: #ff0000 !important;
+  font-size: 14px;
+}
+
+/********** @MEDIA QUERIES FOR VARIOUS SCREEN SIZES **********/
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .contact-info-container {
+    margin-bottom: 4rem;
+    margin-left: 5rem;
+  }
+  .contact-form-container {
+    grid-template-columns: 3fr 10fr;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .dividing-line {
+    width: 65%;
+    height: 3px;
+    margin-left: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .contact-form .text-updates-container .text-updates-label {
+    max-width: 200px;
+    min-width: 200px;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra Large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}
+
+/* Extra-Extra Large devices (large laptops and desktops, 1800px and up) */
+@media only screen and (min-width: 1800px) {
 }
