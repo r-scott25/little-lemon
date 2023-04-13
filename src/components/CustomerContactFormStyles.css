@@ -123,7 +123,7 @@ input.input-error {
 @media only screen and (min-width: 600px) {
   .contact-info-container {
     margin-bottom: 4rem;
-    margin-left: 5rem;
+    margin-left: 2rem;
   }
   .contact-form-container {
     grid-template-columns: 3fr 10fr;
