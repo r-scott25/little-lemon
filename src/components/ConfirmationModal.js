@@ -1,6 +1,5 @@
 import React from "react";
 import CustomerContactForm from "./CustomerContactForm.js";
-import homeIcon from "../assets/homeIcon.svg";
 
 const MODAL_STYLES = {
   position: 'fixed',
@@ -8,8 +7,8 @@ const MODAL_STYLES = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   backgroundColor: "#fbdabb",
-  padding: "50px",
-  zIndex: 1000
+  padding: "20px",
+  zIndex: 1000,
 };
 
 const OVERLAY_STYLES = {
@@ -29,9 +28,6 @@ function ResConfirm({ open, children }) {
     <>
     <div style={OVERLAY_STYLES} />
       <div className="modal" style={MODAL_STYLES}>
-        <a href="/">
-          <img src={homeIcon} alt="home icon" />
-        </a>
         {children}
       </div>
     </>

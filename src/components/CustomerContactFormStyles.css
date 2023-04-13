@@ -1,6 +1,6 @@
 /* Initial layout/sizes based on 480px wide screen. */
 
-/***** Containers *****/
+/***** Customer Contact Form Containers *****/
 
 .contact-info-container {
   padding-bottom: 4rem;
@@ -22,12 +22,7 @@
   align-items: center;
 }
 
-.confirm-modal-container {
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  transition: 0.5s;
-}
+
 
 /***** Element Styling *****/
 
@@ -84,6 +79,7 @@
   border-color: #495e57;
   border-width: 3px;
   border-style: solid;
+  font-family: "Karla", normal;
 }
 
 /* Placeholder Styles */
