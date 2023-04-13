@@ -4,8 +4,8 @@
   transition: 0.5s;
   min-width: 400px;
   max-width: 400px;
-  min-height: 580px;
-  max-height: 580px;
+  min-height: 590px;
+  max-height: 590px;
   padding: 0;
 }
 
@@ -40,6 +40,7 @@
   grid-template-columns: 4fr 3fr;
   align-items: start;
   margin-left: 1.5rem;
+  margin-bottom: .5rem;
 
 }
 .confirm-selected-container {

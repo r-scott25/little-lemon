@@ -246,7 +246,7 @@ function CustomerContactForm(props) {
                         <img src={calendarEE9972} alt="calendar icon" />
                       </div>
                       <div className="confirm-date">
-                        <h3 className="confirmed-text">{props.date} MONTH 00, 0000</h3>
+                        <h3 className="confirmed-text">{props.date} Month 00, 0000</h3>
                       </div>
                       <div className="confirm-time-icon">
                         <img src={clockEE9972} alt="clock icon" />
@@ -264,13 +264,13 @@ function CustomerContactForm(props) {
                         <img src={seatingEE9972} alt="table and chair icon" />
                       </div>
                       <div className="confirm-seating">
-                        <h3 className="confirmed-text">{props.seating} SEATING</h3>
+                        <h3 className="confirmed-text">{props.seating} Seating</h3>
                       </div>
                       <div className="confirm-occasion-icon">
                         <img src={occasionEE9972} alt="party horn icon" />
                       </div>
                       <div className="confirm-occasion">
-                        <h3 className="confirmed-text">{props.occasion} OCCASION</h3>
+                        <h3 className="confirmed-text">{props.occasion} Occasion</h3>
                       </div>
                     </div>
                     <div className="lit-lem-contact-container">
