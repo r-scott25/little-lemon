@@ -5,7 +5,7 @@
   flex-direction: row;
   margin-top: 3rem;
   margin-bottom: -4rem;
-  margin-left: 1.25rem;
+  margin-left: 2.5rem;
   margin-right: 2rem;
 }
 
@@ -87,10 +87,10 @@
   }
 }
 
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 768px) {
   .about-container {
-    margin-left: 5rem;
-    margin-right: 7rem;
+    margin-left: 8rem;
+    margin-bottom: 0.5rem;
   }
   .about-subtitle {
     margin-bottom: 1.5rem;
@@ -182,7 +182,7 @@
     max-width: 18rem;
   }
   .about-images-container {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
   #mario-and-adrian-b {
     margin-left: -50px;
@@ -195,4 +195,3 @@
     border-radius: 8px;
   }
 }
-

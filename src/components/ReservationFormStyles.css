@@ -32,8 +32,8 @@
   color: #495e57;
   padding-top: 8px;
   padding-bottom: 8px;
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 180px;
+  max-width: 180px;
   border-radius: 16px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
   border-color: #495e57;
@@ -43,6 +43,8 @@
   flex-direction: column;
   align-content: center;
   padding-left: 18%;
+  font-family: "Karla", normal;
+  font-size: 1.1rem;
 }
 
 /* TIME & OCCASION DROP-DOWN MENUS */
@@ -62,6 +64,8 @@ select {
   display: flex;
   flex-direction: column;
   align-content: center;
+  font-family: "Karla", normal;
+  font-size: 1.1rem;
 }
 
 option {
@@ -133,7 +137,7 @@ option:checked:hover {
 }
 
 .minus-btn-span {
-  margin-right: 1.5rem;
+  margin-right: 2rem;
 }
 
 .plus-btn-span {
@@ -149,7 +153,7 @@ option:checked:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 0.25rem;
+
 }
 
 /**** SEATING ****/
@@ -244,12 +248,24 @@ select.input-error {
   .reservations-container {
     margin-left: -1.5rem;
   }
+  #date {
+    min-width: 200px;
+    max-width: 200px;
+    padding-left: 20%;
+  }
+ 
+select {
+min-width: 300px;
+}
+.save-btn {
+  margin-left: 9rem;
+}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
   .reservations-container {
-    margin-left: 0rem;
+    margin-left: 3.5rem;
   }
 }
 
@@ -261,7 +277,7 @@ select.input-error {
 /* Extra Large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
   .reservations-container {
-    margin-left: 3rem;
+    margin-left: 7rem;
   }
 }
 

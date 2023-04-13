@@ -74,7 +74,9 @@
 .contact-form-container input[type="email"],
 .contact-form-container input[type="tel"],
 .contact-form-container input[type="checkbox"] {
-  padding: 8px 16px;
+  padding: 8px;
+  padding-right: 65px;
+  padding-left: 16px;
   border-radius: 16px;
   border-color: #495e57;
   border-width: 3px;
@@ -150,6 +152,14 @@ input.input-error {
     margin-bottom: 4rem;
   }
 
+  .contact-form-container input[type="text"],
+  .contact-form-container input[type="email"],
+  .contact-form-container input[type="tel"],
+  .contact-form-container input[type="checkbox"] {
+    padding: 8px;
+    padding-right: 80px;
+    padding-left: 16px;
+  }
   .contact-form .text-updates-container .text-updates-label {
     max-width: 200px;
     min-width: 200px;
@@ -179,11 +189,19 @@ input.input-error {
     margin-bottom: 4rem;
   }
 
-  .contact-form .text-updates-container .text-updates-label {
-    max-width: 195px;
-    min-width: 195px;
+  .contact-form-container input[type="text"],
+  .contact-form-container input[type="email"],
+  .contact-form-container input[type="tel"],
+  .contact-form-container input[type="checkbox"] {
+    padding: 8px;
+    padding-right: 100px;
+    padding-left: 16px;
   }
-
+  
+  .contact-form .text-updates-container .text-updates-label {
+    max-width: 230px;
+    min-width: 230px;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -203,14 +221,14 @@ input.input-error {
     width: 75%;
     height: 3px;
     margin-left: 5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 .contact-form-container input[type="text"],
 .contact-form-container input[type="email"],
 .contact-form-container input[type="tel"],
 .contact-form-container input[type="checkbox"] {
   padding: 8px;
-  padding-right: 80px;
+  padding-right: 150px;
   padding-left: 16px;
 }
 
@@ -241,9 +259,22 @@ input.input-error {
     width: 80%;
     height: 3px;
     margin-left: 7rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 
+  .contact-form-container input[type="text"],
+  .contact-form-container input[type="email"],
+  .contact-form-container input[type="tel"],
+  .contact-form-container input[type="checkbox"] {
+    padding: 10px;
+    padding-right: 170px;
+    padding-left: 16px;
+  }
+  
+  .contact-form .text-updates-container .text-updates-label {
+    max-width: 280px;
+    min-width: 280px;
+  }
   .contact-info-container .reserve-btn-container #reserve-btn {
     margin-left: 15rem;
   }
@@ -265,21 +296,21 @@ input.input-error {
     width: 80%;
     height: 3px;
     margin-left: 10rem;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
   }
 
   .contact-form-container input[type="text"],
 .contact-form-container input[type="email"],
 .contact-form-container input[type="tel"],
 .contact-form-container input[type="checkbox"] {
-  padding: 8px;
+  padding: 12px;
   padding-right: 200px;
   padding-left: 16px;
 }
 
 .contact-form .text-updates-container .text-updates-label {
-  max-width: 300px;
-  min-width: 300px;
+  max-width: 275px;
+  min-width: 275px;
 }
   .contact-info-container .reserve-btn-container #reserve-btn {
     margin-left: 15rem;

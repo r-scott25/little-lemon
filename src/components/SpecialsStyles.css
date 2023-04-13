@@ -21,7 +21,7 @@
   flex-direction: row;
   align-content: center;
   align-items: center;
-  margin: 3rem 0 3rem 1.5rem;
+  margin: 3rem 0 3rem 0rem;
 }
 
 .specials-title {
@@ -39,7 +39,7 @@
   color: #495e57;
   font-family: "Karla", normal;
   font-size: 18px;
-  font-weight: 610;
+  font-weight: 600;
   padding: 8px 16px;
   border-radius: 16px;
   border-width: 0;
@@ -59,10 +59,12 @@
 
 @media only screen and (min-width: 600px) {
   .menu-card-container {
-    margin-right: 4rem;
+    margin-right: 6rem;
   }
   .specials-title-and-menu-button {
-    margin: 6rem 0 3rem 1.5rem;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+    margin-left: -9rem;
     gap: 4rem;
   }
 
@@ -72,25 +74,41 @@
 }
 
 @media only screen and (min-width: 768px) {
+
+.specials-container {
+  margin-left: 1.5rem;
+  }
   .menu-card-container {
-    margin-right: 2rem;
+    margin-right: 6rem;
+    margin-bottom: 1rem;
+    gap: 3rem;
   }
   .specials-title-and-menu-button {
-    margin: 8rem 0 4rem 2rem;
-    gap: 14rem;
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+    margin-left:-4rem;
+    gap: 12rem;
   }
   .specials-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 
 @media only screen and (min-width: 992px) {
+  .specials-container {
+  margin-left: 1.5rem;
+  }
   .menu-card-container {
-    margin-right: 3.5rem;
+    /* margin-right: 2rem; */
+    margin-right: 6rem;
+    margin-bottom: 1rem;
+    gap: 3rem;
   }
   .specials-title-and-menu-button {
-    margin: 8rem 0 4rem 4rem;
-    gap: 18rem;
+    margin-top: 8rem;
+    margin-bottom: 4rem;
+    margin-left:-4rem;
+    gap: 12rem;
   }
   .specials-title {
     font-size: 3rem;
@@ -100,13 +118,16 @@
 @media only screen and (min-width: 1200px) {
   .menu-card-container {
     margin-right: 3rem;
-    margin-left: 1.75rem;
     margin-bottom: 1rem;
+    gap: 3rem;
+    justify-content: center;
   }
 
   .specials-title-and-menu-button {
-    margin: 10rem 0 4rem 4rem;
-    gap: 28rem;
+    margin-top: 10rem;
+    margin-bottom: 4rem;
+    margin-left: 1rem;
+    gap: 20rem;
   }
 }
 
@@ -121,19 +142,16 @@
     margin-left: 14rem;
   }
   .menu-card-container {
-    display: flex;
-    flex-direction: row;
+    margin-right: 3rem;
+    margin-bottom: 1rem;
+    gap: 4rem;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-right: 0.5rem;
   }
   .specials-title-and-menu-button {
-    margin: 12rem 0 8rem 4rem;
+    margin: 12rem 0 10rem 3rem;
     gap: 36rem;
     margin-bottom: 3rem;
     margin-top: 10rem;
-
   }
 
   .specials-title {

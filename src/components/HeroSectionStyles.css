@@ -95,7 +95,8 @@
   }
   .hero-title {
     font-size: 3rem;
-    margin-top: -1rem;
+
+    padding-top: 1rem;
   }
   .hero-subtitle {
     font-size: 2rem;

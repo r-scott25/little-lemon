@@ -5,8 +5,9 @@
 /* .selected-container: column 1: selected-reservations-container   column 2: requests-and-edit-container */
 .selected-container {
   display: grid;
-  grid-template-columns: 3fr 3fr;
+  grid-template-columns: 3fr 4fr;
   margin-bottom: 4rem;
+
 
 }
 
@@ -20,8 +21,8 @@
 
 .selected-container .selected-reservations-container .requests-and-edit-container {
   display: grid;
-  grid-template-rows: 4fr 2fr;
-  margin-left: -6rem;
+  grid-template-rows: 4fr 3fr;
+  margin-left: -8rem;
 }
 
 /***** ELEMENT RULES *****/
@@ -63,7 +64,7 @@
   background-color: #f4ce14;
   font-weight: 600;
   color: #495e57;
-  padding: 6px 33px;
+  padding: 6px 50px;
   border-radius: 16px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
@@ -124,6 +125,7 @@
     grid-template-columns: 2fr 7fr;
     grid-row-gap: 15px;
     margin-left: 2rem;
+    margin-bottom: 1rem;
   }
 }
 
@@ -141,6 +143,7 @@
     grid-template-columns: 2fr 7fr;
     grid-row-gap: 15px;
     margin-left: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -157,5 +160,6 @@
     grid-template-columns: 2fr 7fr;
     grid-row-gap: 15px;
     margin-left: 2rem;
+    margin-bottom: 3rem;
   }
 }

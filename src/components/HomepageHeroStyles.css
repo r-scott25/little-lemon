@@ -54,7 +54,7 @@
   color: #495e57 !important;
   font-family: "Karla", normal;
   font-size: 18px;
-  font-weight: 610;
+  font-weight: 600;
   padding: 8px 16px;
   border-radius: 16px;
   border-width: 0;
@@ -73,6 +73,9 @@
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  .hero-home-container {
+    margin-left: 1rem;
+  }
   .lemon-blurb {
     max-width: 40%;
     min-width: 40%;
@@ -85,7 +88,7 @@
   .hero-home-container .server-image {
     width: 36%;
     height: 94%;
-    left: 40%;
+    left: 42%;
     top: 30%;
   }
 }
@@ -118,7 +121,7 @@
 @media only screen and (min-width: 992px) {
   .hero-intro {
     margin-top: 2rem;
-    margin-left: -.5rem;
+    margin-left: 3rem;
   }
   .hero-home-container .server-image {
     width: 33%;
@@ -153,7 +156,7 @@
 @media only screen and (min-width: 1800px) {
   .hero-home-container {
     padding-top: 2rem;
-    margin-left: 10rem;
+    margin-left: 8rem;
   }
   
   .chicago-subtitle {
