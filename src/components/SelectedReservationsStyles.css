@@ -112,11 +112,37 @@
 
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+  .selected-container {
+    grid-template-columns: 2fr 3.5fr;
+    margin-bottom: 4rem;
+    margin-top: 19rem;
+    margin-left: 13rem;
+  }
+
+  .selected-reservations-container {
+    grid-template-columns: 2fr 7fr;
+    grid-row-gap: 15px;
+    margin-left: 2rem;
+  }
+}
 
 
 /* Extra Large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px){}
+@media only screen and (min-width: 1200px){
+  .selected-container {
+    grid-template-columns: 2fr 3.5fr;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    margin-left: 18rem;
+  }
+
+  .selected-reservations-container {
+    grid-template-columns: 2fr 7fr;
+    grid-row-gap: 15px;
+    margin-left: 2rem;
+  }
+}
 
 /* Extra-Extra Large devices (large laptops and desktops, 1800px and up) */
 @media only screen and (min-width: 1800px){}
