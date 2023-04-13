@@ -84,7 +84,6 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
   .selected-container {
-    display: grid;
     grid-template-columns: 3fr 5fr;
     margin-bottom: 4rem;
     margin-left: 2.5rem;
@@ -96,7 +95,20 @@
 
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+  .selected-container {
+    grid-template-columns: 2fr 3fr;
+    margin-bottom: 4rem;
+    margin-top: 6rem;
+    margin-left: 7.5rem;
+  }
+
+  .selected-reservations-container {
+    grid-template-columns: 2fr 7fr;
+    grid-row-gap: 15px;
+    margin-left: 2rem;
+  }
+}
 
 
 /* Large devices (laptops/desktops, 992px and up) */
