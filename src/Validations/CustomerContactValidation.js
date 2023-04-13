@@ -22,8 +22,8 @@ export const customerContactSchema = Yup.object().shape({
     .email("Please enter a valid email.")
     .required("Please enter your email address."),
   phone: Yup.string()
-    .required("Please enter your phone number")
-    .matches(phoneValidPattern, "Phone number is not valid")
+    .required("Please enter your phone number.")
+    .matches(phoneValidPattern, "Phone number is not valid.")
     .min(10, "Phone number should be 10 digits.")
     .max(10, "Phone number should be 10 digits."),
   textUpdates: Yup.boolean(),

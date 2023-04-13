@@ -5,16 +5,100 @@
   transition: 0.5s;
 }
 
+.dividing-line {
+  background-color:#f4ce14;
+  /* color:#495e57; */
+  border:none;
+  width: 80%;
+  height:3px;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+}
+
 .reservation-details img {
   width: 6%;
 }
 
-input.input-error,
-select.input-error {
-  border-color:#ff0000;
+/**** ERROR STYLING ****/
 
+input.input-error {
+  border-color: #ff0000 !important;
 }
 
 .error {
-  color: #ff0000;
+  color: #ff0000 !important;
+  font-size: 14px;
+}
+
+.contact-form-title {
+  font-family: "Karla", normal;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 2rem;
+}
+
+.contact-info-container {
+  margin-bottom: 4rem;
+}
+.contact-form-container {
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  grid-template-rows: repeat(5, auto) minmax(0, 1fr);
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+
+  align-items: center;
+}
+
+.text-updates-container {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+#textUpdates {
+  width: 18px;
+  height: 18px;
+}
+.contact-form .text-updates-container .text-updates-label label {
+  white-space: normal;
+}
+
+.contact-form label {
+  font-size: 1.1rem;
+  font-weight: 650;
+  color: #495e57;
+  white-space: nowrap;
+}
+
+.contact-form-container input[type="text"],
+.contact-form-container input[type="email"],
+.contact-form-container input[type="tel"],
+.contact-form-container input[type="checkbox"] {
+  padding: 8px 16px;
+  border-radius: 16px;
+  border-color: #495e57;
+  border-width: 3px;
+}
+
+.contact-info-container .reserve-btn-container #reserve-btn {
+  background-color: #f4ce14;
+  color: #495e57;
+  font-weight: 600;
+  border-color: #f4ce14;
+  border-radius: 16px;
+  padding: 8px 20px;
+  margin-left: 7rem;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);;
+}
+
+.contact-info-container .reserve-btn-container #reserve-btn:hover {
+  background-color:#495e57;
+  color: #ffffff;
+}
+.contact-info-container .reserve-btn-container #reserve-btn:active {
+  background-color:#ee9972;
+  color: #ffffff;
 }

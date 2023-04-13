@@ -2,7 +2,7 @@
 
 .reservations-container {
   font-family: "Karla", normal;
-  margin-left: 2rem;
+  margin-left: 2.5rem;
 }
 
 .reservation-form-container {
@@ -20,7 +20,7 @@
   color: #333333;
   margin-bottom: 4rem;
 }
-label {
+.reservations-container label {
   font-size: 1.1rem;
   font-weight: 650;
   color: #495e57;
@@ -34,7 +34,8 @@ label {
   padding-bottom: 8px;
   min-width: 250px;
   max-width: 250px;
-  border-radius: 8px;
+  border-radius: 16px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
   border-color: #495e57;
   border-width: 3px;
   display: flex;
@@ -52,12 +53,14 @@ select {
   padding-bottom: 8px;
   min-width: 250px;
   max-width: 250px;
-  border-radius: 8px;
+  border-radius: 16px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
   border-color: #495e57;
   border-width: 3px;
   display: flex;
   flex-direction: column;
   align-content: center;
+ 
 }
 
 option {
@@ -184,7 +187,7 @@ input[type="radio"]:checked::before {
 
 .special-requests textarea {
   margin-top: 0.5rem;
-  border-radius: 8px;
+  border-radius: 16px;
   border-color: #495e57;
   border-width: 1px;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
@@ -198,7 +201,8 @@ input[type="radio"]:checked::before {
 .save-btn {
   background-color: #f4ce14;
   border-color: #f4ce14;
-  border-radius: 8px;
+  border-radius: 16px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
   padding: 8px 20px;
   margin-left: 6rem;
   color: #495e57;

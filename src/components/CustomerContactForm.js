@@ -67,98 +67,123 @@ function CustomerContactForm(props) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="contact-info-container">
-      <h2>Your Details</h2>
+    <>
+   <div className="dividing-line">.</div>
+    <div className="contact-info-container">
+      <h2 className="contact-form-title">Your Details</h2>
       <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="firstName">
-          <label htmlFor="firstName">First Name</label>
-          <input
-            type="text"
-            value={values.firstName}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={
-              errors.firstName && touched.firstName ? "input-error" : ""
-            }
-            name="firstName"
-            id="firstName"
-            placeholder="First Name"
-          />
-          {errors.firstName && touched.firstName && (
-            <p className="error">{errors.firstName}</p>
-          )}
-        </div>
-        <div className="lastName">
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            type="text"
-            value={values.lastName}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={errors.lastName && touched.lastName ? "input-error" : ""}
-            name="lastName"
-            id="lastName"
-            placeholder="Last Name"
-          />
-          {errors.lastName && touched.lastName && (
-            <p className="error">{errors.lastName}</p>
-          )}
-        </div>
-        <div className="email">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={errors.email && touched.email ? "input-error" : ""}
-            name="email"
-            id="email"
-            placeholder="Email"
-          />
-          {errors.email && touched.email && (
-            <p className="error">{errors.email}</p>
-          )}
-        </div>
-        <div className="phone">
-          <label htmlFor="phone">Phone</label>
-          <input
-            type="tel"
-            value={values.phone}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            className={errors.phone && touched.phone ? "input-error" : ""}
-            name="phone"
-            id="phone"
-            placeholder="Phone Number"
-          />
-          {errors.phone && touched.phone && (
-            <p className="error">{errors.phone}</p>
-          )}
-        </div>
-        <div className="textUpdates">
-          <input
-            type="checkbox"
-            checked={values.textUpdates === true}
-            onChange={handleCheckboxChange}
-            name="textUpdates"
-            id="textUpdates"
-          />
-          <label htmlFor="textUpdates">
-            Yes, I want to receive text updates and reminders about my
-            reservation.
-          </label>
-        </div>
-        <div className="reserve-btn">
-          <button
-            onClick={handleSubmit}
-            type="submit"
-            className="reserve-btn"
-            id="reserve-btn"
-          >
-            Complete Reservation
-          </button>
-        </div>
+        <div className="contact-form-container">
+          <div className="firstName-label">
+            <label htmlFor="firstName">First Name</label>
+          </div>
+
+          <div className="firstName-input">
+            <input
+              type="text"
+              value={values.firstName}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={
+                errors.firstName && touched.firstName ? "input-error" : ""
+              }
+              name="firstName"
+              id="firstName"
+              placeholder="First Name"
+            />
+            {errors.firstName && touched.firstName && (
+              <p className="error">{errors.firstName}</p>
+            )}
+          </div>
+
+          <div className="lastName-label">
+            <label htmlFor="lastName">Last Name</label>
+          </div>
+          <div className="lastName-input">
+            <input
+              type="text"
+              value={values.lastName}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={
+                errors.lastName && touched.lastName ? "input-error" : ""
+              }
+              name="lastName"
+              id="lastName"
+              placeholder="Last Name"
+            />
+            {errors.lastName && touched.lastName && (
+              <p className="error">{errors.lastName}</p>
+            )}
+          </div>
+          <div className="email-label">
+            <label htmlFor="email">Email</label>
+          </div>
+          <div className="email-input">
+            <input
+              type="email"
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={errors.email && touched.email ? "input-error" : ""}
+              name="email"
+              id="email"
+              placeholder="Email"
+            />
+            {errors.email && touched.email && (
+              <p className="error">{errors.email}</p>
+            )}
+          </div>
+
+          <div className="phone-label">
+            <label htmlFor="phone">Phone</label>
+          </div>
+          <div className="phone-input">
+            <input
+              type="tel"
+              value={values.phone}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={errors.phone && touched.phone ? "input-error" : ""}
+              name="phone"
+              id="phone"
+              placeholder="Phone Number"
+            />
+            {errors.phone && touched.phone && (
+              <p className="error">{errors.phone}</p>
+            )}
+          </div>
+          <div className="empty"></div>
+          <div className="textUpdates">
+            <div className="text-updates-container">
+              <div className="text-updates-input">
+                <input
+                  type="checkbox"
+                  checked={values.textUpdates === true}
+                  onChange={handleCheckboxChange}
+                  name="textUpdates"
+                  id="textUpdates"
+                />
+              </div>
+              <div className="text-updates-label">
+                {" "}
+                <label htmlFor="textUpdates">
+                  Yes, I want to receive text updates and reminders about my
+                  reservation.
+                </label>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div className="reserve-btn-container">
+            <a href="#"
+              onClick={handleSubmit}
+              type="submit"
+              className="btn"
+              id="reserve-btn"
+            >
+              Complete Reservation
+            </a>
+          </div>
         <div>
           <ConfirmationModal open={isOpen}>
             <div className="confirm-modal-container" id="modal">
@@ -216,7 +241,8 @@ function CustomerContactForm(props) {
           </ConfirmationModal>
         </div>
       </form>
-    </section>
+    </div>
+    </>
   );
 }
 
