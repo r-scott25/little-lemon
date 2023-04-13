@@ -85,10 +85,16 @@
   border-width: 3px;
 }
 
+/* Placeholder Styles */
 .contact-info-container .contact-form-container input::placeholder {
   font-family: "Karla", normal;
 }
 
+/* Placeholder styles on hover */
+.contact-info-container .contact-form-container input.hovered::placeholder {
+  color: #495e57;
+  font-weight: 600;
+}
 .contact-info-container .contact-form-container input::placeholder:hover {
   color:#495e57;
 }
