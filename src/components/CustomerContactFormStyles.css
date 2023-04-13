@@ -3,14 +3,15 @@
 /***** Containers *****/
 
 .contact-info-container {
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 .contact-form-container {
   display: grid;
-  grid-template-columns: 3fr 5fr;
+  grid-template-columns: 3fr 8fr;
   grid-template-rows: repeat(5, auto) minmax(0, 1fr);
   gap: 2.5rem;
   margin-bottom: 2.5rem;
+  margin-left: 3rem;
   align-items: center;
 }
 
@@ -49,8 +50,12 @@
   font-weight: 700;
   color: #333333;
   margin-bottom: 2rem;
+  margin-left: 3rem;
 }
 
+.contact-form .text-updates-container .text-updates-label{
+  max-width: 195px;
+}
 .contact-form .text-updates-container .text-updates-label label {
   white-space: normal;
 }
@@ -88,7 +93,7 @@
   border-color: #f4ce14;
   border-radius: 16px;
   padding: 8px 20px;
-  margin-left: 7rem;
+  margin-left: 9rem;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
 }
 

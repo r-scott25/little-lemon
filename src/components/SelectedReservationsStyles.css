@@ -5,14 +5,14 @@
 /* .selected-container: column 1: selected-reservations-container   column 2: requests-and-edit-container */
 .selected-container {
   display: grid;
-  grid-template-columns: 3fr 4fr;
+  grid-template-columns: 3fr 3fr;
   margin-bottom: 4rem;
 
 }
 
 .selected-reservations-container {
   display: grid;
-  grid-template-columns: 2fr 8fr;
+  grid-template-columns: 2fr 5fr;
   grid-row-gap: 15px;
   align-items: center;
   margin-left: 2rem;

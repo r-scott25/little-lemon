@@ -14,24 +14,24 @@
   padding-bottom: .5rem;
 }
 
-.footer-logo {
+.footer-container .footer-logo {
   height: 80%;
   margin-left: 4rem;
 }
 
-.footer-logo-nav:hover {
+.footer-container .footer-logo-nav:hover {
   filter: brightness(115%);
   border-radius: 16px;
 }
 
-.footer-nav-container {
+.footer-container .footer-nav-container {
   display: flex;
   justify-content: space-between;
   gap: 2%;
   padding-bottom: 2rem;
 }
 
-.footer-nav-container ul {
+.footer-container .footer-nav-container ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -40,25 +40,19 @@
   list-style: none;
   gap: 20px;
 }
-.footer-nav-container a {
+.footer-container .footer-nav-container a {
   text-decoration: none;
   color: #edefee;
   font-family: "Karla";
   font-weight: 600;
 }
 
-.footer-nav-container a:hover {
+.footer-container .footer-nav-container a:hover {
   color: #f4ce14;
 }
-.contact-info-container {
-  display: flex;
-  flex-direction: column;
-  font-family: "Karla";
-  font-weight: 600;
-  margin-left: 1.5rem;
-}
 
-.contact-and-social-container {
+
+.footer-container .contact-and-social-container {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -67,64 +61,70 @@
   gap: 16px;
   margin-right: 3rem;
 }
-.contact-info-container {
+
+.footer-container .contact-info-container {
   display: flex;
   flex-direction: column;
   font-family: "Karla";
+  font-weight: 600;
   margin-left: 1.5rem;
   padding-bottom: 0.25rem;
 }
 
-.contact-info-container #contactTitle {
+.footer-container .contact-info-container #contactTitle {
   padding-bottom: 0.75rem;
   color: #f4ce14;
   font-weight: 700;
 }
-.contact-info-container p {
+
+.footer-container .contact-info-container p {
   padding-bottom: 1rem;
   color: #edefee;
 }
-.social-media-container {
+
+.footer-container .social-media-container {
   display: flex;
   flex-direction: column;
   color: #edefee;
   justify-content: center;
   margin-left: 0.5rem;
+  padding-bottom: 4rem;
+
 }
 
-#letsConnectTitle {
+.footer-container #letsConnectTitle {
   margin-bottom: 0.5rem;
   color: #f4ce14;
   font-family: "Karla";
   font-weight: 700;
 }
 
-.social-media-links-container ul {
+.footer-container .social-media-links-container ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
   gap: 2%;
 }
-#instagramLink img,
-#facebookLink img,
-#twitterLink img {
+.footer-container #instagramLink img,
+.footer-container #facebookLink img,
+.footer-container #twitterLink img {
   width: 70%;
 }
 
-#instagramLink img:hover,
-#facebookLink img:hover,
-#twitterLink img:hover {
+.footer-container #instagramLink img:hover,
+.footer-container #facebookLink img:hover,
+.footer-container #twitterLink img:hover {
   background-color: #f4ce14;
   padding: 0.25rem;
   border-radius: 16px;
 }
-.copyright {
+.footer-container .copyright {
   font-family: karla;
   color:#edefee;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
-  margin-top: 250px;
+  margin-top: 275px;
   margin-left: -225px;
   white-space: nowrap;
 }
@@ -144,19 +144,19 @@
     align-items: flex-start;
     padding-top: 1rem;
   }
-  .footer-logo {
+  .footer-container .footer-logo {
     height: 90%;
     margin-right: 4rem;
     margin-left: 4rem;
   }
-  .footer-nav-container {
+  .footer-container .footer-nav-container {
     display: flex;
     justify-content: space-between;
     gap: 2%;
     padding-bottom: 2rem;
     margin-right: 4rem;
   }
-  .contact-and-social-container {
+  .footer-container .contact-and-social-container {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -165,7 +165,7 @@
     gap: 10%;
     margin-right: 12rem;
   }
-  .copyright {
+  .footer-container .copyright {
     font-family: karla;
     color:#edefee;
     font-weight: 500;
@@ -190,23 +190,23 @@
     padding-top: 1.5rem;
     margin-right: -4rem;
   }
-  .footer-logo-nav .footer-logo {
+  .footer-container .footer-logo-nav .footer-logo {
     height: 150px;
     margin-right: 4rem;
     margin-left: 4rem;
   }
-  .footer-nav-container ul {
+  .footer-container .footer-nav-container ul {
     display: flex;
     justify-content: space-between;
     padding-bottom: .5rem;
     margin-right: 0rem;
     gap: 16px;
   }
-  .footer-nav-item {
+  .footer-container .footer-nav-item {
     padding-bottom: 1.5rem;
   }
 
-  .contact-and-social-container {
+  .footer-container .contact-and-social-container {
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -216,28 +216,28 @@
     margin-right: 14rem;
   }
 
-  .social-media-container {
+  .footer-container .social-media-container {
     display: flex;
     flex-direction: column;
     color: #edefee;
     justify-content: center;
     flex-grow: 2;
   }
-  #letsConnectTitle {
+  .footer-container #letsConnectTitle {
     white-space: nowrap;
   }
-  .social-media-links-container ul {
+  .footer-container .social-media-links-container ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 12%;
   }
-  #instagramLink img,
-  #facebookLink img,
-  #twitterLink img {
+  .footer-container #instagramLink img,
+  .footer-container #facebookLink img,
+  .footer-container #twitterLink img {
     width: 120%;
   }
-  .copyright {
+  .footer-container .copyright {
     font-family: karla;
     color:#edefee;
     font-weight: 500;
@@ -262,13 +262,13 @@
     padding-top: 1.5rem;
     margin-right: 3rem;
   }
-  .footer-logo {
+  .footer-container .footer-logo {
     height: 90%;
     margin-top: 2rem;
     margin-right: 4rem;
     margin-left: 4rem;
   }
-  .footer-nav-container {
+  .footer-container .footer-nav-container {
     display: flex;
     justify-content: space-between;
     gap: 5%;
@@ -280,11 +280,11 @@
     line-height: 1.5rem;
   }
 
-  .footer-nav-container ul {
+  .footer-container  .footer-nav-container ul {
     gap: 8px;
   }
 
-  .contact-and-social-container {
+  .footer-container .contact-and-social-container {
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -294,17 +294,17 @@
     margin-top: 2rem;
   }
 
-  .contact-info-container {
+  .footer-container .contact-info-container {
     margin-left: 3rem;
   }
-  #contactTitle {
+  .footer-container #contactTitle {
     font-size: 20px;
   }
 
-  .contact-info-container p {
+  .footer-container .contact-info-container p {
     font-size: 18px;
   }
-  .social-media-container {
+  .footer-container .social-media-container {
     display: flex;
     flex-direction: column;
     color: #edefee;
@@ -312,22 +312,22 @@
     flex-grow: 2;
     margin-left: 4rem;
   }
-  #letsConnectTitle {
+  .footer-container #letsConnectTitle {
     white-space: nowrap;
     font-size: 20px;
   }
-  .social-media-links-container ul {
+  .footer-container .social-media-links-container ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 15%;
   }
-  #instagramLink img,
-  #facebookLink img,
-  #twitterLink img {
+  .footer-container #instagramLink img,
+  .footer-container #facebookLink img,
+  .footer-container #twitterLink img {
     width: 120%;
   }
-  .copyright {
+  .footer-container  .copyright {
     font-family: karla;
     color:#edefee;
     font-weight: 500;
@@ -351,13 +351,13 @@
     align-items: flex-start;
     padding-top: 1.5rem;
   }
-  .footer-logo {
+  .footer-container .footer-logo {
     height: 90%;
     margin-top: 2rem;
     margin-right: 4rem;
     margin-left: 4rem;
   }
-  .footer-nav-container {
+  .footer-container .footer-nav-container {
     display: flex;
     justify-content: space-between;
     gap: 5%;
@@ -369,11 +369,11 @@
     line-height: 1.5rem;
   }
 
-  .footer-nav-container ul {
+  .footer-container .footer-nav-container ul {
     gap: 8px;
   }
 
-  .contact-and-social-container {
+  .footer-container .contact-and-social-container {
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -383,17 +383,17 @@
     margin-top: 2rem;
   }
 
-  .contact-info-container {
+  .footer-container  .contact-info-container {
     margin-left: 3rem;
   }
-  #contactTitle {
+  .footer-container #contactTitle {
     font-size: 20px;
   }
 
-  .contact-info-container p {
+  .footer-container .contact-info-container p {
     font-size: 18px;
   }
-  .social-media-container {
+  .footer-container .social-media-container {
     display: flex;
     flex-direction: column;
     color: #edefee;
@@ -401,23 +401,23 @@
     flex-grow: 2;
     margin-left: rem;
   }
-  #letsConnectTitle {
+  .footer-container #letsConnectTitle {
     white-space: nowrap;
     font-size: 20px;
   }
-  .social-media-links-container ul {
+  .footer-container .social-media-links-container ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 15%;
   }
-  #instagramLink img,
-  #facebookLink img,
-  #twitterLink img {
+  .footer-container #instagramLink img,
+  .footer-container #facebookLink img,
+  .footer-container #twitterLink img {
     width: 120%;
   }
 
-  .copyright {
+  .footer-container .copyright {
     font-family: karla;
     color:#edefee;
     font-weight: 500;
@@ -442,13 +442,13 @@
     padding-top: 1.5rem;
     margin-left:0px;
   }
-  .footer-logo {
+  .footer-container .footer-logo {
     height: 90%;
     margin-top: 2rem;
     margin-right: rem;
     margin-left: 4rem;
   }
-  .footer-nav-container {
+  .footer-container .footer-nav-container {
     display: flex;
     justify-content: space-between;
     gap: 5%;
@@ -459,12 +459,11 @@
     line-height: 1.5rem;
   }
 
-  .footer-nav-container ul {
+  .footer-container .footer-nav-container ul {
     gap: 8px;
-    
   }
 
-  .contact-and-social-container {
+  .footer-container .contact-and-social-container {
     display: flex;
     flex-direction: row;
     align-content: center;
@@ -475,17 +474,18 @@
     margin-left: 1rem;
   }
 
-  .contact-info-container {
+  .footer-container .contact-info-container {
     margin-left: 3rem;
   }
-  #contactTitle {
+
+  .footer-container #contactTitle {
     font-size: 20px;
   }
 
-  .contact-info-container p {
+ .footer-container .contact-info-container p {
     font-size: 18px;
   }
-  .social-media-container {
+  .footer-container .social-media-container {
     display: flex;
     flex-direction: column;
     color: #edefee;
@@ -493,19 +493,19 @@
     flex-grow: 2;
     margin-left: 4rem;
   }
-  #letsConnectTitle {
+  .footer-container #letsConnectTitle {
     white-space: nowrap;
     font-size: 20px;
   }
-  .social-media-links-container ul {
+  .footer-container .social-media-links-container ul {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     gap: 15%;
   }
-  #instagramLink img,
-  #facebookLink img,
-  #twitterLink img {
+  .footer-container  #instagramLink img,
+  .footer-container #facebookLink img,
+  .footer-container #twitterLink img {
     width: 120%;
   }
 

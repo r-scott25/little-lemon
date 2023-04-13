@@ -81,7 +81,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div>
+      <div >
         <p className="copyright">© 2023 Rachel Scott</p>
       </div>
     </footer>
