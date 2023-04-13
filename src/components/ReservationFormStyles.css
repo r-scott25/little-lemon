@@ -62,7 +62,6 @@ select {
   display: flex;
   flex-direction: column;
   align-content: center;
- 
 }
 
 option {
@@ -187,7 +186,7 @@ input[type="radio"]:checked::before {
   white-space: nowrap;
 }
 
-.special-requests textarea {
+.special-requests #special-requests {
   margin-top: 0.5rem;
   border-radius: 16px;
   border-color: #495e57;
@@ -197,8 +196,12 @@ input[type="radio"]:checked::before {
   width: 540%;
   max-width: 540%;
   height: 10rem;
+  padding: 16px;
+  font-family: "Karla", normal;
+  font-size: 1.25rem;
+  color:#495e57;
+  font-weight: 500;
 }
-
 /* SAVE AND CONTINUE BUTTON */
 
 .save-btn {
