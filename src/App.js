@@ -8,6 +8,7 @@ import Menu from "./routes/Menu";
 import CustomerContactPage from "./routes/CustomerContactPage";
 import OrderOnline from "./routes/OrderOnline";
 import Login from "./routes/Login";
+import ShoppingCart from "./routes/ShoppingCart";
 import ConfirmationModal from "./components/ConfirmationModal";
 
 import { Routes, Route } from "react-router-dom";
@@ -32,6 +33,7 @@ function App() {
           // element={<ResConfirm reservationData={reservationData} />}
           element={<ConfirmationModal />}
         />
+        <Route path="/cart" element={<ShoppingCart />} />
       </Routes>
     </>
   );

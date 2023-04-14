@@ -16,16 +16,16 @@
   margin-right: 1rem;
 }
 
-.about-title {
+.about-section-title {
   font-family: "Markazi Text", serif;
   font-size: 2.75rem;
   color: #495e57;
   font-weight: 600;
   white-space: nowrap;
-  margin-bottom: -0.5rem;
+  margin-bottom: .25rem;
 }
 
-.about-subtitle {
+.about-section-subtitle {
   font-family: "Markazi Text", serif;
   font-size: 1.75rem;
   font-weight: 600;

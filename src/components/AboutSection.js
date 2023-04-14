@@ -7,8 +7,8 @@ function AboutSection() {
     <section className="about-container">
       <div className="about-text-container">
         <div className="about-heading">
-          <h1 className="about-title">Little Lemon</h1>
-          <h2 className="about-subtitle">Chicago</h2>
+          <h1 className="about-section-title">Little Lemon</h1>
+          <h2 className="about-section-subtitle">Chicago</h2>
         </div>
         <div className="about-paragraph">
           <p>

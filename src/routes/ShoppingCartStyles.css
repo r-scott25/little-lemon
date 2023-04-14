@@ -1,4 +1,4 @@
-.menu-body-container {
+.shopping-cart-body-container {
   display: grid;
   grid-template-rows: 130px auto 200px;
   max-width: 100%;
@@ -6,7 +6,7 @@
   word-spacing: 0.3em;
 }
 
-.menu-main-container {
+.shopping-cart-main-container {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -14,14 +14,14 @@
   margin-top: 4rem;
 
 }
-.menu-title {
+.shopping-cart-title {
   font-family: "Markazi Text", serif;
   font-size: 3rem;
   color: #495e57;
   margin-bottom: 2rem;
 }
 
-.menu-subtitle {
+.shopping-cart-subtitle {
   display: flex;
   font-family: "Markazi Text", serif;
   color: #f4ce14;

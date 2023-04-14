@@ -5,13 +5,25 @@ import Footer from "../components/Footer.js";
 
 function OrderOnline() {
   return (
-    <body>
-      <Header />
-      <main>
-        <h1>Order Online Page</h1>
+    <>
+    <div className="order-online-body-container">
+      <header>
+        <Header />
+      </header>
+
+      <main className="order-online-main-container">
+        <div className="order-online-title">
+          <h1>Order Online</h1>
+        </div>
+        <div className="order-online-subtitle"> 
+          <h2>Online Ordering Coming Soon</h2>
+        </div>
       </main>
-      <Footer />
-    </body>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
+    </>
   );
 };
 

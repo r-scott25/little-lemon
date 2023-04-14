@@ -62,7 +62,7 @@ function Header() {
               </a>
             </li>
             <li className="link">
-              <a href="/" className="nav-item basket">
+              <a href="/cart" className="nav-item basket">
                 <img className="basket" src={Basket} alt="basket" />
               </a>
             </li>

@@ -1,0 +1,37 @@
+.order-online-body-container {
+  display: grid;
+  grid-template-rows: 130px auto 200px;
+  max-width: 100%;
+  min-height: 100vh;
+  word-spacing: 0.3em;
+}
+
+.order-online-main-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin-top: 4rem;
+
+}
+.order-online-title {
+  font-family: "Markazi Text", serif;
+  font-size: 3rem;
+  color: #495e57;
+  margin-bottom: 2rem;
+  
+}
+
+.order-online-subtitle {
+  display: flex;
+  font-family: "Markazi Text", serif;
+  color: #f4ce14;
+  font-size: 2rem;
+  width: 450px;
+  height: 150px;
+  background-color:#495e57;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  margin-top: 40px;
+}

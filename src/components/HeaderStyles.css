@@ -40,7 +40,7 @@
 .nav-container ul li:nth-child(7) a img {
   margin: 0;
 }
-.links-container .link a {
+.links-container .link a{
   text-decoration: none;
   font-family: "Karla";
   font-weight: 600;
@@ -48,12 +48,24 @@
   color: #495e57;
 }
 
-.header-container .logo-container .logo:hover {
-  filter: brightness(115%);
-}
+/* .links-container a:visited {
+  color:#f4ce14;
+  filter:saturate(75%);
+} */
+
 
 .links-container a:hover {
   filter: brightness(175%);
+}
+
+.links-container a:active {
+  color:#ee9972;
+  filter:saturate(75%);
+}
+
+
+.header-container .logo-container .logo:hover {
+  filter: brightness(115%);
 }
 
 .toggle-button {
