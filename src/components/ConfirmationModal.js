@@ -21,7 +21,7 @@ const OVERLAY_STYLES = {
   zIndex: 1000
 };
 
-function ResConfirm({ open, children }) {
+function ConfirmationModal({ open, children }) {
   if (!open) return null;
 
   return (
@@ -34,4 +34,4 @@ function ResConfirm({ open, children }) {
   );
 }
 
-export default ResConfirm;
+export default ConfirmationModal;

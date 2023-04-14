@@ -216,7 +216,7 @@ input[type="radio"]:checked::before {
   padding: 8px 20px;
   margin-left: 6rem;
   color: #495e57;
-  font-weight: 700;
+  font-weight: 600;
 }
 .save-btn:hover {
   background-color: #495e57;
