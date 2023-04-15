@@ -201,15 +201,14 @@ function CustomerContactForm(props) {
             </div>
           </div>
           <div className="reserve-btn-container">
-            <a
-              href="#"
+            <button
               onClick={handleSubmit}
               type="submit"
               className="btn"
               id="reserve-btn"
             >
               Complete Reservation
-            </a>
+            </button>
           </div>
           <div>
             <ConfirmationModal open={isOpen}>
@@ -217,71 +216,100 @@ function CustomerContactForm(props) {
                 <div className="confirm-header">
                   <div className="home-icon-div">
                     <a href="/">
-                      <img src={homeIcon} alt="home icon" className="confirm-home-icon"/>
+                      <img
+                        src={homeIcon}
+                        alt="home icon"
+                        className="confirm-home-icon"
+                      />
                     </a>
                   </div>
                   <div className="confirm-header-container">
                     <h1 className="confirm-title">Reservation Confirmed</h1>
-                    <h2 className="confirm-subtitle">A confirmation email has been sent.</h2>
+                    <h2 className="confirm-subtitle">
+                      A confirmation email has been sent.
+                    </h2>
                   </div>
                 </div>
                 <div className="confirm-main-container">
                   <div className="logo-background">
-                    <img src={Logo} className="confirm-lemon-logo" alt="Little Lemon Logo" />
+                    <img
+                      src={Logo}
+                      className="confirm-lemon-logo"
+                      alt="Little Lemon Logo"
+                    />
                   </div>
                   <section className="reservation-details">
-                    <h2 className="dine-with-you-text">We look forward to dining with you!</h2>
+                    <h2 className="dine-with-you-text">
+                      We look forward to dining with you!
+                    </h2>
                     <div className="confirm-contact-requests-container">
-                    <div className="confirm-and-contact-container">
-                    <div className="confirm-selected-container">
-                      <div className="confirm-date-icon">
-                        <img src={calendarEE9972} alt="calendar icon" />
+                      <div className="confirm-and-contact-container">
+                        <div className="confirm-selected-container">
+                          <div className="confirm-date-icon">
+                            <img src={calendarEE9972} alt="calendar icon" />
+                          </div>
+                          <div className="confirm-date">
+                            <h3 className="confirmed-text">
+                              {props.date} Month 00, 0000
+                            </h3>
+                          </div>
+                          <div className="confirm-time-icon">
+                            <img src={clockEE9972} alt="clock icon" />
+                          </div>
+                          <div className="confirm-time">
+                            <h3 className="confirmed-text">
+                              {props.time} 00:00 PM{" "}
+                            </h3>
+                          </div>
+                          <div className="confirm-guests-icon">
+                            <img src={guestsEE9972} alt="person icon" />
+                          </div>
+                          <div className="confirm-guests">
+                            <h3 className="confirmed-text">
+                              {props.guests} 00
+                            </h3>
+                          </div>
+                          <div className="confirm-seating-icon">
+                            <img
+                              src={seatingEE9972}
+                              alt="table and chair icon"
+                            />
+                          </div>
+                          <div className="confirm-seating">
+                            <h3 className="confirmed-text">
+                              {props.seating} Seating
+                            </h3>
+                          </div>
+                          <div className="confirm-occasion-icon">
+                            <img src={occasionEE9972} alt="party horn icon" />
+                          </div>
+                          <div className="confirm-occasion">
+                            <h3 className="confirmed-text">
+                              {props.occasion} Occasion
+                            </h3>
+                          </div>
+                        </div>
+                        <div className="lit-lem-contact-container">
+                          <h3>LITTLE LEMON</h3>
+                          <p>
+                            123 Lemon St.
+                            <br />
+                            Chicago, IL 60654
+                          </p>
+                          <p>(312) 555-5555</p>
+                          <p>lemon@email.com</p>
+                        </div>
                       </div>
-                      <div className="confirm-date">
-                        <h3 className="confirmed-text">{props.date} Month 00, 0000</h3>
+                      <div className="confirm-requests">
+                        <h3 className="confirm-requests-label">
+                          SPECIAL REQUESTS
+                        </h3>
+                        <div className="confirm-requests-box">
+                          <p className="confirmed-text">
+                            {props.specialRequests}
+                          </p>
+                        </div>
                       </div>
-                      <div className="confirm-time-icon">
-                        <img src={clockEE9972} alt="clock icon" />
-                      </div>
-                      <div className="confirm-time">
-                        <h3 className="confirmed-text">{props.time} 00:00 PM </h3>
-                      </div>
-                      <div className="confirm-guests-icon">
-                        <img src={guestsEE9972} alt="person icon" />
-                      </div>
-                      <div className="confirm-guests">
-                        <h3 className="confirmed-text">{props.guests} 00</h3>
-                      </div>
-                      <div className="confirm-seating-icon">
-                        <img src={seatingEE9972} alt="table and chair icon" />
-                      </div>
-                      <div className="confirm-seating">
-                        <h3 className="confirmed-text">{props.seating} Seating</h3>
-                      </div>
-                      <div className="confirm-occasion-icon">
-                        <img src={occasionEE9972} alt="party horn icon" />
-                      </div>
-                      <div className="confirm-occasion">
-                        <h3 className="confirmed-text">{props.occasion} Occasion</h3>
-                      </div>
-                    </div>
-                    <div className="lit-lem-contact-container">
-                      <h3>LITTLE LEMON</h3>
-                      <p>
-                        123 Lemon St.
-                        <br />
-                        Chicago, IL 60654
-                      </p>
-                      <p>(312) 555-5555</p>
-                      <p>lemon@email.com</p>
-                    </div>
-                    </div>
-                    <div className="confirm-requests">
-                      <h3 className="confirm-requests-label">SPECIAL REQUESTS</h3>
-                      <div className="confirm-requests-box">
-                      <p className="confirmed-text">{props.specialRequests}</p>
-                      </div>
-                    </div>
                     </div>
                   </section>
                 </div>
