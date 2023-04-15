@@ -1,7 +1,10 @@
 import React from "react";
 import "./App.css";
 import Home from "./routes/Home";
+import ReservationForm from "./components/ReservationForm";
 import Reservations from "./routes/Reservations";
+import ResDataProvider from "./components/ResDataProvider";
+import SelectedReservations from "./components/SelectedReservations";
 // import { reservationData }from "./components/ReservationForm.js";
 import About from "./routes/About";
 import Menu from "./routes/Menu";
@@ -23,17 +26,30 @@ function App() {
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/order-online" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/cart" element={<ShoppingCart />} />
         <Route
           path="/reservations/customercontact"
-          // element={<CustomerContactPage reservationData={reservationData} />}
           element={<CustomerContactPage />}
         />
-        <Route
-          path="/res-confirm"
-          // element={<ResConfirm reservationData={reservationData} />}
-          element={<ConfirmationModal />}
-        />
-        <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="/resdataprovider" element={ResDataProvider}>
+          <Route
+            path="/resdataprovider/reservation-form"
+            element={ReservationForm}
+          />
+
+          <Route
+            path="/resdataprovider/selectedreservations"
+            element={SelectedReservations}
+          />
+          <Route
+            path="/resdataprovider/res-confirm"
+            element={<ConfirmationModal />}
+          />
+          <Route
+            path="/resdataprovider/customer-contact"
+            element={CustomerContactPage}
+          />
+        </Route>
       </Routes>
     </>
   );

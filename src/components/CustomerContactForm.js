@@ -98,9 +98,6 @@ function CustomerContactForm(props) {
                 value={values.firstName}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                // className={
-                //   errors.firstName && touched.firstName ? "input-error" : ""
-                // }
                 className={`${
                   errors.firstName && touched.firstName ? "input-error" : ""
                 } ${hoveredInputId === "firstName" ? "hovered" : ""}`}
@@ -124,9 +121,6 @@ function CustomerContactForm(props) {
                 value={values.lastName}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                // className={
-                //   errors.lastName && touched.lastName ? "input-error" : ""
-                // }
                 className={`${
                   errors.lastName && touched.lastName ? "input-error" : ""
                 } ${hoveredInputId === "lastName" ? "hovered" : ""}`}
@@ -149,7 +143,6 @@ function CustomerContactForm(props) {
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                // className={errors.email && touched.email ? "input-error" : ""}
                 className={`${
                   errors.email && touched.email ? "input-error" : ""
                 } ${hoveredInputId === "email" ? "hovered" : ""}`}
@@ -173,7 +166,6 @@ function CustomerContactForm(props) {
                 value={values.phone}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                // className={errors.phone && touched.phone ? "input-error" : ""}
                 className={`${
                   errors.phone && touched.phone ? "input-error" : ""
                 } ${hoveredInputId === "phone" ? "hovered" : ""}`}

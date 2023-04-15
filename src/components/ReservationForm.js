@@ -1,21 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./ReservationFormStyles.css";
-import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { reservationSchema } from "../Validations/ReservationValidation";
+import ResDataProvider, { ResDataContext } from "./ResDataProvider";
+import { useNavigate } from "react-router-dom";
 
-function ReservationForm() {
+function ReservationForm(props) {
+  const { onSubmit } = useContext(ResDataContext);
   const navigate = useNavigate();
-
-  const onSubmit = async (values, actions, history) => {
-    console.log(values);
-    console.log(actions);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    // Submit the form data here using an API call or any other method
-
-    navigate("/reservations/customerContact");
-  };
 
   const {
     values,
@@ -35,18 +27,8 @@ function ReservationForm() {
       specialRequests: "",
     },
     validationSchema: reservationSchema,
-    onSubmit,
+    onSubmit: (values, actions) => onSubmit(values, actions),
   });
-  console.log(errors);
-
-  const reservationData = {
-    date: values.date,
-    time: values.time,
-    occasion: values.occasion,
-    guests: values.guests,
-    seating: values.seating,
-    specialRequests: values.specialRequests,
-  };
 
   const increment = () => {
     if (values.guests < 20) {
@@ -85,7 +67,9 @@ function ReservationForm() {
                 value={values.date}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={errors.date && touched.date ? "input-error" : ""}
+                className={`${
+                  errors.date && touched.date ? "input-error" : ""
+                }`}
                 id="date"
                 name="date"
               />
@@ -103,7 +87,9 @@ function ReservationForm() {
                 value={values.time}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={errors.time && touched.time ? "input-error" : ""}
+                className={`${
+                  errors.occasion && touched.occasion ? "input-error" : ""
+                }`}
                 id="time"
                 name="time"
               >
@@ -145,9 +131,9 @@ function ReservationForm() {
                 value={values.occasion}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={
-                  errors.occasion && touched.occasion ? "input-error" : ""
-                }
+                className={`${
+                  errors.guests && touched.occasion ? "input-error" : ""
+                }`}
                 id="occasion"
                 name="occasion"
               >
@@ -183,9 +169,9 @@ function ReservationForm() {
                     value={values.guests}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={
+                    className={`${
                       errors.guests && touched.guests ? "input-error" : ""
-                    }
+                    }`}
                     id="guests"
                     name="guests"
                   />
@@ -226,7 +212,6 @@ function ReservationForm() {
                     name="seating"
                     id="indoor"
                     value="indoor"
-                    className
                   />
                   <label htmlFor="indoor">Indoor</label>
                 </div>
@@ -272,10 +257,14 @@ function ReservationForm() {
             </div>
           </div>
           <div className="save-continue">
-              <a  onClick={handleSubmit}
+            <a
               type="submit"
               className="save-btn"
-              id="save-btn" href="/reservations/customerContact">Save and Continue</a>
+              id="save-btn"
+              href="/reservations/customerContact"
+            >
+              Save and Continue
+            </a>
           </div>
         </form>
       </section>

@@ -6,14 +6,7 @@ import ReservationForm from "../components/ReservationForm.js";
 import HeroSection from "../components/HeroSection.js";
 import restaurant from "../assets/restaurant.jpg";
 
-// export const reservationData = {
-//   date: "",
-//   time: "",
-//   occasion: "",
-//   guests: "",
-//   seating: "",
-//   specialRequests: "",
-// };
+
 
 function Reservations(props) {
   return (
