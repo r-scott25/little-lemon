@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./SelectedReservationsStyles.css";
-import ReservationForm from "../components/ReservationForm.js";
-import ResDataProvider, { ResDataContext } from "./ResDataProvider";
+import BookingForm from "./BookingForm.js";
+// import ResDataProvider, { ResDataContext } from "./ResDataProvider";
 import calendar from "../assets/calendar.svg";
 import clock from "../assets/clock.svg";
 import guests from "../assets/guests.svg";
@@ -9,7 +9,7 @@ import seating from "../assets/seating.svg";
 import occasion from "../assets/occasion.svg";
 
 function SelectedReservations(props) {
-  const { reservationData, setReservationData } = useContext(ResDataContext);
+  const { reservationData, setReservationData } = useContext();
 
   useEffect(() => {
     if (props.location?.state) {

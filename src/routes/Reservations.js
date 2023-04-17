@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import "./ReservationsStyles.css";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
-import ReservationForm from "../components/ReservationForm.js";
+import BookingForm from "../components/BookingForm.js";
 import HeroSection from "../components/HeroSection.js";
 import restaurant from "../assets/restaurant.jpg";
-
-
 
 function Reservations(props) {
   return (
@@ -29,7 +27,7 @@ function Reservations(props) {
           />
         </section>
         <section className="reservations-section-container">
-          <ReservationForm />
+          <BookingForm />
         </section>
       </main>
       <footer>

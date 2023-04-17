@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Home from "./routes/Home";
-import ReservationForm from "./components/ReservationForm";
+import BookingForm from "./components/BookingForm";
 import Reservations from "./routes/Reservations";
 import ResDataProvider from "./components/ResDataProvider";
 import SelectedReservations from "./components/SelectedReservations";
@@ -33,8 +33,8 @@ function App() {
         />
         <Route path="/resdataprovider" element={ResDataProvider}>
           <Route
-            path="/resdataprovider/reservation-form"
-            element={ReservationForm}
+            path="/resdataprovider/booking-form"
+            element={BookingForm}
           />
 
           <Route

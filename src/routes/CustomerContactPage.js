@@ -2,9 +2,9 @@ import React, { useState, useContext } from "react";
 import "./CustomerContactPageStyles.css";
 import SelectedReservations from "../components/SelectedReservations.js";
 import CustomerContactForm from "../components/CustomerContactForm.js";
-import ReservationForm from "../components/ReservationForm.js";
+import ReservationForm from "../components/BookingForm.js";
 import ConfirmationModal from "../components/ConfirmationModal";
-import ResDataProvider, { ResDataContext } from "../components/ResDataProvider";
+// import ResDataProvider, { ResDataContext } from "../components/ResDataProvider";
 // import { reservationData } from "./Reservations.js";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
@@ -12,7 +12,7 @@ import HeroSection from "../components/HeroSection.js";
 import dinnerTableFifty from "../assets/dinnerTable-50-1387.jpg";
 
 function CustomerContactPage(props) {
-  const { reservationData, onSubmit } = useContext(ResDataContext);
+  // const { reservationData, onSubmit } = useContext();
 
   // const [reservationData, setReservationData] = useState(null);
 
@@ -45,7 +45,7 @@ function CustomerContactPage(props) {
             />
           </section>
           <section className="selected-res-section">
-            <SelectedReservations reservationData={reservationData} />
+            {/* <SelectedReservations reservationData={reservationData} /> */}
           </section>
           <section className="contact-form-section">
             <CustomerContactForm />
