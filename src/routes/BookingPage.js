@@ -1,12 +1,37 @@
 import React, { useState } from "react";
-import "./ReservationsStyles.css";
+import "./BookingPageStyles.css";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
 import BookingForm from "../components/BookingForm.js";
 import HeroSection from "../components/HeroSection.js";
 import restaurant from "../assets/restaurant.jpg";
 
-function Reservations(props) {
+function BookingPage(props) {
+
+
+  // The state for the BookingForm component is managed by the useState hook in the BookingPage component, 
+  // and the state is passed down to the BookingForm component as a prop (updateBookingInfo). 
+  // The BookingForm component then updates the state of the BookingPage component by calling the updateBookingInfo function.
+  const [bookingInfo, setBookingInfo] = useState({
+    date: "",
+    time: "",
+    occasion: "",
+    guests: 0,
+    seating: "",
+    specialRequests: "",
+  });
+
+
+  const updateBookingInfo = (date, time, occasion, guests, seating, specialRequests) => {
+    setBookingInfo({
+      date: date,
+      time: time,
+      occasion: occasion,
+      guests: guests,
+      seating: seating,
+      specialRequests: specialRequests,
+    });
+  }
   return (
     <div className="res-body-container">
       <header>
@@ -27,7 +52,8 @@ function Reservations(props) {
           />
         </section>
         <section className="reservations-section-container">
-          <BookingForm />
+          {/* the state is passed down to the BookingForm component as a prop (updateBookingInfo) */}
+          <BookingForm updateBookingInfo={updateBookingInfo}/>
         </section>
       </main>
       <footer>
@@ -37,4 +63,4 @@ function Reservations(props) {
   );
 }
 
-export default Reservations;
+export default BookingPage;

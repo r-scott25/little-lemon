@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Home from "./routes/Home";
 import BookingForm from "./components/BookingForm";
-import Reservations from "./routes/Reservations";
+import BookingPage from "./routes/BookingPage";
 import ResDataProvider from "./components/ResDataProvider";
 import SelectedReservations from "./components/SelectedReservations";
 // import { reservationData }from "./components/ReservationForm.js";
@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/reservations" element={<Reservations />} />
+        <Route path="/reservations" element={<BookingPage />} />
         <Route path="/order-online" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<ShoppingCart />} />
@@ -31,7 +31,7 @@ function App() {
           path="/reservations/customercontact"
           element={<CustomerContactPage />}
         />
-        <Route path="/resdataprovider" element={ResDataProvider}>
+
           <Route
             path="/resdataprovider/booking-form"
             element={BookingForm}
@@ -49,7 +49,6 @@ function App() {
             path="/resdataprovider/customer-contact"
             element={CustomerContactPage}
           />
-        </Route>
       </Routes>
     </>
   );
