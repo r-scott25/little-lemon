@@ -5,7 +5,10 @@ import { reservationSchema } from "../Validations/ReservationValidation";
 import { useNavigate } from "react-router-dom";
 
 const BookingForm = (props) => {
-  const { values, handleChange } = props;
+  const [availableTimes, setAvailableTimes] = useState([  "11:00 AM",  "11:30 AM",  "12:00 PM",  "12:30 PM",  "1:00 PM",  "1:30 PM",  "2:00 PM",  "2:30 PM",  "3:00 PM",  "3:30 PM",  "4:00 PM",  "4:30 PM",  "5:00 PM",  "5:30 PM",  "6:00 PM",  "6:30 PM",  "7:00 PM",  "7:30 PM",  "8:00 PM",  "8:30 PM",  "9:00 PM",  "9:30 PM",]);
+
+
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const target = event.target;
@@ -14,32 +17,18 @@ const BookingForm = (props) => {
     props.updateBookingInfo(name, value);
   };
 
-  const navigate = useNavigate();
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
 
-  const [availableTimes, setAvailableTimes] = useState([
-    "11:00 AM",
-    "11:30 AM",
-    "12:00 PM",
-    "12:30 PM",
-    "1:00 PM",
-    "1:30 PM",
-    "2:00 PM",
-    "2:30 PM",
-    "3:00 PM",
-    "3:30 PM",
-    "4:00 PM",
-    "4:30 PM",
-    "5:00 PM",
-    "5:30 PM",
-    "6:00 PM",
-    "6:30 PM",
-    "7:00 PM",
-    "7:30 PM",
-    "8:00 PM",
-    "8:30 PM",
-    "9:00 PM",
-    "9:30 PM",
-  ]);
+    const { selectedTime, bookedTimes } = props;
+    const updatedAvailableTimes = props.availableTimes.filter(
+      (time) => !bookedTimes.includes(time)
+    );
+    if (selectedTime && !bookedTimes.includes(selectedTime)) {
+      updatedAvailableTimes.push(selectedTime);
+    }
+    console.log("Form is about to submit");
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -51,6 +40,7 @@ const BookingForm = (props) => {
       specialRequests: "",
     },
     onSubmit: (values) => {
+      handleFormSubmit();
       navigate("/reservations/customerContact");
       console.log(values);
     },
@@ -62,7 +52,7 @@ const BookingForm = (props) => {
       <section className="reservations-container">
         <h2 className="res-form-title">Reservation Details</h2>
         {formik.values && (
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={handleFormSubmit}>
             <div className="reservation-form-container">
               <div className="input-label">
                 <label htmlFor="date">DATE</label>
@@ -71,7 +61,10 @@ const BookingForm = (props) => {
                 <input
                   type="date"
                   value={formik.values.date}
-                  onChange={formik.handleChange(handleInputChange)}
+                  onChange={(e) => {
+                    formik.handleChange(e);
+                    handleInputChange(e);
+                  }}
                   onBlur={formik.handleBlur}
                   className={`${
                     formik.errors.date && formik.touched.date
@@ -85,7 +78,6 @@ const BookingForm = (props) => {
                   <p className="error">{formik.errors.date}</p>
                 )}
               </div>
-
               <div className="input-label">
                 <label htmlFor="time">TIME</label>
               </div>
@@ -95,10 +87,12 @@ const BookingForm = (props) => {
                   name="time"
                   value={formik.values.time}
                   onBlur={formik.handleBlur}
-                  onChange={formik.handleChange(handleInputChange)}
+                  onChange={(event) => {
+                    formik.handleChange(event);
+                  }}
                 >
                   <option value="">Select a Time</option>
-                  {availableTimes.map((time) => (
+                  {availableTimes?.map((time) => (
                     <option key={time} value={time}>
                       {time}
                     </option>
@@ -108,7 +102,6 @@ const BookingForm = (props) => {
                   <p className="error">{formik.errors.time}</p>
                 )}
               </div>
-
               <div className="input-label">
                 <label htmlFor="occasion">OCCASION</label>
               </div>
@@ -116,7 +109,7 @@ const BookingForm = (props) => {
                 <select
                   type="text"
                   value={formik.values.occasion}
-                  onChange={formik.handleChange(handleInputChange)}
+                  onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   className={`${
                     formik.errors.occasion && formik.touched.occasion
@@ -136,7 +129,6 @@ const BookingForm = (props) => {
                   <p className="error">{formik.errors.occasion}</p>
                 )}
               </div>
-
               <div className="input-label">
                 <label htmlFor="guests">GUESTS</label>
               </div>
@@ -165,7 +157,7 @@ const BookingForm = (props) => {
                     <input
                       type="text"
                       value={formik.values.guests}
-                      onChange={formik.handleChange(handleInputChange)}
+                      onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
                       className={`${
                         formik.errors.guests && formik.touched.guests
@@ -201,14 +193,13 @@ const BookingForm = (props) => {
                   <p className="error">{formik.errors.guests}</p>
                 )}
               </div>
-
               <div className="input-label">
                 <label htmlFor="seating">SEATING</label>
               </div>
               <div className="data-input">
                 <span
                   value={formik.values.seating}
-                  onChange={formik.handleChange(handleInputChange)}
+                  onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   className={`${
                     formik.errors.seating && formik.touched.seating
@@ -260,7 +251,7 @@ const BookingForm = (props) => {
                 <div>
                   <textarea
                     value={formik.values.specialRequests}
-                    onChange={formik.handleChange(handleInputChange)}
+                    onChange={formik.handleChange}
                     id="special-requests"
                     name="specialRequests"
                     className="form-control"
@@ -269,7 +260,11 @@ const BookingForm = (props) => {
               </div>
             </div>
             <div className="save-continue">
-              <button type="submit" className="save-btn" value="submit">
+              <button
+                type="submit"
+                className="save-btn"
+                value="submit"
+              >
                 Save and Continue
               </button>
             </div>
