@@ -1,7 +1,6 @@
 import React, { useReducer, useState, useEffect } from "react";
 import "./App.css";
 import Home from "./routes/Home";
-import BookingForm from "./components/BookingForm";
 import BookingPage from "./routes/BookingPage";
 import SelectedReservations from "./components/SelectedReservations";
 import About from "./routes/About";
@@ -25,7 +24,7 @@ function App() {
   function updateTimes(selectedDate) {
     // Here you can update the available times based on the selected date
     // For now, we'll just return the same initialAvailableTimes regardless of the date
-    return initializeTimes;
+    return initializeTimes();
   }
   // Available Times useReducer
 
@@ -128,11 +127,6 @@ function App() {
           path="/reservations/customercontact"
           element={<CustomerContactPage />}
         />
-        {/* 
-        <Route
-          path="/booking-form"
-          element={<BookingForm  availableTimes={availableTimes} setAvailableTimes={setAvailableTimes}/>}
-        /> */}
 
         <Route
           path="/reservations/customercontact/selectedreservations"

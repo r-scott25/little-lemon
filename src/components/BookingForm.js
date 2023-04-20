@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./BookingFormStyles.css";
 import { useFormik } from "formik";
 import { reservationSchema } from "../Validations/ReservationValidation";
 import { useNavigate } from "react-router-dom";
 
 const BookingForm = (props) => {
+
+
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
@@ -31,7 +33,7 @@ const BookingForm = (props) => {
         payload: props.selectedTime,
       });
     }
-
+    console.log(props.availableTimes);
     navigate("/reservations/customerContact");
   };
 
@@ -46,7 +48,6 @@ const BookingForm = (props) => {
     },
     onSubmit: (values) => {
       handleFormSubmit();
-      // navigate("/reservations/customerContact");
       console.log(values);
     },
     validationSchema: reservationSchema,

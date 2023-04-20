@@ -10,6 +10,7 @@ function BookingPage(props) {
   // The state for the BookingForm component is managed by the useState hook in the BookingPage component,
   // and the state is passed down to the BookingForm component as a prop (updateBookingInfo).
   // The BookingForm component then updates the state of the BookingPage component by calling the updateBookingInfo function.
+
   const [bookingInfo, setBookingInfo] = useState({
     date: "",
     time: "",
@@ -37,22 +38,18 @@ function BookingPage(props) {
     });
   };
 
-
   // state variable to keep track of the selected date
   const [selectedDate, setSelectedDate] = useState("");
 
-
   // useEffect hook updates the available times when the selected date changes
   useEffect(() => {
-    props.dispatchAvailableTimes({
-      type: "set",
-      payload:  props.updateTimes(selectedDate),
-    },
-     [selectedDate, props.dispatchAvailableTimes,  props.updateTimes]);
-  });
+    // Call the updateTimes function to get the updated available times
+    const updatedTimes = props.updateTimes(selectedDate);
 
+    // Dispatch the updated times to the availableTimesReducer
+    props.dispatchAvailableTimes({ type: "set", payload: updatedTimes });
+  }, [selectedDate]);
 
-  
   return (
     <div className="res-body-container">
       <header>
