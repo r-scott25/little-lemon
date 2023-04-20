@@ -59,8 +59,10 @@ function BookingPage(props) {
           {/* the state is passed down to the BookingForm component as a prop (updateBookingInfo) */}
           <BookingForm
             updateBookingInfo={updateBookingInfo}
-            availableTimes={props.availableTimes} setAvailableTimes={props.setAvailableTimes} selectedTime={props.selectedTime} setSelectedTime={props.setSelectedTime}
+            availableTimes={props.availableTimes}
+            dispatchAvailableTimes={props.dispatchAvailableTimes}
             bookedTimes={props.bookedTimes}
+              setBookedTimes={props.setBookedTimes}
           />
         </section>
       </main>

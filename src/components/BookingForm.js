@@ -17,14 +17,21 @@ const BookingForm = (props) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const { selectedTime, bookedTimes } = props;
-    const updatedAvailableTimes = props.availableTimes.filter(
-      (time) => !bookedTimes.includes(time)
-    );
-    if (selectedTime && !bookedTimes.includes(selectedTime)) {
-      updatedAvailableTimes.push(selectedTime);
+    const updatedAvailableTimes = [...props.availableTimes];
+
+    // Remove booked times from available times
+    props.bookedTimes.forEach((time) => {
+      props.dispatchAvailableTimes({ type: "remove", payload: time });
+    });
+
+    // Add selected time to available times
+    if (props.selectedTime && !props.bookedTimes.includes(props.selectedTime)) {
+      props.dispatchAvailableTimes({
+        type: "add",
+        payload: props.selectedTime,
+      });
     }
-    console.log("Form is about to submit");
+
     navigate("/reservations/customerContact");
   };
 
@@ -90,11 +97,6 @@ const BookingForm = (props) => {
                   }}
                 >
                   <option value="">Select a Time</option>
-                  {/* {availableTimes.map((time) => (
-                    <option key={time} value={time}>
-                      {time}
-                    </option>
-                  ))} */}
                   {props.availableTimes.map((time) => (
                     <option key={time} value={time}>
                       {time}

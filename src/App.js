@@ -17,19 +17,88 @@ import { Routes, Route } from "react-router-dom";
 function App() {
   //// Booking Info ///
   const [bookingInfo, setBookingInfo] = useState(null);
-  function handleBookingInfo(booking) {
-    setBookingInfo(booking);
-  }
+
 
   //// Available Times ///
-  const [availableTimes, setAvailableTimes] = useState([  "11:00 AM",  "11:30 AM",  "12:00 PM",  "12:30 PM",  "1:00 PM",  "1:30 PM",  "2:00 PM",  "2:30 PM",  "3:00 PM",  "3:30 PM",  "4:00 PM",  "4:30 PM",  "5:00 PM",  "5:30 PM",  "6:00 PM",  "6:30 PM",  "7:00 PM",  "7:30 PM",  "8:00 PM",  "8:30 PM",  "9:00 PM",  "9:30 PM",]);
-  
-  
-  //// Selected Time ////
-const [selectedTime, setSelectedTime] = useState("");
 
-//// Booked Times ////  HARD-CODED TIMES NEED TO BE CHANGED TO DYNAMICALLY UPDATED TIMES
-const [bookedTimes, setBookedTimes] = useState([  "11:00 AM",  "11:30 AM",  "12:00 PM",  "12:30 PM" ]);
+  // Available Times useState
+  // const [availableTimes, setAvailableTimes] = useState([  "11:00 AM",  "11:30 AM",  "12:00 PM",  "12:30 PM",  "1:00 PM",  "1:30 PM",  "2:00 PM",  "2:30 PM",  "3:00 PM",  "3:30 PM",  "4:00 PM",  "4:30 PM",  "5:00 PM",  "5:30 PM",  "6:00 PM",  "6:30 PM",  "7:00 PM",  "7:30 PM",  "8:00 PM",  "8:30 PM",  "9:00 PM",  "9:30 PM",]);
+
+
+
+  // Available Times useReducer
+
+  // 1.  Define an initial state and a reducer function that will handle state updates.
+  const initialAvailableTimes = [
+    "11:00 AM",
+    "11:30 AM",
+    "12:00 PM",
+    "12:30 PM",
+    "1:00 PM",
+    "1:30 PM",
+    "2:00 PM",
+    "2:30 PM",
+    "3:00 PM",
+    "3:30 PM",
+    "4:00 PM",
+    "4:30 PM",
+    "5:00 PM",
+    "5:30 PM",
+    "6:00 PM",
+    "6:30 PM",
+    "7:00 PM",
+    "7:30 PM",
+    "8:00 PM",
+    "8:30 PM",
+    "9:00 PM",
+    "9:30 PM",
+  ];
+
+  function availableTimesReducer(state, action) {
+    switch (action.type) {
+      case "set":
+        return action.payload;
+      case "add":
+        return [...state, action.payload];
+      case "remove":
+        return state.filter((time) => time !== action.payload);
+      default:
+        return state;
+    }
+  }
+
+  // 2. replace the useState call with a useReducer call
+
+  const [availableTimes, dispatchAvailableTimes] = useReducer(
+    availableTimesReducer,
+    initialAvailableTimes
+  );
+
+  // 3.  Replace the setAvailableTimes function with a dispatchAvailableTimes function
+
+  // Handler functions for selecting and booking a time
+  function handleTimeSelection(time) {
+    setSelectedTime(time);
+  };
+
+
+    function handleBookingInfo(booking) {
+      setBookingInfo({
+        time: selectedTime,
+      });
+
+    // Remove the booked time from the available times
+    dispatchAvailableTimes({ type: "remove", payload: selectedTime });
+
+    // Clear the selected time
+    setSelectedTime("");
+  }
+
+  //// Selected Time ////
+  const [selectedTime, setSelectedTime] = useState("");
+
+  //// Booked Times //// 
+  const [bookedTimes, setBookedTimes] = useState([]);
 
   //// Selected Date ///
   // const [selectedDate, setSelectedDate] = useState("");
@@ -42,7 +111,15 @@ const [bookedTimes, setBookedTimes] = useState([  "11:00 AM",  "11:30 AM",  "12:
         <Route path="/menu" element={<Menu />} />
         <Route
           path="/reservations"
-          element={<BookingPage onBooking={handleBookingInfo} availableTimes={availableTimes} setAvailableTimes={setAvailableTimes} selectedTime={selectedTime} setSelectedTime={setSelectedTime} bookedTimes={bookedTimes}/>}
+          element={
+            <BookingPage
+              onBooking={handleBookingInfo}
+              availableTimes={availableTimes}
+              dispatchAvailableTimes={dispatchAvailableTimes}
+              bookedTimes={bookedTimes}
+              setBookedTimes={setBookedTimes}
+            />
+          }
         />
         <Route path="/order-online" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
@@ -51,7 +128,7 @@ const [bookedTimes, setBookedTimes] = useState([  "11:00 AM",  "11:30 AM",  "12:
           path="/reservations/customercontact"
           element={<CustomerContactPage />}
         />
-{/* 
+        {/* 
         <Route
           path="/booking-form"
           element={<BookingForm  availableTimes={availableTimes} setAvailableTimes={setAvailableTimes}/>}
