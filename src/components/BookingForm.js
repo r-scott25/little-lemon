@@ -98,6 +98,7 @@ const BookingForm = (props) => {
                   id="date"
                   name="date"
                   aria-label="Reservation date"
+                  aria-describedby="dateError"
                   value={formik.values.date}
                   onChange={(e) => {
                     formik.handleChange(e);
@@ -110,9 +111,11 @@ const BookingForm = (props) => {
                       : ""
                   }`}
                 />
-                {formik.errors.date && formik.touched.date && (
-                  <p className="error">{formik.errors.date}</p>
-                )}
+                <div id="dateError" role="alert">
+                  {formik.errors.date && formik.touched.date && (
+                    <p className="error">{formik.errors.date}</p>
+                  )}
+                </div>
               </div>
               <div className="input-label">
                 <label htmlFor="time">TIME</label>
@@ -122,6 +125,7 @@ const BookingForm = (props) => {
                   id="time"
                   name="time"
                   aria-label="Reservation time"
+                  aria-describedby="timeError"
                   value={formik.values.time}
                   onChange={(event) => {
                     formik.handleChange(event);
@@ -140,9 +144,11 @@ const BookingForm = (props) => {
                     </option>
                   ))}
                 </select>
-                {formik.errors.time && formik.touched.time && (
-                  <p className="error">{formik.errors.time}</p>
-                )}
+                <div id="timeError" role="alert">
+                  {formik.errors.time && formik.touched.time && (
+                    <p className="error">{formik.errors.time}</p>
+                  )}
+                </div>
               </div>
               <div className="input-label">
                 <label htmlFor="occasion">OCCASION</label>
@@ -153,6 +159,7 @@ const BookingForm = (props) => {
                   id="occasion"
                   name="occasion"
                   aria-label="Reservation occasion"
+                  aria-describedby="occasionError"
                   value={formik.values.occasion}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -168,9 +175,11 @@ const BookingForm = (props) => {
                   <option value="engagement">Engagement</option>
                   <option value="other">Other</option>
                 </select>
-                {formik.errors.occasion && formik.touched.occasion && (
-                  <p className="error">{formik.errors.occasion}</p>
-                )}
+                <div id="occasionError" role="alert">
+                  {formik.errors.occasion && formik.touched.occasion && (
+                    <p className="error">{formik.errors.occasion}</p>
+                  )}
+                </div>
               </div>
               <div className="input-label">
                 <label htmlFor="guests">GUESTS</label>
@@ -202,6 +211,7 @@ const BookingForm = (props) => {
                       id="guests"
                       name="guests"
                       aria-label="Reservation guest count"
+                      aria-describedby="guestsError"
                       value={formik.values.guests}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
@@ -233,9 +243,11 @@ const BookingForm = (props) => {
                     </button>
                   </span>
                 </span>
-                {formik.errors.guests && formik.touched.guests && (
-                  <p className="error">{formik.errors.guests}</p>
-                )}
+                <div id="guestsError" role="alert">
+                  {formik.errors.guests && formik.touched.guests && (
+                    <p className="error">{formik.errors.guests}</p>
+                  )}
+                </div>
               </div>
               <div className="input-label">
                 <label htmlFor="seating">SEATING</label>
@@ -243,6 +255,7 @@ const BookingForm = (props) => {
               <div className="data-input">
                 <span
                   aria-label="Reservation seating"
+                  aria-describedby="seatingError"
                   value={formik.values.seating}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -285,9 +298,11 @@ const BookingForm = (props) => {
                     <label htmlFor="noPreference">No Preference</label>
                   </div>
                 </span>
-                {formik.errors.seating && formik.touched.seating && (
-                  <p className="error">{formik.errors.seating}</p>
-                )}
+                <div id="seatingError" role="alert">
+                  {formik.errors.seating && formik.touched.seating && (
+                    <p className="error">{formik.errors.seating}</p>
+                  )}
+                </div>
               </div>
               <div className="special-requests">
                 <label
@@ -304,6 +319,7 @@ const BookingForm = (props) => {
                     name="specialRequests"
                     className="form-control"
                     aria-label="Reservation special requests"
+                    aria-describedby="special-requests-container"
                   />
                 </div>
               </div>
