@@ -15,8 +15,6 @@ import ConfirmationModal from "./components/ConfirmationModal";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-
-
   //// Booking Info ///
   const [bookingInfo, setBookingInfo] = useState(null);
   function handleBookingInfo(booking) {
@@ -24,12 +22,17 @@ function App() {
   }
 
   //// Available Times ///
-  // const [availableTimes, setAvailableTimes] = useState([  "11:00 AM",  "11:30 AM",  "12:00 PM",  "12:30 PM",  "1:00 PM",  "1:30 PM",  "2:00 PM",  "2:30 PM",  "3:00 PM",  "3:30 PM",  "4:00 PM",  "4:30 PM",  "5:00 PM",  "5:30 PM",  "6:00 PM",  "6:30 PM",  "7:00 PM",  "7:30 PM",  "8:00 PM",  "8:30 PM",  "9:00 PM",  "9:30 PM",]);
+  const [availableTimes, setAvailableTimes] = useState([  "11:00 AM",  "11:30 AM",  "12:00 PM",  "12:30 PM",  "1:00 PM",  "1:30 PM",  "2:00 PM",  "2:30 PM",  "3:00 PM",  "3:30 PM",  "4:00 PM",  "4:30 PM",  "5:00 PM",  "5:30 PM",  "6:00 PM",  "6:30 PM",  "7:00 PM",  "7:30 PM",  "8:00 PM",  "8:30 PM",  "9:00 PM",  "9:30 PM",]);
+  
+  
+  //// Selected Time ////
+const [selectedTime, setSelectedTime] = useState("");
 
+//// Booked Times ////  HARD-CODED TIMES NEED TO BE CHANGED TO DYNAMICALLY UPDATED TIMES
+const [bookedTimes, setBookedTimes] = useState([  "11:00 AM",  "11:30 AM",  "12:00 PM",  "12:30 PM" ]);
 
   //// Selected Date ///
-  const [selectedDate, setSelectedDate] = useState("");
-
+  // const [selectedDate, setSelectedDate] = useState("");
 
   return (
     <>
@@ -39,7 +42,7 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route
           path="/reservations"
-          element={<BookingPage onBooking={handleBookingInfo} />}
+          element={<BookingPage onBooking={handleBookingInfo} availableTimes={availableTimes} setAvailableTimes={setAvailableTimes} selectedTime={selectedTime} setSelectedTime={setSelectedTime} bookedTimes={bookedTimes}/>}
         />
         <Route path="/order-online" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
@@ -48,16 +51,11 @@ function App() {
           path="/reservations/customercontact"
           element={<CustomerContactPage />}
         />
-
+{/* 
         <Route
           path="/booking-form"
-          element={
-            <BookingForm
-
-              selectedDate={selectedDate}
-            />
-          }
-        />
+          element={<BookingForm  availableTimes={availableTimes} setAvailableTimes={setAvailableTimes}/>}
+        /> */}
 
         <Route
           path="/reservations/customercontact/selectedreservations"

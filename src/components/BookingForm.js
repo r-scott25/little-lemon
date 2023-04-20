@@ -5,9 +5,6 @@ import { reservationSchema } from "../Validations/ReservationValidation";
 import { useNavigate } from "react-router-dom";
 
 const BookingForm = (props) => {
-  const [availableTimes, setAvailableTimes] = useState([  "11:00 AM",  "11:30 AM",  "12:00 PM",  "12:30 PM",  "1:00 PM",  "1:30 PM",  "2:00 PM",  "2:30 PM",  "3:00 PM",  "3:30 PM",  "4:00 PM",  "4:30 PM",  "5:00 PM",  "5:30 PM",  "6:00 PM",  "6:30 PM",  "7:00 PM",  "7:30 PM",  "8:00 PM",  "8:30 PM",  "9:00 PM",  "9:30 PM",]);
-
-
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
@@ -28,6 +25,7 @@ const BookingForm = (props) => {
       updatedAvailableTimes.push(selectedTime);
     }
     console.log("Form is about to submit");
+    navigate("/reservations/customerContact");
   };
 
   const formik = useFormik({
@@ -41,7 +39,7 @@ const BookingForm = (props) => {
     },
     onSubmit: (values) => {
       handleFormSubmit();
-      navigate("/reservations/customerContact");
+      // navigate("/reservations/customerContact");
       console.log(values);
     },
     validationSchema: reservationSchema,
@@ -92,7 +90,12 @@ const BookingForm = (props) => {
                   }}
                 >
                   <option value="">Select a Time</option>
-                  {availableTimes?.map((time) => (
+                  {/* {availableTimes.map((time) => (
+                    <option key={time} value={time}>
+                      {time}
+                    </option>
+                  ))} */}
+                  {props.availableTimes.map((time) => (
                     <option key={time} value={time}>
                       {time}
                     </option>
@@ -260,11 +263,7 @@ const BookingForm = (props) => {
               </div>
             </div>
             <div className="save-continue">
-              <button
-                type="submit"
-                className="save-btn"
-                value="submit"
-              >
+              <button type="submit" className="save-btn" value="submit">
                 Save and Continue
               </button>
             </div>

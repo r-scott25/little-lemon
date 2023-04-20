@@ -7,7 +7,6 @@ import HeroSection from "../components/HeroSection.js";
 import restaurant from "../assets/restaurant.jpg";
 
 function BookingPage(props) {
-
   // The state for the BookingForm component is managed by the useState hook in the BookingPage component,
   // and the state is passed down to the BookingForm component as a prop (updateBookingInfo).
   // The BookingForm component then updates the state of the BookingPage component by calling the updateBookingInfo function.
@@ -60,6 +59,8 @@ function BookingPage(props) {
           {/* the state is passed down to the BookingForm component as a prop (updateBookingInfo) */}
           <BookingForm
             updateBookingInfo={updateBookingInfo}
+            availableTimes={props.availableTimes} setAvailableTimes={props.setAvailableTimes} selectedTime={props.selectedTime} setSelectedTime={props.setSelectedTime}
+            bookedTimes={props.bookedTimes}
           />
         </section>
       </main>
