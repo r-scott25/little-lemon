@@ -5,8 +5,6 @@ import { reservationSchema } from "../Validations/ReservationValidation";
 import { useNavigate } from "react-router-dom";
 
 const BookingForm = (props) => {
-
-
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
@@ -19,22 +17,53 @@ const BookingForm = (props) => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    const updatedAvailableTimes = [...props.availableTimes];
-
-    // Remove booked times from available times
-    props.bookedTimes.forEach((time) => {
-      props.dispatchAvailableTimes({ type: "remove", payload: time });
+    formik.setTouched({
+      date: true,
+      time: true,
+      occasion: true,
+      guests: true,
+      seating: true,
+      specialRequests: true,
     });
 
-    // Add selected time to available times
-    if (props.selectedTime && !props.bookedTimes.includes(props.selectedTime)) {
-      props.dispatchAvailableTimes({
-        type: "add",
-        payload: props.selectedTime,
-      });
+    // Validate all fields
+    formik.validateForm();
+
+    if (Object.keys(formik.errors).length > 0) {
+      console.log("Form has errors");
+      return;
     }
-    console.log(props.availableTimes);
-    navigate("/reservations/customerContact");
+
+    // Check if any fields have been touched
+    if (Object.keys(formik.touched).length === 0) {
+      console.log("No fields have been touched");
+      return;
+    }
+
+    if (formik.isValid) {
+      const updatedAvailableTimes = [...props.availableTimes];
+
+      // Remove booked times from available times
+      props.bookedTimes.forEach((time) => {
+        props.dispatchAvailableTimes({ type: "remove", payload: time });
+      });
+
+      // Add selected time to available times
+      if (
+        props.selectedTime &&
+        !props.bookedTimes.includes(props.selectedTime)
+      ) {
+        props.dispatchAvailableTimes({
+          type: "add",
+          payload: props.selectedTime,
+        });
+      }
+      console.log(props.availableTimes);
+      navigate("/reservations/customerContact");
+    } else {
+      // form is invalid, show error message or do something else
+      console.log("Form is invalid");
+    }
   };
 
   const formik = useFormik({
@@ -66,6 +95,9 @@ const BookingForm = (props) => {
               <div className="data-input date-container">
                 <input
                   type="date"
+                  id="date"
+                  name="date"
+                  aria-label="Reservation date"
                   value={formik.values.date}
                   onChange={(e) => {
                     formik.handleChange(e);
@@ -77,8 +109,6 @@ const BookingForm = (props) => {
                       ? "input-error"
                       : ""
                   }`}
-                  id="date"
-                  name="date"
                 />
                 {formik.errors.date && formik.touched.date && (
                   <p className="error">{formik.errors.date}</p>
@@ -91,11 +121,17 @@ const BookingForm = (props) => {
                 <select
                   id="time"
                   name="time"
+                  aria-label="Reservation time"
                   value={formik.values.time}
-                  onBlur={formik.handleBlur}
                   onChange={(event) => {
                     formik.handleChange(event);
                   }}
+                  onBlur={formik.handleBlur}
+                  className={`${
+                    formik.errors.time && formik.touched.time
+                      ? "input-error"
+                      : ""
+                  }`}
                 >
                   <option value="">Select a Time</option>
                   {props.availableTimes.map((time) => (
@@ -114,6 +150,9 @@ const BookingForm = (props) => {
               <div className="data-input">
                 <select
                   type="text"
+                  id="occasion"
+                  name="occasion"
+                  aria-label="Reservation occasion"
                   value={formik.values.occasion}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -122,8 +161,6 @@ const BookingForm = (props) => {
                       ? "input-error"
                       : ""
                   }`}
-                  id="occasion"
-                  name="occasion"
                 >
                   <option value="select-occasion">Select an Occasion</option>
                   <option value="birthday">Birthday</option>
@@ -162,6 +199,9 @@ const BookingForm = (props) => {
                   <span className="guest-count-input">
                     <input
                       type="text"
+                      id="guests"
+                      name="guests"
+                      aria-label="Reservation guest count"
                       value={formik.values.guests}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
@@ -170,8 +210,6 @@ const BookingForm = (props) => {
                           ? "input-error"
                           : ""
                       }`}
-                      id="guests"
-                      name="guests"
                     />
                   </span>
                   <span className="plus-btn-span">
@@ -204,6 +242,7 @@ const BookingForm = (props) => {
               </div>
               <div className="data-input">
                 <span
+                  aria-label="Reservation seating"
                   value={formik.values.seating}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -221,6 +260,7 @@ const BookingForm = (props) => {
                       name="seating"
                       id="indoor"
                       value="indoor"
+                      aria-label="Reservation seating: indoor"
                     />
                     <label htmlFor="indoor">Indoor</label>
                   </div>
@@ -230,6 +270,7 @@ const BookingForm = (props) => {
                       name="seating"
                       id="outdoor"
                       value="outdoor"
+                      aria-label="Reservation seating: outdoor"
                     />
                     <label htmlFor="outdoor">Outdoor</label>
                   </div>
@@ -239,6 +280,7 @@ const BookingForm = (props) => {
                       name="seating"
                       id="noPreference"
                       value="noPreference"
+                      aria-label="Reservation seating: no preference"
                     />
                     <label htmlFor="noPreference">No Preference</label>
                   </div>
@@ -261,12 +303,19 @@ const BookingForm = (props) => {
                     id="special-requests"
                     name="specialRequests"
                     className="form-control"
+                    aria-label="Reservation special requests"
                   />
                 </div>
               </div>
             </div>
             <div className="save-continue">
-              <button type="submit" className="save-btn" value="submit">
+              <button
+                type="submit"
+                className="save-btn"
+                value="submit"
+                aria-label="Reservation save and continue button"
+                disabled={formik.isSubmitting}
+              >
                 Save and Continue
               </button>
             </div>
