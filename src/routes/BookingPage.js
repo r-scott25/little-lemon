@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./BookingPageStyles.css";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
@@ -36,6 +36,23 @@ function BookingPage(props) {
       specialRequests: specialRequests,
     });
   };
+
+
+  // state variable to keep track of the selected date
+  const [selectedDate, setSelectedDate] = useState("");
+
+
+  // useEffect hook updates the available times when the selected date changes
+  useEffect(() => {
+    props.dispatchAvailableTimes({
+      type: "set",
+      payload:  props.updateTimes(selectedDate),
+    },
+     [selectedDate, props.dispatchAvailableTimes,  props.updateTimes]);
+  });
+
+
+  
   return (
     <div className="res-body-container">
       <header>
@@ -62,7 +79,7 @@ function BookingPage(props) {
             availableTimes={props.availableTimes}
             dispatchAvailableTimes={props.dispatchAvailableTimes}
             bookedTimes={props.bookedTimes}
-              setBookedTimes={props.setBookedTimes}
+            setBookedTimes={props.setBookedTimes}
           />
         </section>
       </main>

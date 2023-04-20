@@ -18,41 +18,44 @@ function App() {
   //// Booking Info ///
   const [bookingInfo, setBookingInfo] = useState(null);
 
+  //////////// Available Times ///////////
 
-  //// Available Times ///
+  // updateTimes Function: handles state change. Changes availableTimes based on the selected date
 
-  // Available Times useState
-  // const [availableTimes, setAvailableTimes] = useState([  "11:00 AM",  "11:30 AM",  "12:00 PM",  "12:30 PM",  "1:00 PM",  "1:30 PM",  "2:00 PM",  "2:30 PM",  "3:00 PM",  "3:30 PM",  "4:00 PM",  "4:30 PM",  "5:00 PM",  "5:30 PM",  "6:00 PM",  "6:30 PM",  "7:00 PM",  "7:30 PM",  "8:00 PM",  "8:30 PM",  "9:00 PM",  "9:30 PM",]);
-
-
-
+  function updateTimes(selectedDate) {
+    // Here you can update the available times based on the selected date
+    // For now, we'll just return the same initialAvailableTimes regardless of the date
+    return initializeTimes;
+  }
   // Available Times useReducer
 
   // 1.  Define an initial state and a reducer function that will handle state updates.
-  const initialAvailableTimes = [
-    "11:00 AM",
-    "11:30 AM",
-    "12:00 PM",
-    "12:30 PM",
-    "1:00 PM",
-    "1:30 PM",
-    "2:00 PM",
-    "2:30 PM",
-    "3:00 PM",
-    "3:30 PM",
-    "4:00 PM",
-    "4:30 PM",
-    "5:00 PM",
-    "5:30 PM",
-    "6:00 PM",
-    "6:30 PM",
-    "7:00 PM",
-    "7:30 PM",
-    "8:00 PM",
-    "8:30 PM",
-    "9:00 PM",
-    "9:30 PM",
-  ];
+  function initializeTimes() {
+    return [
+      "11:00 AM",
+      "11:30 AM",
+      "12:00 PM",
+      "12:30 PM",
+      "1:00 PM",
+      "1:30 PM",
+      "2:00 PM",
+      "2:30 PM",
+      "3:00 PM",
+      "3:30 PM",
+      "4:00 PM",
+      "4:30 PM",
+      "5:00 PM",
+      "5:30 PM",
+      "6:00 PM",
+      "6:30 PM",
+      "7:00 PM",
+      "7:30 PM",
+      "8:00 PM",
+      "8:30 PM",
+      "9:00 PM",
+      "9:30 PM",
+    ];
+  }
 
   function availableTimesReducer(state, action) {
     switch (action.type) {
@@ -71,7 +74,7 @@ function App() {
 
   const [availableTimes, dispatchAvailableTimes] = useReducer(
     availableTimesReducer,
-    initialAvailableTimes
+    initializeTimes()
   );
 
   // 3.  Replace the setAvailableTimes function with a dispatchAvailableTimes function
@@ -79,13 +82,12 @@ function App() {
   // Handler functions for selecting and booking a time
   function handleTimeSelection(time) {
     setSelectedTime(time);
-  };
+  }
 
-
-    function handleBookingInfo(booking) {
-      setBookingInfo({
-        time: selectedTime,
-      });
+  function handleBookingInfo(booking) {
+    setBookingInfo({
+      time: selectedTime,
+    });
 
     // Remove the booked time from the available times
     dispatchAvailableTimes({ type: "remove", payload: selectedTime });
@@ -97,11 +99,8 @@ function App() {
   //// Selected Time ////
   const [selectedTime, setSelectedTime] = useState("");
 
-  //// Booked Times //// 
+  //// Booked Times ////
   const [bookedTimes, setBookedTimes] = useState([]);
-
-  //// Selected Date ///
-  // const [selectedDate, setSelectedDate] = useState("");
 
   return (
     <>
@@ -118,6 +117,7 @@ function App() {
               dispatchAvailableTimes={dispatchAvailableTimes}
               bookedTimes={bookedTimes}
               setBookedTimes={setBookedTimes}
+              updateTimes={updateTimes}
             />
           }
         />
