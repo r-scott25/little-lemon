@@ -51,6 +51,7 @@ function BookingPage(props) {
   }, [selectedDate]);
 
   return (
+    <>
     <div className="res-body-container" role="main">
       <header role="banner">
         <Header />
@@ -87,6 +88,7 @@ function BookingPage(props) {
         <Footer />
       </footer>
     </div>
+    </>
   );
 }
 

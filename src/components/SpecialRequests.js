@@ -2,6 +2,7 @@ import "./SpecialRequestsStyles.css";
 
 function SpecialRequests() {
   return (
+    <></>
     <div
       className="special-requests"
       role="group"
@@ -19,6 +20,7 @@ function SpecialRequests() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

@@ -7,6 +7,7 @@ import twitter from "../assets/twitter.svg";
 
 function Footer() {
   return (
+    <>
     <footer className="footer-container" role="contentinfo">
       <div className="footer-logo-nav">
         <a href="/">
@@ -85,6 +86,7 @@ function Footer() {
         <p className="copyright">© 2023 Rachel Scott</p>
       </div>
     </footer>
+    </>
   );
 }
 

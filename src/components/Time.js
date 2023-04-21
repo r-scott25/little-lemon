@@ -2,6 +2,7 @@ import "./TimeStyles.css";
 
 const Time = () => {
   return (
+    <>
     <div className="time">
       <label for="time">Time</label>
       <select name="time" id="time">
@@ -30,6 +31,7 @@ const Time = () => {
         <option value="9:30 PM">9:30 PM</option>
       </select>
     </div>
+    </>
   );
 };
 

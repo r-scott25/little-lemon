@@ -2,6 +2,7 @@ import "./OccasionStyles.css";
 
 const Occasion = () => {
   return (
+    <>
     <div className="occasion">
       <label for="occasion">Occasion</label>
       <select name="occasion" id="occasion">
@@ -12,6 +13,7 @@ const Occasion = () => {
         <option value="other">Other</option>
       </select>
     </div>
+    </>
   );
 };
 

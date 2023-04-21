@@ -2,6 +2,7 @@ import "./DateStyles.css";
 
 const Date = () => {
   return (
+    <>
     <div className="date">
       <label for="date">Date</label>
     <input
@@ -11,6 +12,7 @@ const Date = () => {
       className="form-control"
     ></input>
  </div>
+ </>
   );
 }
 

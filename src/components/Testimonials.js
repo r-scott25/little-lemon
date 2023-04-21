@@ -5,6 +5,7 @@ import TestimonialCardData from "./TestimonialCardData.js";
 
 function Testimonials() {
   return (
+    <>
     <div className="heading-and-testimonials">
       <h2
         className="testimonials-heading"
@@ -38,6 +39,7 @@ function Testimonials() {
         </div>
       </section>
     </div>
+    </>
   );
 }
 

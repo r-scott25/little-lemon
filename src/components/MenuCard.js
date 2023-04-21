@@ -5,6 +5,7 @@ import scooter from "../assets/scooter.svg";
 
 function MenuCard(props) {
   return (
+    <>
     <div className="menu-card">
       <img className="dishImage" src={props.imgsrc} alt={props.dishName} />
       <div className="name-and-price">
@@ -20,6 +21,7 @@ function MenuCard(props) {
       </div>
      
     </div>
+    </>
   );
 }
 

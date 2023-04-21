@@ -4,6 +4,7 @@ import MarioAndAdrianB from "../assets/MarioAndAdrianB.jpg";
 
 function AboutSection() {
   return (
+    <>
     <section className="about-container" role="region" aria-labelledby="about-heading" aria-describedby="about-paragraph">
       <div className="about-text-container">
         <div className="about-heading">
@@ -33,6 +34,7 @@ function AboutSection() {
         />
       </div>
     </section>
+    </>
   );
 }
 

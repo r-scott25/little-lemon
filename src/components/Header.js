@@ -18,6 +18,7 @@ function Header() {
   };
 
   return (
+    <>
     <header className="header-container" role="banner">
       <div className="logo-container">
         <a href="/" className="logo-link" aria-label="Site Name">
@@ -85,6 +86,7 @@ function Header() {
         </nav>
       </div>
     </header>
+    </>
   );
 }
 

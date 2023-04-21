@@ -5,6 +5,7 @@ import MenuCardData from "./MenuCardData.js";
 
 function Specials() {
   return (
+    <>
     <section className="specials-container" role="region" aria-label="This week's specials!">
       <div className="specials-title-and-menu-button"> <h1 className="specials-title">This week's specials!</h1>
       <div>
@@ -28,6 +29,7 @@ function Specials() {
         })}
       </div>
     </section>
+    </>
   );
 }
 

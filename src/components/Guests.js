@@ -17,6 +17,7 @@ const Guests = () => {
   };
 
   return (
+    <>
     <div className="guests">
       <label for="counter">Guests</label>
       <span id="counter">
@@ -29,6 +30,7 @@ const Guests = () => {
       </button>
       </span>
     </div>
+    </>
   );
 };
 

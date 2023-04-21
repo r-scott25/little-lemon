@@ -5,6 +5,7 @@ import restaurantfood from "../assets/restaurantfood.jpg";
 
 function HomepageHero() {
   return (
+    <>
     <section className="hero-home-container">
       <div>
         <article className="hero-intro">
@@ -34,6 +35,7 @@ function HomepageHero() {
         />
       </div>
     </section>
+   </>
   );
 }
 

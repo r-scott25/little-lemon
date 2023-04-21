@@ -4,6 +4,7 @@ import "./TestimonialCardStyles.css";
 
 function TestimonialCard(props) {
   return (
+    <>
     <div className="testimonial-card-container" role="region" aria-label="Testimonial Card">
       <div className="testimonial-card" role="article" aria-labelledby="cust-name">
         {" "}
@@ -22,6 +23,7 @@ function TestimonialCard(props) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

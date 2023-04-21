@@ -2,6 +2,7 @@ import "./SeatingStyles.css";
 
 const Seating = () => {
   return (
+    <>
     <div className="seating-radio-buttons">
       <label>Seating</label>
       <input type="radio" name="seating" id="indoor" value="indoor" />
@@ -10,6 +11,7 @@ const Seating = () => {
       <input type="radio" name="seating" id="outdoor" value="outdoor" />
       <label for="outdoor">Outdoor</label>
     </div>
+    </>
   );
 };
 
