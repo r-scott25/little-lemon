@@ -14,7 +14,7 @@ function MenuCard(props) {
       <div className="dishDescription">
         <p>{props.dishDescription}</p>
       </div>
-      <div className="deliveryLink-container"> <a className="orderDeliveryLink" href="/order-online">Order a Delivery</a>
+      <div className="deliveryLink-container"> <a className="orderDeliveryLink" href="/order-online" aria-label="Order a Delivery" aria-describedby="description">Order a Delivery</a>
       <a className="scooterDeliveryLink" href="/order-online"><img className="scooterIcon" src={scooter} alt="Scooter Icon" /></a>
       
       </div>
