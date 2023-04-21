@@ -1,4 +1,4 @@
-import React, { useReducer, useState, useEffect } from "react";
+import React, { useReducer, useState, useEffect, Link } from "react";
 import "./App.css";
 import Home from "./routes/Home";
 import BookingPage from "./routes/BookingPage";
@@ -104,7 +104,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} id="home-route" />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
         <Route
