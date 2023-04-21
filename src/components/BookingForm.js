@@ -99,6 +99,7 @@ const BookingForm = (props) => {
                   name="date"
                   aria-label="Reservation date"
                   aria-describedby="dateError"
+                  aria-invalid={formik.errors.date && formik.touched.date? "true" : "false"}
                   value={formik.values.date}
                   onChange={(e) => {
                     formik.handleChange(e);

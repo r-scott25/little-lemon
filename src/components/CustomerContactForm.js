@@ -27,9 +27,11 @@ function CustomerContactForm(props) {
   };
 
   const {
+   
     values,
     errors,
     touched,
+    isSubmitting,
     handleBlur,
     handleChange,
     handleSubmit,
@@ -95,6 +97,14 @@ function CustomerContactForm(props) {
             <div className="firstName-input">
               <input
                 type="text"
+                name="firstName"
+                id="firstName"
+                placeholder="First Name"
+                aria-label="First Name"
+                aria-invalid={
+                  errors.firstName && touched.firstName ? "true" : "false"
+                }
+                aria-describedby="firstNameError"
                 value={values.firstName}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -103,12 +113,11 @@ function CustomerContactForm(props) {
                 } ${hoveredInputId === "firstName" ? "hovered" : ""}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                name="firstName"
-                id="firstName"
-                placeholder="First Name"
               />
               {errors.firstName && touched.firstName && (
-                <p className="error">{errors.firstName}</p>
+                <p className="error" id="firstNameError">
+                  {errors.firstName}
+                </p>
               )}
             </div>
 
@@ -118,6 +127,14 @@ function CustomerContactForm(props) {
             <div className="lastName-input">
               <input
                 type="text"
+                name="lastName"
+                id="lastName"
+                placeholder="Last Name"
+                aria-label="Last Name"
+                aria-invalid={
+                  errors.lastName && touched.lastName ? "true" : "false"
+                }
+                aria-describedby="lastNameError"
                 value={values.lastName}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -126,12 +143,11 @@ function CustomerContactForm(props) {
                 } ${hoveredInputId === "lastName" ? "hovered" : ""}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                name="lastName"
-                id="lastName"
-                placeholder="Last Name"
               />
               {errors.lastName && touched.lastName && (
-                <p className="error">{errors.lastName}</p>
+                <p className="error" id="lastNameError">
+                  {errors.lastName}
+                </p>
               )}
             </div>
             <div className="email-label">
@@ -140,6 +156,12 @@ function CustomerContactForm(props) {
             <div className="email-input">
               <input
                 type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                aria-label="Email"
+                aria-invalid={errors.email && touched.email ? "true" : "false"}
+                aria-describedby="emailError"
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -148,12 +170,11 @@ function CustomerContactForm(props) {
                 } ${hoveredInputId === "email" ? "hovered" : ""}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                name="email"
-                id="email"
-                placeholder="Email"
               />
               {errors.email && touched.email && (
-                <p className="error">{errors.email}</p>
+                <p className="error" id="emailError">
+                  {errors.email}
+                </p>
               )}
             </div>
 
@@ -163,6 +184,12 @@ function CustomerContactForm(props) {
             <div className="phone-input">
               <input
                 type="tel"
+                name="phone"
+                id="phone"
+                placeholder="Phone Number"
+                aria-label="Phone Number"
+                aria-invalid={errors.phone && touched.phone ? "true" : "false"}
+                aria-describedby="phoneError"
                 value={values.phone}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -171,12 +198,11 @@ function CustomerContactForm(props) {
                 } ${hoveredInputId === "phone" ? "hovered" : ""}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                name="phone"
-                id="phone"
-                placeholder="Phone Number"
               />
               {errors.phone && touched.phone && (
-                <p className="error">{errors.phone}</p>
+                <p className="error" id="phoneError">
+                  {errors.phone}
+                </p>
               )}
             </div>
             <div className="empty"></div>
@@ -189,9 +215,11 @@ function CustomerContactForm(props) {
                     onChange={handleCheckboxChange}
                     name="textUpdates"
                     id="textUpdates"
+                    aria-checked={values.textUpdates ? "true" : "false"}
+                    aria-labelledby="textUpdates-label"
                   />
                 </div>
-                <div className="text-updates-label">
+                <div className="text-updates-label" id="textUpdates-label">
                   <label htmlFor="textUpdates">
                     Yes, I want to receive text updates and reminders about my
                     reservation.
@@ -206,6 +234,10 @@ function CustomerContactForm(props) {
               type="submit"
               className="btn"
               id="reserve-btn"
+              aria-label="Submit reservation"
+              aria-disabled={isSubmitting}
+              aria-live="polite"
+              aria-controls="reservation-form"
             >
               Complete Reservation
             </button>
