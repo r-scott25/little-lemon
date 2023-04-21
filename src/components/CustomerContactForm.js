@@ -85,10 +85,10 @@ function CustomerContactForm(props) {
 
   return (
     <>
-      <div className="dividing-line">.</div>
-      <div className="contact-info-container">
-        <h2 className="contact-form-title">Your Details</h2>
-        <form className="contact-form" onSubmit={handleSubmit}>
+      <div className="dividing-line" role="separator">.</div>
+      <div className="contact-info-container" role="region" aria-label="contact-info-container">
+        <h2 className="contact-form-title" id="your-details-title">Your Details</h2>
+        <form className="contact-form" onSubmit={handleSubmit} role="form" aria-labelledby="Your Details">
           <div className="contact-form-container">
             <div className="firstName-label">
               <label htmlFor="firstName">First Name</label>

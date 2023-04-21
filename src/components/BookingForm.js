@@ -84,10 +84,17 @@ const BookingForm = (props) => {
 
   return (
     <>
-      <section className="reservations-container">
+      <section
+        className="reservations-container"
+        aria-labelledby="res-form-title"
+      >
         <h2 className="res-form-title">Reservation Details</h2>
         {formik.values && (
-          <form onSubmit={handleFormSubmit}>
+          <form
+            onSubmit={handleFormSubmit}
+            role="form"
+            aria-labelledby="Reservation Details"
+          >
             <div className="reservation-form-container">
               <div className="input-label">
                 <label htmlFor="date">DATE</label>
@@ -99,7 +106,9 @@ const BookingForm = (props) => {
                   name="date"
                   aria-label="Reservation date"
                   aria-describedby="dateError"
-                  aria-invalid={formik.errors.date && formik.touched.date? "true" : "false"}
+                  aria-invalid={
+                    formik.errors.date && formik.touched.date ? "true" : "false"
+                  }
                   value={formik.values.date}
                   onChange={(e) => {
                     formik.handleChange(e);

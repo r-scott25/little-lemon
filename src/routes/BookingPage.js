@@ -51,11 +51,11 @@ function BookingPage(props) {
   }, [selectedDate]);
 
   return (
-    <div className="res-body-container">
-      <header>
+    <div className="res-body-container" role="main">
+      <header role="banner">
         <Header />
       </header>
-      <main className="res-main-container">
+      <main className="res-main-container" aria-label="Main content">
         <section className="hero-image">
           <img
             className="restaurant-img"
@@ -63,13 +63,13 @@ function BookingPage(props) {
             alt="outdoor patio of a restaurant with a fresh, bright ambience"
           />
         </section>
-        <section className="res-hero-section">
+        <section className="res-hero-section" aria-label="Hero section">
           <HeroSection
             title="Reservations"
             subtitle="Delicious Cuisine and Unforgettable Ambience Await!"
           />
         </section>
-        <section className="reservations-section-container">
+        <section className="reservations-section-container"  aria-label="Reservations section">
           {/* the state is passed down to the BookingForm component as a prop (updateBookingInfo) */}
           <BookingForm
             updateBookingInfo={updateBookingInfo}
@@ -77,6 +77,9 @@ function BookingPage(props) {
             dispatchAvailableTimes={props.dispatchAvailableTimes}
             bookedTimes={props.bookedTimes}
             setBookedTimes={props.setBookedTimes}
+            aria-label="Booking form"
+            aria-live="assertive"
+            aria-atomic="true"
           />
         </section>
       </main>
