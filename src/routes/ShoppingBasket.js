@@ -1,9 +1,9 @@
 import React from "react";
-import "./ShoppingCartStyles.css";
+import "./ShoppingBasketStyles.css";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
 
-function ShoppingCart() {
+function ShoppingBasket() {
   return (
     <>
     <div className="shopping-cart-body-container">
@@ -13,10 +13,10 @@ function ShoppingCart() {
 
       <main className="shopping-cart-main-container">
         <div className="shopping-cart-title">
-          <h1>Shopping Cart</h1>
+          <h1>Shopping Basket</h1>
         </div>
         <div className="shopping-cart-subtitle"> 
-          <h2>Shopping Cart Coming Soon</h2>
+          <h2>Shopping Basket Coming Soon</h2>
         </div>
       </main>
       <footer>
@@ -27,4 +27,4 @@ function ShoppingCart() {
   );
 }
 
-export default ShoppingCart;
+export default ShoppingBasket;

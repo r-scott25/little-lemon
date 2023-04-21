@@ -8,7 +8,7 @@ import Menu from "./routes/Menu";
 import CustomerContactPage from "./routes/CustomerContactPage";
 import OrderOnline from "./routes/OrderOnline";
 import Login from "./routes/Login";
-import ShoppingCart from "./routes/ShoppingCart";
+import ShoppingBasket from "./routes/ShoppingBasket";
 import ConfirmationModal from "./components/ConfirmationModal";
 
 import { Routes, Route } from "react-router-dom";
@@ -122,7 +122,7 @@ function App() {
         />
         <Route path="/order-online" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="/basket" element={<ShoppingBasket />} />
         <Route
           path="/reservations/customercontact"
           element={<CustomerContactPage />}

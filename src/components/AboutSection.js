@@ -4,13 +4,13 @@ import MarioAndAdrianB from "../assets/MarioAndAdrianB.jpg";
 
 function AboutSection() {
   return (
-    <section className="about-container">
+    <section className="about-container" role="region" aria-labelledby="about-heading" aria-describedby="about-paragraph">
       <div className="about-text-container">
         <div className="about-heading">
           <h1 className="about-section-title">Little Lemon</h1>
           <h2 className="about-section-subtitle">Chicago</h2>
         </div>
-        <div className="about-paragraph">
+        <div className="about-paragraph" aria-describedby="about-paragraph">
           <p>
             Brothers Mario and Adrian opened Little Lemon to bring a taste of
             the Mediterranean to Chicago. Born and raised in Italy, the brothers

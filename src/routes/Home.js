@@ -9,25 +9,25 @@ import AboutSection from "../components/AboutSection";
 
 function Home() {
   return (
-    <div className="home-body-container">
-      <header>
+    <div className="home-body-container" role="main">
+      <header role="banner">
         <Header />
       </header>
-      <main className="home-main-container">
-        <section className="hero-section">
+      <main className="home-main-container" id="main-content" aria-labelledby="main-title">
+        <section className="hero-section" aria-label="hero section">
           <HomepageHero />
         </section>
-        <section className="specials-section">
+        <section className="specials-section" aria-label="specials-section">
           <Specials />
         </section>
-        <section className="testimonials-section">
+        <section className="testimonials-section" aria-label="testimonials-section">
           <Testimonials />
         </section>
-        <section className="about-section">
+        <section className="about-section" aria-label="about-section">
           <AboutSection />
         </section>
       </main>
-      <footer>
+      <footer role="contentinfo">
         <Footer />
       </footer>
     </div>

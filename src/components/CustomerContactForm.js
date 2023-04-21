@@ -105,6 +105,7 @@ function CustomerContactForm(props) {
                   errors.firstName && touched.firstName ? "true" : "false"
                 }
                 aria-describedby="firstNameError"
+                aria-required="true"
                 value={values.firstName}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -135,6 +136,7 @@ function CustomerContactForm(props) {
                   errors.lastName && touched.lastName ? "true" : "false"
                 }
                 aria-describedby="lastNameError"
+                aria-required="true"
                 value={values.lastName}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -162,6 +164,7 @@ function CustomerContactForm(props) {
                 aria-label="Email"
                 aria-invalid={errors.email && touched.email ? "true" : "false"}
                 aria-describedby="emailError"
+                aria-required="true"
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -190,6 +193,7 @@ function CustomerContactForm(props) {
                 aria-label="Phone Number"
                 aria-invalid={errors.phone && touched.phone ? "true" : "false"}
                 aria-describedby="phoneError"
+                aria-required="true"
                 value={values.phone}
                 onChange={handleChange}
                 onBlur={handleBlur}

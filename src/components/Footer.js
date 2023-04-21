@@ -7,7 +7,7 @@ import twitter from "../assets/twitter.svg";
 
 function Footer() {
   return (
-    <footer className="footer-container">
+    <footer className="footer-container" role="contentinfo">
       <div className="footer-logo-nav">
         <a href="/">
           <img className="footer-logo" src={logoGreenLemon} alt="logo" />
@@ -49,16 +49,16 @@ function Footer() {
           </ul>
         </nav>
       </div>
-      <div className="contact-and-social-container">
-        <div className="contact-info-container">
+      <div className="contact-and-social-container" aria-label="contact-and-social-container">
+        <div className="contact-info-container" aria-label="contact-info-container">
           <h5 id="contactTitle">Little Lemon</h5>
-          <p id="lemonAddress">
+          <p id="lemonAddress" aria-describedby="contactTitle">
             123 Lemon St. <br /> Chicago, IL 60654
           </p>
-          <p id="lemonPhone">(312) 555-5555</p>
-          <p id="lemonEmail">lemon@email.com</p>
+          <p id="lemonPhone" aria-describedby="contactTitle">(312) 555-5555</p>
+          <p id="lemonEmail" aria-describedby="contactTitle">lemon@email.com</p>
         </div>
-        <div className="social-media-container">
+        <div className="social-media-container" aria-label="Social Media Links">
           <h5 id="letsConnectTitle">Let's Connect!</h5>
           <div className="social-media-links-container">
             <ul id="socialMediaList">

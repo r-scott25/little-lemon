@@ -109,6 +109,7 @@ const BookingForm = (props) => {
                   aria-invalid={
                     formik.errors.date && formik.touched.date ? "true" : "false"
                   }
+                  aria-required="true"
                   value={formik.values.date}
                   onChange={(e) => {
                     formik.handleChange(e);
@@ -137,6 +138,7 @@ const BookingForm = (props) => {
                   aria-label="Reservation time"
                   aria-describedby="timeError"
                   aria-live="assertive"
+                  aria-required="true"
                   value={formik.values.time}
                   onChange={(event) => {
                     formik.handleChange(event);
@@ -171,6 +173,7 @@ const BookingForm = (props) => {
                   name="occasion"
                   aria-label="Reservation occasion"
                   aria-describedby="occasionError"
+                  aria-required="true"
                   value={formik.values.occasion}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -223,6 +226,7 @@ const BookingForm = (props) => {
                       name="guests"
                       aria-label="Reservation guest count"
                       aria-describedby="guestsError"
+                      aria-required="true"
                       value={formik.values.guests}
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
@@ -267,6 +271,7 @@ const BookingForm = (props) => {
                 <span
                   aria-label="Reservation seating"
                   aria-describedby="seatingError"
+                  aria-required="true"
                   value={formik.values.seating}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
