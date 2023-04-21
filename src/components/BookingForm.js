@@ -126,6 +126,7 @@ const BookingForm = (props) => {
                   name="time"
                   aria-label="Reservation time"
                   aria-describedby="timeError"
+                  aria-live="assertive"
                   value={formik.values.time}
                   onChange={(event) => {
                     formik.handleChange(event);
@@ -329,8 +330,9 @@ const BookingForm = (props) => {
                 type="submit"
                 className="save-btn"
                 value="submit"
+                disabled={!formik.isValid || formik.isSubmitting}
                 aria-label="Reservation save and continue button"
-                disabled={formik.isSubmitting}
+                aria-disabled={!formik.isValid}
               >
                 Save and Continue
               </button>
