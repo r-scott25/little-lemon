@@ -30,7 +30,7 @@
 
   .contact-hero-section {
     background-color: #495e57;
-    margin-top: -7.55rem;
+    margin-top: -10rem;
     margin-bottom: 2rem;
   }
   .selected-res-section {
@@ -45,7 +45,7 @@
 
   .contact-hero-section {
     background-color: #495e57;
-    margin-top: -9.75rem;
+    margin-top: -11rem;
   }
   .selected-res-section {
     margin-top: -16rem;
@@ -59,7 +59,7 @@
 
   .contact-hero-section {
     background-color: #495e57;
-    margin-top: -10.75rem;
+    margin-top: -12.5rem;
     margin-bottom: 10rem;
   }
   .selected-res-section {
@@ -67,6 +67,13 @@
   }
 }
 
+@media only screen and (min-width: 1400px) {
+  .contact-hero-section {
+    background-color: #495e57;
+    margin-top: -13rem;
+    margin-bottom: 10rem;
+  }
+}
 
 @media only screen and (min-width: 1800px) {
   .dinner-img {

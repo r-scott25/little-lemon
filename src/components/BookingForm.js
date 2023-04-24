@@ -58,6 +58,15 @@ const BookingForm = (props) => {
           payload: props.selectedTime,
         });
       }
+       // Store form data in parent component's state
+    props.updateBookingInfo({
+      date: formik.values.date,
+      time: formik.values.time,
+      occasion: formik.values.occasion,
+      guests: formik.values.guests,
+      seating: formik.values.seating,
+      specialRequests: formik.values.specialRequests,
+    });
       console.log(props.availableTimes);
       navigate("/reservations/customerContact");
     } else {
@@ -344,9 +353,11 @@ const BookingForm = (props) => {
               <button
                 type="submit"
                 className="save-btn"
+                name="submit"
                 value="submit"
+                role="button"
                 disabled={!formik.isValid || formik.isSubmitting}
-                aria-label="Reservation save and continue button"
+                aria-label="submit"
                 aria-disabled={!formik.isValid}
               >
                 Save and Continue

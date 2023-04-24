@@ -13,52 +13,57 @@ import ConfirmationModal from "./components/ConfirmationModal";
 
 import { Routes, Route } from "react-router-dom";
 
+export function initializeTimes() {
+  return [
+    "11:00 AM",
+    "11:30 AM",
+    "12:00 PM",
+    "12:30 PM",
+    "1:00 PM",
+    "1:30 PM",
+    "2:00 PM",
+    "2:30 PM",
+    "3:00 PM",
+    "3:30 PM",
+    "4:00 PM",
+    "4:30 PM",
+    "5:00 PM",
+    "5:30 PM",
+    "6:00 PM",
+    "6:30 PM",
+    "7:00 PM",
+    "7:30 PM",
+    "8:00 PM",
+    "8:30 PM",
+    "9:00 PM",
+    "9:30 PM",
+  ];
+}
+
+// updateTimes Function: handles state change. Changes availableTimes based on the selected date
+
+export function updateTimes(selectedDate) {
+  // Here you can update the available times based on the selected date
+  // For now, we'll just return the same initialTimes regardless of the date
+  return initializeTimes();
+}
+
 function App() {
   //// Booking Info ///
   const [bookingInfo, setBookingInfo] = useState(null);
 
   //////////// Available Times ///////////
 
-  // updateTimes Function: handles state change. Changes availableTimes based on the selected date
-
-  function updateTimes(selectedDate) {
-    // Here you can update the available times based on the selected date
-    // For now, we'll just return the same initialAvailableTimes regardless of the date
-    return initializeTimes();
-  }
   // Available Times useReducer
 
   // 1.  Define an initial state and a reducer function that will handle state updates.
-  function initializeTimes() {
-    return [
-      "11:00 AM",
-      "11:30 AM",
-      "12:00 PM",
-      "12:30 PM",
-      "1:00 PM",
-      "1:30 PM",
-      "2:00 PM",
-      "2:30 PM",
-      "3:00 PM",
-      "3:30 PM",
-      "4:00 PM",
-      "4:30 PM",
-      "5:00 PM",
-      "5:30 PM",
-      "6:00 PM",
-      "6:30 PM",
-      "7:00 PM",
-      "7:30 PM",
-      "8:00 PM",
-      "8:30 PM",
-      "9:00 PM",
-      "9:30 PM",
-    ];
-  }
 
   function availableTimesReducer(state, action) {
     switch (action.type) {
       case "set":
+        //******validation**********************
+
+        //************************************ */
         return action.payload;
       case "add":
         return [...state, action.payload];
@@ -75,7 +80,7 @@ function App() {
     availableTimesReducer,
     initializeTimes()
   );
-
+  console.log("Available times:", availableTimes);
   // 3.  Replace the setAvailableTimes function with a dispatchAvailableTimes function
 
   // Handler functions for selecting and booking a time
@@ -90,6 +95,8 @@ function App() {
 
     // Remove the booked time from the available times
     dispatchAvailableTimes({ type: "remove", payload: selectedTime });
+
+    console.log("Available times:", availableTimes);
 
     // Clear the selected time
     setSelectedTime("");

@@ -57,6 +57,7 @@ function BookingPage(props) {
         <Header />
       </header>
       <main className="res-main-container" aria-label="Main content">
+        <div className="hero-image-hero-section-container">
         <section className="hero-image">
           <img
             className="restaurant-img"
@@ -70,6 +71,7 @@ function BookingPage(props) {
             subtitle="Delicious Cuisine and Unforgettable Ambience Await!"
           />
         </section>
+        </div>
         <section className="reservations-section-container"  aria-label="Reservations section">
           {/* the state is passed down to the BookingForm component as a prop (updateBookingInfo) */}
           <BookingForm

@@ -5,6 +5,12 @@
   grid-template-rows: 130px auto 200px;
 }
 
+.hero-image-hero-section-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "hero-image";
+}
 .res-main-container {
   display: grid;
   grid-template-rows: auto auto auto;
@@ -53,7 +59,7 @@
 
   .res-hero-section {
     background-color: #495e57;
-    margin-top: -8.5rem;
+    margin-top: -10rem;
     margin-bottom: 8rem;
   }
   .reservations-section-container {
@@ -69,7 +75,7 @@
 
   .res-hero-section {
     background-color: #495e57;
-    margin-top: -10.85rem;
+    margin-top: -12rem;
     margin-bottom: 12rem;
   }
   .reservations-section-container {
@@ -86,7 +92,7 @@
 
   .res-hero-section {
     background-color: #495e57;
-    margin-top: -12rem;
+    margin-top: -15rem;
     margin-bottom: 12rem;
   }
   .reservations-section-container {
@@ -95,6 +101,15 @@
 }
 
 
+@media only screen and (min-width: 1500px) {
+
+  .res-hero-section {
+    background-color: #495e57;
+    margin-top: -18rem;
+    margin-bottom: 12rem;
+  }
+
+}
 
 @media only screen and (min-width: 1800px) {
   .restaurant-img {
@@ -103,11 +118,25 @@
 
   .res-hero-section {
     background-color: #495e57;
-    margin-top: -18.2rem;
+    margin-top: -20rem;
     margin-bottom: 18rem;
   }
 
   .reservations-section-container {
     margin-top: -12rem;
   }
+}
+
+@media only screen and (min-width: 2000px) {
+  .restaurant-img {
+    height: 60%;
+  }
+
+  .res-hero-section {
+    background-color: #495e57;
+    margin-top: -20rem;
+    margin-bottom: 18rem;
+  }
+
+  
 }
