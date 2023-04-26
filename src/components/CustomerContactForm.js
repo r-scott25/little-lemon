@@ -331,7 +331,7 @@ function CustomerContactForm(props) {
                   </div>
                   <section className="reservation-details">
                     <h2 className="dine-with-you-text">
-                      We look forward to dining with you!
+                      We look forward to dining with you, {props.firstName} Rosalia!
                     </h2>
                     <div className="confirm-contact-requests-container">
                       <div className="confirm-and-contact-container">
@@ -391,6 +391,7 @@ function CustomerContactForm(props) {
                           <p>lemon@email.com</p>
                         </div>
                       </div>
+                       
                       <div className="confirm-requests">
                         <h3 className="confirm-requests-label">
                           SPECIAL REQUESTS
@@ -403,6 +404,7 @@ function CustomerContactForm(props) {
                       </div>
                     </div>
                   </section>
+                  
                 </div>
               </div>
             </ConfirmationModal>
