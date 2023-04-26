@@ -4,19 +4,60 @@ import { useFormik } from "formik";
 import { reservationSchema } from "../Validations/ReservationValidation";
 import { useNavigate } from "react-router-dom";
 
-const BookingForm = (props) => {
+export default function BookingForm(props) {
+  console.log(props.availableTimes);
+
   const navigate = useNavigate();
 
-  const handleInputChange = (event) => {
-    const target = event.target;
-    const name = target.name;
-    const value = target.value;
-    props.updateBookingInfo(name, value);
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [occasion, setOccasion] = useState("");
+  const [guests, setGuests] = useState(0);
+  const [seating, setSeating] = useState("");
+  const [specialRequests, setSpecialRequests] = useState("");
+
+  const [selectedTime, setSelectedTime] = useState(
+    props.availableTimes.map((times) => <option>{times}</option>)
+  );
+
+  const handleDateChange = (event) => {
+    setDate(event.target.value);
+
+    var stringify = event.target.value;
+    props.updateTimes(stringify);
+
+    setSelectedTime(
+      props.availableTimes.map((times) => <option>{times}</option>)
+    );
   };
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
+  const formik = useFormik({
+    initialValues: {
+      date: "",
+      time: "",
+      occasion: "",
+      guests: 0,
+      seating: "",
+      specialRequests: "",
+      availableTimes: [...props.availableTimes],
+    },
+    onSubmit: (values) => {
+      handleFormSubmit(values);
+      console.log(values);
+    },
+    validationSchema: reservationSchema,
+  });
 
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const bookingInfo = {
+      date: date,
+      time: time,
+      occasion: occasion,
+      guests: guests,
+      seating: seating,
+      specialRequests: specialRequests,
+    };
     formik.setTouched({
       date: true,
       time: true,
@@ -39,57 +80,13 @@ const BookingForm = (props) => {
       console.log("No fields have been touched");
       return;
     }
-
     if (formik.isValid) {
-      const updatedAvailableTimes = [...props.availableTimes];
-
-      // Remove booked times from available times
-      props.bookedTimes.forEach((time) => {
-        props.dispatchAvailableTimes({ type: "remove", payload: time });
-      });
-
-      // Add selected time to available times
-      if (
-        props.selectedTime &&
-        !props.bookedTimes.includes(props.selectedTime)
-      ) {
-        props.dispatchAvailableTimes({
-          type: "add",
-          payload: props.selectedTime,
-        });
-      }
-       // Store form data in parent component's state
-    props.updateBookingInfo({
-      date: formik.values.date,
-      time: formik.values.time,
-      occasion: formik.values.occasion,
-      guests: formik.values.guests,
-      seating: formik.values.seating,
-      specialRequests: formik.values.specialRequests,
-    });
-      console.log(props.availableTimes);
+      console.log("Booking Info: ", bookingInfo);
       navigate("/reservations/customerContact");
     } else {
-      // form is invalid, show error message or do something else
       console.log("Form is invalid");
     }
   };
-
-  const formik = useFormik({
-    initialValues: {
-      date: "",
-      time: "",
-      occasion: "",
-      guests: 0,
-      seating: "",
-      specialRequests: "",
-    },
-    onSubmit: (values) => {
-      handleFormSubmit();
-      console.log(values);
-    },
-    validationSchema: reservationSchema,
-  });
 
   return (
     <>
@@ -120,9 +117,9 @@ const BookingForm = (props) => {
                   }
                   aria-required="true"
                   value={formik.values.date}
-                  onChange={(e) => {
-                    formik.handleChange(e);
-                    handleInputChange(e);
+                  onChange={(event) => {
+                    formik.handleChange(event);
+                    handleDateChange(event);
                   }}
                   onBlur={formik.handleBlur}
                   className={`${
@@ -151,6 +148,7 @@ const BookingForm = (props) => {
                   value={formik.values.time}
                   onChange={(event) => {
                     formik.handleChange(event);
+                    setTime(event.target.value);
                   }}
                   onBlur={formik.handleBlur}
                   className={`${
@@ -161,7 +159,7 @@ const BookingForm = (props) => {
                 >
                   <option value="">Select a Time</option>
                   {props.availableTimes.map((time) => (
-                    <option key={time} value={time}>
+                    <option key={time} id={time} value={time}>
                       {time}
                     </option>
                   ))}
@@ -184,7 +182,10 @@ const BookingForm = (props) => {
                   aria-describedby="occasionError"
                   aria-required="true"
                   value={formik.values.occasion}
-                  onChange={formik.handleChange}
+                  onChange={(event) => {
+                    formik.handleChange(event);
+                    setOccasion(event.target.value);
+                  }}
                   onBlur={formik.handleBlur}
                   className={`${
                     formik.errors.occasion && formik.touched.occasion
@@ -216,12 +217,11 @@ const BookingForm = (props) => {
                       id="minus-button"
                       onClick={() => {
                         if (formik.values.guests > 0) {
-                          formik.handleChange({
-                            target: {
-                              name: "guests",
-                              value: formik.values.guests - 1,
-                            },
-                          });
+                          formik.setFieldValue(
+                            "guests",
+                            formik.values.guests - 1
+                          );
+                          setGuests(formik.values.guests - 1);
                         }
                       }}
                     >
@@ -237,7 +237,10 @@ const BookingForm = (props) => {
                       aria-describedby="guestsError"
                       aria-required="true"
                       value={formik.values.guests}
-                      onChange={formik.handleChange}
+                      onChange={(event) => {
+                        formik.handleChange(event);
+                        setGuests(event.target.value);
+                      }}
                       onBlur={formik.handleBlur}
                       className={`${
                         formik.errors.guests && formik.touched.guests
@@ -249,17 +252,15 @@ const BookingForm = (props) => {
                   <span className="plus-btn-span">
                     <button
                       type="button"
-                      // onClick={increment}
                       className="counter-button"
                       id="plus-button"
                       onClick={() => {
                         if (formik.values.guests < 20) {
-                          formik.handleChange({
-                            target: {
-                              name: "guests",
-                              value: formik.values.guests + 1,
-                            },
-                          });
+                          formik.setFieldValue(
+                            "guests",
+                            formik.values.guests + 1
+                          );
+                          setGuests(formik.values.guests + 1);
                         }
                       }}
                     >
@@ -282,7 +283,10 @@ const BookingForm = (props) => {
                   aria-describedby="seatingError"
                   aria-required="true"
                   value={formik.values.seating}
-                  onChange={formik.handleChange}
+                  onChange={(event) => {
+                    formik.handleChange(event);
+                    setSeating(event.target.value);
+                  }}
                   onBlur={formik.handleBlur}
                   className={`${
                     formik.errors.seating && formik.touched.seating
@@ -339,7 +343,10 @@ const BookingForm = (props) => {
                 <div>
                   <textarea
                     value={formik.values.specialRequests}
-                    onChange={formik.handleChange}
+                    onChange={(event) => {
+                      formik.handleChange(event);
+                      setSpecialRequests(event.target.value);
+                    }}
                     id="special-requests"
                     name="specialRequests"
                     className="form-control"
@@ -368,6 +375,4 @@ const BookingForm = (props) => {
       </section>
     </>
   );
-};
-
-export default BookingForm;
+}

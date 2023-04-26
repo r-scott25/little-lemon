@@ -37,43 +37,44 @@ describe("BookingForm", () => {
         />
       </MemoryRouter>
     );
+    act(() => {
+      const dateInput = screen.getByLabelText("Reservation date");
+      fireEvent.change(dateInput, { target: { value: "2023-04-23" } });
 
-    const dateInput = screen.getByLabelText("Reservation date");
-    fireEvent.change(dateInput, { target: { value: "2023-04-23" } });
+      const timeInput = screen.getByLabelText("Reservation time");
+      fireEvent.change(timeInput, { target: { value: "1:00 PM" } });
 
-    const timeInput = screen.getByLabelText("Reservation time");
-    fireEvent.change(timeInput, { target: { value: "1:00 PM" } });
+      const occasionInput = screen.getByLabelText("Reservation occasion");
+      fireEvent.change(occasionInput, { target: { value: "birthday" } });
 
-    const occasionInput = screen.getByLabelText("Reservation occasion");
-    fireEvent.change(occasionInput, { target: { value: "birthday" } });
+      const guestsInput = screen.getByLabelText("Reservation guest count");
+      fireEvent.change(guestsInput, { target: { value: "4" } });
 
-    const guestsInput = screen.getByLabelText("Reservation guest count");
-    fireEvent.change(guestsInput, { target: { value: "4" } });
+      const seatingInput = screen.getByLabelText("Reservation seating");
+      const outdoorSeatingOption = screen.getByLabelText(
+        "Reservation seating: outdoor"
+      );
+      fireEvent.click(outdoorSeatingOption);
 
-    const seatingInput = screen.getByLabelText("Reservation seating");
-    const outdoorSeatingOption = screen.getByLabelText(
-      "Reservation seating: outdoor"
-    );
-    fireEvent.click(outdoorSeatingOption);
+      const specialRequestsInput = screen.getByLabelText(
+        "Reservation special requests"
+      );
+      fireEvent.change(specialRequestsInput, {
+        target: { value: "No special requests" },
+      });
 
-    const specialRequestsInput = screen.getByLabelText(
-      "Reservation special requests"
-    );
-    fireEvent.change(specialRequestsInput, {
-      target: { value: "No special requests" },
+      const submitButton = screen.getByRole("button", { name: /submit/i });
+      fireEvent.click(submitButton);
+
+      expect(updateBookingInfo).toHaveBeenCalledTimes(6);
+      expect(dispatchAvailableTimes).toHaveBeenCalledTimes(1);
+      expect(dispatchAvailableTimes).toHaveBeenCalledWith({
+        type: "remove",
+        payload: "1:00 PM",
+      });
+      expect(
+        screen.getByText(/customer contact information/i)
+      ).toBeInTheDocument();
     });
-
-    const submitButton = screen.getByRole("button", { name: /submit/i });
-    fireEvent.click(submitButton);
-
-    expect(updateBookingInfo).toHaveBeenCalledTimes(1);
-    expect(dispatchAvailableTimes).toHaveBeenCalledTimes(1);
-    expect(dispatchAvailableTimes).toHaveBeenCalledWith({
-      type: "remove",
-      payload: "1:00 PM",
-    });
-    expect(
-      screen.getByText(/customer contact information/i)
-    ).toBeInTheDocument();
   });
 });
