@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ErrorMessage, useFormik } from "formik";
+import { useFormik } from "formik";
 import "./CustomerContactFormStyles.css";
 import { customerContactSchema } from "../Validations/CustomerContactValidation.js";
 import ConfirmationModal from "./ConfirmationModal.js";
@@ -11,30 +11,67 @@ import guestsEE9972 from "../assets/guests-EE9972.svg";
 import seatingEE9972 from "../assets/seating-EE9972.svg";
 import occasionEE9972 from "../assets/occasion-EE9972.svg";
 import homeIcon from "../assets/homeIcon.svg";
-import Error from "next/error";
 
 function CustomerContactForm(props) {
-  const onSubmit = async (values, actions) => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [textUpdates, setTextUpdates] = useState(false);
+
+  //// useState for Confirm Reservation Modal ////
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    const customerContactInfo = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone,
+      textUpdates: textUpdates,
+    };
+    setTouched({
+      firstName: true,
+      lastName: true,
+      email: true,
+      guests: true,
+      phone: true,
+      textUpdates: false,
+    });
+    validateForm();
+
     if (Object.keys(errors).length > 0) {
+      console.log("Form has errors");
       setIsOpen(false);
     } else {
       setIsOpen(true);
     }
-    console.log(values);
-    console.log(actions);
+
+    // Check if any fields have been touched
+    if (Object.keys(touched).length === 0) {
+      console.log("No fields have been touched");
+      return;
+    }
+    if (isValid) {
+      console.log("Customer Contact Info: ", customerContactInfo);
+    } else {
+      console.log("Form is invalid");
+    }
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    actions.resetForm();
+    event.resetForm();
   };
 
   const {
-   
     values,
     errors,
     touched,
     isSubmitting,
+    isValid,
+    setTouched,
     handleBlur,
+    validateForm,
     handleChange,
-    handleSubmit,
   } = useFormik({
     initialValues: {
       firstName: "",
@@ -43,8 +80,11 @@ function CustomerContactForm(props) {
       phone: "",
       textUpdates: false,
     },
+    onSubmit: (values) => {
+      handleFormSubmit(values);
+      console.log(values);
+    },
     validationSchema: customerContactSchema,
-    onSubmit,
   });
 
   console.log(errors);
@@ -57,14 +97,6 @@ function CustomerContactForm(props) {
         value: checked ? true : false,
       },
     });
-  };
-
-  const customerContactData = {
-    firstName: values.firstName,
-    lastName: values.lastName,
-    email: values.email,
-    phone: values.phone,
-    textUpdates: values.textUpdates,
   };
 
   //// useState to change placeholder color when Hovering over input boxes ////
@@ -80,15 +112,24 @@ function CustomerContactForm(props) {
     event.target.classList.remove("hovered");
   }
 
-  //// useState for Confirm Reservation Modal ////
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <>
-      <div className="dividing-line" role="separator">.</div>
-      <div className="contact-info-container" role="region" aria-label="contact-info-container">
-        <h2 className="contact-form-title" id="your-details-title">Your Details</h2>
-        <form className="contact-form" onSubmit={handleSubmit} role="form" aria-labelledby="Your Details">
+      <div className="dividing-line" role="separator">
+        .
+      </div>
+      <div
+        className="contact-info-container"
+        role="region"
+        aria-label="contact-info-container"
+      >
+        <h2 className="contact-form-title" id="your-details-title">
+          Your Details
+        </h2>
+        <form
+          className="contact-form"
+          onSubmit={handleFormSubmit}
+          aria-labelledby="Your Details"
+        >
           <div className="contact-form-container">
             <div className="firstName-label">
               <label htmlFor="firstName">First Name</label>
@@ -107,7 +148,10 @@ function CustomerContactForm(props) {
                 aria-describedby="firstNameError"
                 aria-required="true"
                 value={values.firstName}
-                onChange={handleChange}
+                onChange={(event) => {
+                  handleChange(event);
+                  setFirstName(event.target.value);
+                }}
                 onBlur={handleBlur}
                 className={`${
                   errors.firstName && touched.firstName ? "input-error" : ""
@@ -138,7 +182,10 @@ function CustomerContactForm(props) {
                 aria-describedby="lastNameError"
                 aria-required="true"
                 value={values.lastName}
-                onChange={handleChange}
+                onChange={(event) => {
+                  handleChange(event);
+                  setLastName(event.target.value);
+                }}
                 onBlur={handleBlur}
                 className={`${
                   errors.lastName && touched.lastName ? "input-error" : ""
@@ -166,7 +213,10 @@ function CustomerContactForm(props) {
                 aria-describedby="emailError"
                 aria-required="true"
                 value={values.email}
-                onChange={handleChange}
+                onChange={(event) => {
+                  handleChange(event);
+                  setEmail(event.target.value);
+                }}
                 onBlur={handleBlur}
                 className={`${
                   errors.email && touched.email ? "input-error" : ""
@@ -195,7 +245,10 @@ function CustomerContactForm(props) {
                 aria-describedby="phoneError"
                 aria-required="true"
                 value={values.phone}
-                onChange={handleChange}
+                onChange={(event) => {
+                  handleChange(event);
+                  setPhone(event.target.value);
+                }}
                 onBlur={handleBlur}
                 className={`${
                   errors.phone && touched.phone ? "input-error" : ""
@@ -216,7 +269,10 @@ function CustomerContactForm(props) {
                   <input
                     type="checkbox"
                     checked={values.textUpdates === true}
-                    onChange={handleCheckboxChange}
+                    onChange={(event) => {
+                      handleChange(event);
+                      handleCheckboxChange(event);
+                    }}
                     name="textUpdates"
                     id="textUpdates"
                     aria-checked={values.textUpdates ? "true" : "false"}
@@ -234,7 +290,6 @@ function CustomerContactForm(props) {
           </div>
           <div className="reserve-btn-container">
             <button
-              onClick={handleSubmit}
               type="submit"
               className="btn"
               id="reserve-btn"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./BookingFormStyles.css";
 import { useFormik } from "formik";
 import { reservationSchema } from "../Validations/ReservationValidation";
@@ -30,23 +30,6 @@ export default function BookingForm(props) {
       props.availableTimes.map((times) => <option>{times}</option>)
     );
   };
-
-  const formik = useFormik({
-    initialValues: {
-      date: "",
-      time: "",
-      occasion: "",
-      guests: 0,
-      seating: "",
-      specialRequests: "",
-      availableTimes: [...props.availableTimes],
-    },
-    onSubmit: (values) => {
-      handleFormSubmit(values);
-      console.log(values);
-    },
-    validationSchema: reservationSchema,
-  });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -87,6 +70,22 @@ export default function BookingForm(props) {
       console.log("Form is invalid");
     }
   };
+  const formik = useFormik({
+    initialValues: {
+      date: "",
+      time: "",
+      occasion: "",
+      guests: 0,
+      seating: "",
+      specialRequests: "",
+      availableTimes: [...props.availableTimes],
+    },
+    onSubmit: (values) => {
+      handleFormSubmit(values);
+      console.log(values);
+    },
+    validationSchema: reservationSchema,
+  });
 
   return (
     <>
@@ -98,7 +97,6 @@ export default function BookingForm(props) {
         {formik.values && (
           <form
             onSubmit={handleFormSubmit}
-            role="form"
             aria-labelledby="Reservation Details"
           >
             <div className="reservation-form-container">
@@ -362,7 +360,6 @@ export default function BookingForm(props) {
                 className="save-btn"
                 name="submit"
                 value="submit"
-                role="button"
                 disabled={!formik.isValid || formik.isSubmitting}
                 aria-label="submit"
                 aria-disabled={!formik.isValid}
