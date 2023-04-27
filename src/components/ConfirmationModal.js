@@ -1,5 +1,5 @@
 import React from "react";
-import CustomerContactForm from "./CustomerContactForm.js";
+import BookingForm from "./BookingForm.js";
 
 const MODAL_STYLES = {
   position: 'fixed',

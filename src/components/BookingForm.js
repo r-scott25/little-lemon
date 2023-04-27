@@ -3,6 +3,15 @@ import "./BookingFormStyles.css";
 import { useFormik } from "formik";
 import { reservationSchema } from "../Validations/ReservationValidation";
 import { useNavigate } from "react-router-dom";
+import ConfirmationModal from "./ConfirmationModal.js";
+import "./ConfirmationModalStyles.css";
+import Logo from "../assets/Logo.svg";
+import calendarEE9972 from "../assets/calendar-EE9972.svg";
+import clockEE9972 from "../assets/clock-EE9972.svg";
+import guestsEE9972 from "../assets/guests-EE9972.svg";
+import seatingEE9972 from "../assets/seating-EE9972.svg";
+import occasionEE9972 from "../assets/occasion-EE9972.svg";
+import homeIcon from "../assets/homeIcon.svg";
 
 export default function BookingForm(props) {
   console.log(props.availableTimes);
@@ -24,6 +33,9 @@ export default function BookingForm(props) {
   const [selectedTime, setSelectedTime] = useState(
     props.availableTimes.map((times) => <option>{times}</option>)
   );
+
+    //// useState for Confirm Reservation Modal ////
+    const [isOpen, setIsOpen] = useState(false);
 
   const handleDateChange = (event) => {
     setDate(event.target.value);
@@ -91,11 +103,12 @@ export default function BookingForm(props) {
     // Validate all fields
     formik.validateForm();
 
-    if (Object.keys(formik.errors).length > 0) {
+      if (Object.keys(formik.errors).length > 0) {
       console.log("Form has errors");
-      return;
+      setIsOpen(false);
+    } else {
+      setIsOpen(true);
     }
-
     // Check if any fields have been touched
     if (Object.keys(formik.touched).length === 0) {
       console.log("No fields have been touched");
@@ -103,7 +116,7 @@ export default function BookingForm(props) {
     }
     if (formik.isValid) {
       console.log("Booking Info: ", bookingInfo);
-      navigate("/reservations/customerContact");
+
     } else {
       console.log("Form is invalid");
     }
@@ -131,6 +144,15 @@ export default function BookingForm(props) {
     setHoveredInputId("");
     event.target.classList.remove("hovered");
   }
+
+  const selectedDate = new Date(formik.values.date);
+
+  const formattedDate = selectedDate.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  });
+  
   return (
     <>
       <section
@@ -183,7 +205,7 @@ export default function BookingForm(props) {
                 )}
               </div>
               <div className="input-label">
-                <label htmlFor="lastName">Last Name</label>
+                <label htmlFor="lastName">LAST NAME</label>
               </div>
               <div className="contact-info lastName-input">
                 <input
@@ -220,7 +242,7 @@ export default function BookingForm(props) {
                 )}
               </div>
               <div className="input-label">
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">EMAIL</label>
               </div>
               <div className="contact-info email-input">
                 <input
@@ -257,7 +279,7 @@ export default function BookingForm(props) {
                 )}
               </div>
               <div className="input-label">
-              <label htmlFor="phone">Phone</label>
+              <label htmlFor="phone">PHONE</label>
             </div>
             <div className="contact-info phone-input">
               <input
@@ -378,11 +400,11 @@ export default function BookingForm(props) {
                       : ""
                   }`}
                 >
-                  <option value="select-occasion">Select an Occasion</option>
-                  <option value="birthday">Birthday</option>
-                  <option value="anniversary">Anniversary</option>
-                  <option value="engagement">Engagement</option>
-                  <option value="other">Other</option>
+                  <option value="Select-occasion">Select an Occasion</option>
+                  <option value="Birthday">Birthday</option>
+                  <option value="Anniversary">Anniversary</option>
+                  <option value="Engagement">Engagement</option>
+                  <option value="Other">Other</option>
                 </select>
                 <div id="occasionError" role="alert">
                   {formik.errors.occasion && formik.touched.occasion && (
@@ -481,13 +503,13 @@ export default function BookingForm(props) {
                   id="seating"
                   name="seating"
                 >
-                  <div className="indoor-seating">
+                  <div className="Indoor-seating">
                     <input
                       type="radio"
                       name="seating"
-                      id="indoor"
-                      value="indoor"
-                      aria-label="Reservation seating: indoor"
+                      id="Indoor"
+                      value="Indoor"
+                      aria-label="Reservation seating: Indoor"
                     />
                     <label htmlFor="indoor">Indoor</label>
                   </div>
@@ -495,11 +517,11 @@ export default function BookingForm(props) {
                     <input
                       type="radio"
                       name="seating"
-                      id="outdoor"
-                      value="outdoor"
-                      aria-label="Reservation seating: outdoor"
+                      id="Outdoor"
+                      value="Outdoor"
+                      aria-label="Reservation seating: Outdoor"
                     />
-                    <label htmlFor="outdoor">Outdoor</label>
+                    <label htmlFor="Outdoor">Outdoor</label>
                   </div>
                   <div className="no-pref-seating">
                     <input
@@ -580,7 +602,112 @@ export default function BookingForm(props) {
                 Reserve
               </button>
             </div>
-
+            <ConfirmationModal open={isOpen} firstName={firstName}>
+              <div className="confirm-modal-container" id="modal">
+                <div className="confirm-header">
+                  <div className="home-icon-div">
+                    <a href="/">
+                      <img
+                        src={homeIcon}
+                        alt="home icon"
+                        className="confirm-home-icon"
+                      />
+                    </a>
+                  </div>
+                  <div className="confirm-header-container">
+                    <h1 className="confirm-title">Reservation Confirmed</h1>
+                    <h2 className="confirm-subtitle">
+                      A confirmation email has been sent.
+                    </h2>
+                  </div>
+                </div>
+                <div className="confirm-main-container">
+                  <div className="logo-background">
+                    <img
+                      src={Logo}
+                      className="confirm-lemon-logo"
+                      alt="Little Lemon Logo"
+                    />
+                  </div>
+                  <section className="reservation-details">
+                    <h2 className="dine-with-you-text">
+                      We look forward to dining with you, {firstName} !
+                    </h2>
+                    <div className="confirm-contact-requests-container">
+                      <div className="confirm-and-contact-container">
+                        <div className="confirm-selected-container">
+                          <div className="confirm-date-icon">
+                            <img src={calendarEE9972} alt="calendar icon" />
+                          </div>
+                          <div className="confirm-date">
+                            <h3 className="confirmed-text">
+                              {formattedDate}
+                            </h3>
+                          </div>
+                          <div className="confirm-time-icon">
+                            <img src={clockEE9972} alt="clock icon" />
+                          </div>
+                          <div className="confirm-time">
+                            <h3 className="confirmed-text">
+                              {time}
+                            </h3>
+                          </div>
+                          <div className="confirm-guests-icon">
+                            <img src={guestsEE9972} alt="person icon" />
+                          </div>
+                          <div className="confirm-guests">
+                            <h3 className="confirmed-text">
+                              {guests}
+                            </h3>
+                          </div>
+                          <div className="confirm-seating-icon">
+                            <img
+                              src={seatingEE9972}
+                              alt="table and chair icon"
+                            />
+                          </div>
+                          <div className="confirm-seating">
+                            <h3 className="confirmed-text">
+                              {seating}
+                            </h3>
+                          </div>
+                          <div className="confirm-occasion-icon">
+                            <img src={occasionEE9972} alt="party horn icon" />
+                          </div>
+                          <div className="confirm-occasion">
+                            <h3 className="confirmed-text">
+                              {occasion}
+                            </h3>
+                          </div>
+                        </div>
+                        <div className="lit-lem-contact-container">
+                          <h3>LITTLE LEMON</h3>
+                          <p>
+                            123 Lemon St.
+                            <br />
+                            Chicago, IL 60654
+                          </p>
+                          <p>(312) 555-5555</p>
+                          <p>lemon@email.com</p>
+                        </div>
+                      </div>
+                      <div className="confirm-requests">
+                        <h3 className="confirm-requests-label">
+                          SPECIAL REQUESTS
+                        </h3>
+                        <div className="confirm-requests-box">
+                          <div className="confirm-requests-box-inner">
+                          <p className="confirmed-text">
+                            {specialRequests}
+                          </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </ConfirmationModal >
           </form>
         )}
       </section>
