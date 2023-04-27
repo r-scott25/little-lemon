@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./BookingFormStyles.css";
 import { useFormik } from "formik";
 import { reservationSchema } from "../Validations/ReservationValidation";
@@ -8,6 +8,10 @@ export default function BookingForm(props) {
   console.log(props.availableTimes);
 
   const navigate = useNavigate();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -15,6 +19,7 @@ export default function BookingForm(props) {
   const [guests, setGuests] = useState(0);
   const [seating, setSeating] = useState("");
   const [specialRequests, setSpecialRequests] = useState("");
+  const [textUpdates, setTextUpdates] = useState(false);
 
   const [selectedTime, setSelectedTime] = useState(
     props.availableTimes.map((times) => <option>{times}</option>)
@@ -31,23 +36,56 @@ export default function BookingForm(props) {
     );
   };
 
+  const formik = useFormik({
+    initialValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      date: "",
+      time: "",
+      occasion: "",
+      guests: 0,
+      seating: "",
+      specialRequests: "",
+      availableTimes: [...props.availableTimes],
+      textUpdates: false,
+    },
+    onSubmit: (values) => {
+      handleFormSubmit(values);
+      console.log(values);
+    },
+    validationSchema: reservationSchema,
+  });
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     const bookingInfo = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone,
       date: date,
       time: time,
       occasion: occasion,
       guests: guests,
       seating: seating,
       specialRequests: specialRequests,
+      textUpdates: textUpdates,
     };
     formik.setTouched({
+      firstName: true,
+      lastName: true,
+      email: true,
+      guests: true,
+      phone: true,
       date: true,
       time: true,
       occasion: true,
       guests: true,
       seating: true,
       specialRequests: true,
+      textUpdates: false,
     });
 
     // Validate all fields
@@ -70,23 +108,29 @@ export default function BookingForm(props) {
       console.log("Form is invalid");
     }
   };
-  const formik = useFormik({
-    initialValues: {
-      date: "",
-      time: "",
-      occasion: "",
-      guests: 0,
-      seating: "",
-      specialRequests: "",
-      availableTimes: [...props.availableTimes],
-    },
-    onSubmit: (values) => {
-      handleFormSubmit(values);
-      console.log(values);
-    },
-    validationSchema: reservationSchema,
-  });
 
+  const handleCheckboxChange = (event) => {
+    const { name, checked } = event.target;
+    formik.handleChange({
+      target: {
+        name,
+        value: checked ? true : false,
+      },
+    });
+  };
+
+  //// useState to change placeholder color when Hovering over input boxes ////
+  const [hoveredInputId, setHoveredInputId] = useState("");
+
+  function handleMouseEnter(event) {
+    setHoveredInputId(event.target.id);
+    event.target.classList.add("hovered");
+  }
+
+  function handleMouseLeave(event) {
+    setHoveredInputId("");
+    event.target.classList.remove("hovered");
+  }
   return (
     <>
       <section
@@ -97,9 +141,152 @@ export default function BookingForm(props) {
         {formik.values && (
           <form
             onSubmit={handleFormSubmit}
+            role="form"
             aria-labelledby="Reservation Details"
           >
             <div className="reservation-form-container">
+              <div className="input-label">
+                <label htmlFor="firstName">FIRST NAME</label>
+              </div>
+              <div className="contact-info firstName-input">
+                <input
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  placeholder="First Name"
+                  aria-label="First Name"
+                  aria-invalid={
+                    formik.errors.firstName && formik.touched.firstName
+                      ? "true"
+                      : "false"
+                  }
+                  aria-describedby="firstNameError"
+                  aria-required="true"
+                  value={formik.values.firstName}
+                  onChange={(event) => {
+                    formik.handleChange(event);
+                    setFirstName(event.target.value);
+                  }}
+                  onBlur={formik.handleBlur}
+                  className={`${
+                    formik.errors.firstName && formik.touched.firstName
+                      ? "input-error"
+                      : ""
+                  } ${hoveredInputId === "firstName" ? "hovered" : ""}`}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                />
+                {formik.errors.firstName && formik.touched.firstName && (
+                  <p className="error" id="firstNameError">
+                    {formik.errors.firstName}
+                  </p>
+                )}
+              </div>
+              <div className="input-label">
+                <label htmlFor="lastName">Last Name</label>
+              </div>
+              <div className="contact-info lastName-input">
+                <input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  placeholder="Last Name"
+                  aria-label="Last Name"
+                  aria-invalid={
+                    formik.errors.lastName && formik.touched.lastName
+                      ? "true"
+                      : "false"
+                  }
+                  aria-describedby="lastNameError"
+                  aria-required="true"
+                  value={formik.values.lastName}
+                  onChange={(event) => {
+                    formik.handleChange(event);
+                    setLastName(event.target.value);
+                  }}
+                  onBlur={formik.handleBlur}
+                  className={`${
+                    formik.errors.lastName && formik.touched.lastName
+                      ? "input-error"
+                      : ""
+                  } ${hoveredInputId === "lastName" ? "hovered" : ""}`}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                />
+                {formik.errors.lastName && formik.touched.lastName && (
+                  <p className="error" id="lastNameError">
+                    {formik.errors.lastName}
+                  </p>
+                )}
+              </div>
+              <div className="input-label">
+                <label htmlFor="email">Email</label>
+              </div>
+              <div className="contact-info email-input">
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email Address"
+                  aria-label="Email"
+                  aria-invalid={
+                    formik.errors.email && formik.touched.email
+                      ? "true"
+                      : "false"
+                  }
+                  aria-describedby="emailError"
+                  aria-required="true"
+                  value={formik.values.email}
+                  onChange={(event) => {
+                    formik.handleChange(event);
+                    setEmail(event.target.value);
+                  }}
+                  onBlur={formik.handleBlur}
+                  className={`${
+                    formik.errors.email && formik.touched.email
+                      ? "input-error"
+                      : ""
+                  } ${hoveredInputId === "email" ? "hovered" : ""}`}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                />
+                {formik.errors.email && formik.touched.email && (
+                  <p className="error" id="emailError">
+                    {formik.errors.email}
+                  </p>
+                )}
+              </div>
+              <div className="input-label">
+              <label htmlFor="phone">Phone</label>
+            </div>
+            <div className="contact-info phone-input">
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="Phone Number"
+                aria-label="Phone Number"
+                aria-invalid={formik.errors.phone && formik.touched.phone ? "true" : "false"}
+                aria-describedby="phoneError"
+                aria-required="true"
+                value={formik.values.phone}
+                onChange={(event) => {
+                  formik.handleChange(event);
+                  setPhone(event.target.value);
+                }}
+                onBlur={formik.handleBlur}
+                className={`${
+                  formik.errors.phone && formik.touched.phone ? "input-error" : ""
+                } ${hoveredInputId === "phone" ? "hovered" : ""}`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              />
+              {formik.errors.phone && formik.touched.phone && (
+                <p className="error" id="phoneError">
+                  {formik.errors.phone}
+                </p>
+              )}
+            </div>
               <div className="input-label">
                 <label htmlFor="date">DATE</label>
               </div>
@@ -353,6 +540,31 @@ export default function BookingForm(props) {
                   />
                 </div>
               </div>
+           
+            </div>
+            <div className="textUpdates">
+              <div className="text-updates-container">
+                <div className="text-updates-input">
+                  <input
+                    type="checkbox"
+                    checked={formik.values.textUpdates === true}
+                    onChange={(event) => {
+                      formik.handleChange(event);
+                      handleCheckboxChange(event);
+                    }}
+                    name="textUpdates"
+                    id="textUpdates"
+                    aria-checked={formik.values.textUpdates ? "true" : "false"}
+                    aria-labelledby="textUpdates-label"
+                  />
+                </div>
+                <div className="text-updates-label" id="textUpdates-label">
+                  <label htmlFor="textUpdates">
+                    I would like to receive text updates and reminders about my
+                    reservation.
+                  </label>
+                </div>
+              </div>
             </div>
             <div className="save-continue">
               <button
@@ -360,13 +572,15 @@ export default function BookingForm(props) {
                 className="save-btn"
                 name="submit"
                 value="submit"
+                role="button"
                 disabled={!formik.isValid || formik.isSubmitting}
                 aria-label="submit"
                 aria-disabled={!formik.isValid}
               >
-                Save and Continue
+                Reserve
               </button>
             </div>
+
           </form>
         )}
       </section>

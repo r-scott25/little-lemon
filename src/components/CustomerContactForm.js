@@ -302,7 +302,7 @@ function CustomerContactForm(props) {
             </button>
           </div>
           <div>
-            <ConfirmationModal open={isOpen}>
+            <ConfirmationModal open={isOpen} firstName={firstName}>
               <div className="confirm-modal-container" id="modal">
                 <div className="confirm-header">
                   <div className="home-icon-div">
@@ -331,7 +331,7 @@ function CustomerContactForm(props) {
                   </div>
                   <section className="reservation-details">
                     <h2 className="dine-with-you-text">
-                      We look forward to dining with you, {props.firstName} Rosalia!
+                      We look forward to dining with you, {firstName} !
                     </h2>
                     <div className="confirm-contact-requests-container">
                       <div className="confirm-and-contact-container">
@@ -407,7 +407,7 @@ function CustomerContactForm(props) {
                   
                 </div>
               </div>
-            </ConfirmationModal>
+            </ConfirmationModal >
           </div>
         </form>
       </div>
