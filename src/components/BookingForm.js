@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./BookingFormStyles.css";
 import { useFormik } from "formik";
 import { reservationSchema } from "../Validations/ReservationValidation";
-import { useNavigate } from "react-router-dom";
 import ConfirmationModal from "./ConfirmationModal.js";
 import "./ConfirmationModalStyles.css";
 import Logo from "../assets/Logo.svg";
@@ -16,7 +15,6 @@ import homeIcon from "../assets/homeIcon.svg";
 export default function BookingForm(props) {
   console.log(props.availableTimes);
 
-  const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -562,7 +560,6 @@ export default function BookingForm(props) {
                   />
                 </div>
               </div>
-           
             </div>
             <div className="textUpdates">
               <div className="text-updates-container">
@@ -588,10 +585,10 @@ export default function BookingForm(props) {
                 </div>
               </div>
             </div>
-            <div className="save-continue">
+            <div className="reserve-button-container">
               <button
                 type="submit"
-                className="save-btn"
+                className="reserve-button"
                 name="submit"
                 value="submit"
                 role="button"

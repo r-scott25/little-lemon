@@ -52,7 +52,6 @@
   font-family: "Karla", normal;
   font-size: 1.1rem;
   padding: 40%;
-
 }
 
 /* Placeholder styles on hover */
@@ -239,7 +238,6 @@ input[type="radio"]:checked::before {
   font-weight: 500;
 }
 
-
 /**** TEXT UPDATES ****/
 .text-updates-container {
   display: grid;
@@ -248,12 +246,12 @@ input[type="radio"]:checked::before {
   align-items: center;
 }
 
-/**** SAVE AND CONTINUE BUTTON ****/
+/**** RESERVE BUTTON ****/
 
-.save-continue {
+.reserve-button-container {
   margin-top: 4rem;
 }
-.save-continue .save-btn {
+.reserve-button-container .reserve-button {
   background-color: #f4ce14;
   border-color: #f4ce14;
   border-radius: 16px;
@@ -265,13 +263,13 @@ input[type="radio"]:checked::before {
   font-size: 1rem;
   font-weight: 700;
 }
-.save-btn:hover {
+.reserve-button:hover {
   background-color: #495e57;
   border-color: #495e57;
   color: #ffffff;
 }
 
-.save-btn:active {
+.reserve-button:active {
   background-color: #ee9972;
   border-color: #ee9972;
   color: #ffffff;
