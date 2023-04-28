@@ -1,4 +1,4 @@
-import React, { useReducer} from "react";
+import React, { useReducer } from "react";
 import "./BookingPageStyles.css";
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
@@ -34,6 +34,9 @@ export function initializeTimes() {
   ];
 }
 
+
+
+
 // Update the available times based on the selected date
 
 export function updateTimes(date) {
@@ -42,12 +45,12 @@ export function updateTimes(date) {
   return initializeTimes();
 };
 
-function BookingPage() {
 
+function BookingPage() {
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
 
-  console.log('availableTimes:', availableTimes);
-  console.log('updateTimes:', updateTimes);
+  console.log("availableTimes:", availableTimes);
+  console.log("updateTimes:", updateTimes);
 
   return (
     <>

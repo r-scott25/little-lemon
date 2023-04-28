@@ -27,9 +27,17 @@ export default function BookingForm(props) {
   const [specialRequests, setSpecialRequests] = useState("");
   const [textUpdates, setTextUpdates] = useState(false);
 
+
+  
   const [selectedTime, setSelectedTime] = useState(
-    props.availableTimes.map((times) => <option>{times}</option>)
+    props.availableTimes.map((time, index) => (
+      <option key={index} value={time}>
+        {time}
+      </option>
+    ))
   );
+
+  
 
   //// useState for Confirm Reservation Modal ////
   const [isOpen, setIsOpen] = useState(false);
