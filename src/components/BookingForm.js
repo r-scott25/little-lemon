@@ -43,7 +43,9 @@ export default function BookingForm(props) {
     setSelectedTime(
       props.availableTimes.map((times) => <option>{times}</option>)
     );
+   
   };
+
 
   const formik = useFormik({
     initialValues: {

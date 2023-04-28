@@ -7,7 +7,7 @@ import HeroSection from "../components/HeroSection.js";
 import restaurant from "../assets/restaurant.jpg";
 
 // Initialize the available times as an array of strings
-export function initialTimes() {
+export function initializeTimes() {
   return [
     "11:00 AM",
     "11:30 AM",
@@ -38,13 +38,13 @@ export function initialTimes() {
 
 export function updateTimes(date) {
   // Update the available times based on the selected date
-  // For now, we'll just return the same initialTimes regardless of the date
-  return initialTimes();
-}
+  // For now, we'll just return the same initializeTimes regardless of the date
+  return initializeTimes();
+};
 
 function BookingPage() {
 
-  const [availableTimes, dispatch] = useReducer(updateTimes, initialTimes());
+  const [availableTimes, dispatch] = useReducer(updateTimes, initializeTimes());
 
   console.log('availableTimes:', availableTimes);
   console.log('updateTimes:', updateTimes);
