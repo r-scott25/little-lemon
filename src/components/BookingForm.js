@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./BookingFormStyles.css";
 import { useFormik } from "formik";
 import { reservationSchema } from "../Validations/ReservationValidation";
@@ -19,7 +19,6 @@ export default function BookingForm(props) {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [occasion, setOccasion] = useState("");
@@ -32,8 +31,8 @@ export default function BookingForm(props) {
     props.availableTimes.map((times) => <option>{times}</option>)
   );
 
-    //// useState for Confirm Reservation Modal ////
-    const [isOpen, setIsOpen] = useState(false);
+  //// useState for Confirm Reservation Modal ////
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleDateChange = (event) => {
     setDate(event.target.value);
@@ -70,53 +69,51 @@ export default function BookingForm(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const bookingInfo = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      phone: phone,
-      date: date,
-      time: time,
-      occasion: occasion,
-      guests: guests,
-      seating: seating,
-      specialRequests: specialRequests,
-      textUpdates: textUpdates,
-    };
-    formik.setTouched({
-      firstName: true,
-      lastName: true,
-      email: true,
-      guests: true,
-      phone: true,
-      date: true,
-      time: true,
-      occasion: true,
-      guests: true,
-      seating: true,
-      specialRequests: true,
-      textUpdates: false,
-    });
+
+    // Check if any fields have been touched
+    if (Object.keys(formik.touched).length === 0) {
+      console.log("No fields have been touched");
+      return formik.setTouched({
+        firstName: true,
+        lastName: true,
+        email: true,
+        guests: true,
+        phone: true,
+        date: true,
+        time: true,
+        occasion: true,
+        seating: true,
+        specialRequests: true,
+        textUpdates: false,
+      });
+    }
+
+
 
     // Validate all fields
-    formik.validateForm();
+    await formik.validateForm();
 
-      if (Object.keys(formik.errors).length > 0) {
+    console.log("Form errors:", formik.errors);
+
+    if (Object.keys(formik.errors).length > 0) {
       console.log("Form has errors");
       setIsOpen(false);
     } else {
       setIsOpen(true);
-    }
-    // Check if any fields have been touched
-    if (Object.keys(formik.touched).length === 0) {
-      console.log("No fields have been touched");
-      return;
-    }
-    if (formik.isValid) {
+      const bookingInfo = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        phone: phone,
+        date: date,
+        time: time,
+        occasion: occasion,
+        guests: guests,
+        seating: seating,
+        specialRequests: specialRequests,
+        textUpdates: textUpdates,
+      };
       console.log("Booking Info: ", bookingInfo);
-
-    } else {
-      console.log("Form is invalid");
     }
   };
 
@@ -148,9 +145,9 @@ export default function BookingForm(props) {
   const formattedDate = selectedDate.toLocaleDateString("en-US", {
     year: "numeric",
     month: "2-digit",
-    day: "2-digit"
+    day: "2-digit",
   });
-  
+
   return (
     <>
       <section
@@ -161,7 +158,6 @@ export default function BookingForm(props) {
         {formik.values && (
           <form
             onSubmit={handleFormSubmit}
-            role="form"
             aria-labelledby="Reservation Details"
           >
             <div className="reservation-form-container">
@@ -277,36 +273,42 @@ export default function BookingForm(props) {
                 )}
               </div>
               <div className="input-label">
-              <label htmlFor="phone">PHONE</label>
-            </div>
-            <div className="contact-info phone-input">
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                placeholder="Phone Number"
-                aria-label="Phone Number"
-                aria-invalid={formik.errors.phone && formik.touched.phone ? "true" : "false"}
-                aria-describedby="phoneError"
-                aria-required="true"
-                value={formik.values.phone}
-                onChange={(event) => {
-                  formik.handleChange(event);
-                  setPhone(event.target.value);
-                }}
-                onBlur={formik.handleBlur}
-                className={`${
-                  formik.errors.phone && formik.touched.phone ? "input-error" : ""
-                } ${hoveredInputId === "phone" ? "hovered" : ""}`}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              />
-              {formik.errors.phone && formik.touched.phone && (
-                <p className="error" id="phoneError">
-                  {formik.errors.phone}
-                </p>
-              )}
-            </div>
+                <label htmlFor="phone">PHONE</label>
+              </div>
+              <div className="contact-info phone-input">
+                <input
+                  type="tel"
+                  name="phone"
+                  id="phone"
+                  placeholder="Phone Number"
+                  aria-label="Phone Number"
+                  aria-invalid={
+                    formik.errors.phone && formik.touched.phone
+                      ? "true"
+                      : "false"
+                  }
+                  aria-describedby="phoneError"
+                  aria-required="true"
+                  value={formik.values.phone}
+                  onChange={(event) => {
+                    formik.handleChange(event);
+                    setPhone(event.target.value);
+                  }}
+                  onBlur={formik.handleBlur}
+                  className={`${
+                    formik.errors.phone && formik.touched.phone
+                      ? "input-error"
+                      : ""
+                  } ${hoveredInputId === "phone" ? "hovered" : ""}`}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                />
+                {formik.errors.phone && formik.touched.phone && (
+                  <p className="error" id="phoneError">
+                    {formik.errors.phone}
+                  </p>
+                )}
+              </div>
               <div className="input-label">
                 <label htmlFor="date">DATE</label>
               </div>
@@ -591,7 +593,6 @@ export default function BookingForm(props) {
                 className="reserve-button"
                 name="submit"
                 value="submit"
-                role="button"
                 disabled={!formik.isValid || formik.isSubmitting}
                 aria-label="submit"
                 aria-disabled={!formik.isValid}
@@ -637,25 +638,19 @@ export default function BookingForm(props) {
                             <img src={calendarEE9972} alt="calendar icon" />
                           </div>
                           <div className="confirm-date">
-                            <h3 className="confirmed-text">
-                              {formattedDate}
-                            </h3>
+                            <h3 className="confirmed-text">{formattedDate}</h3>
                           </div>
                           <div className="confirm-time-icon">
                             <img src={clockEE9972} alt="clock icon" />
                           </div>
                           <div className="confirm-time">
-                            <h3 className="confirmed-text">
-                              {time}
-                            </h3>
+                            <h3 className="confirmed-text">{time}</h3>
                           </div>
                           <div className="confirm-guests-icon">
                             <img src={guestsEE9972} alt="person icon" />
                           </div>
                           <div className="confirm-guests">
-                            <h3 className="confirmed-text">
-                              {guests}
-                            </h3>
+                            <h3 className="confirmed-text">{guests}</h3>
                           </div>
                           <div className="confirm-seating-icon">
                             <img
@@ -664,17 +659,13 @@ export default function BookingForm(props) {
                             />
                           </div>
                           <div className="confirm-seating">
-                            <h3 className="confirmed-text">
-                              {seating}
-                            </h3>
+                            <h3 className="confirmed-text">{seating}</h3>
                           </div>
                           <div className="confirm-occasion-icon">
                             <img src={occasionEE9972} alt="party horn icon" />
                           </div>
                           <div className="confirm-occasion">
-                            <h3 className="confirmed-text">
-                              {occasion}
-                            </h3>
+                            <h3 className="confirmed-text">{occasion}</h3>
                           </div>
                         </div>
                         <div className="lit-lem-contact-container">
@@ -694,9 +685,7 @@ export default function BookingForm(props) {
                         </h3>
                         <div className="confirm-requests-box">
                           <div className="confirm-requests-box-inner">
-                          <p className="confirmed-text">
-                            {specialRequests}
-                          </p>
+                            <p className="confirmed-text">{specialRequests}</p>
                           </div>
                         </div>
                       </div>
@@ -704,7 +693,7 @@ export default function BookingForm(props) {
                   </section>
                 </div>
               </div>
-            </ConfirmationModal >
+            </ConfirmationModal>
           </form>
         )}
       </section>
