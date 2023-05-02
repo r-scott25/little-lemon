@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useReducer} from "react";
+import { submitAPI } from "../LittleLemonAPI.js";
 import "./BookingFormStyles.css";
 import { useFormik } from "formik";
-import { reservationSchema } from "../Validations/ReservationValidation";
+import { reservationSchema } from "../validations/ReservationValidation";
 import ConfirmationModal from "./ConfirmationModal.js";
 import "./ConfirmationModalStyles.css";
 import Logo from "../assets/Logo.svg";
@@ -11,9 +12,15 @@ import guestsEE9972 from "../assets/guests-EE9972.svg";
 import seatingEE9972 from "../assets/seating-EE9972.svg";
 import occasionEE9972 from "../assets/occasion-EE9972.svg";
 import homeIcon from "../assets/homeIcon.svg";
+import { initializeTimes, updateTimes, availableTimesReducer } from "./Main";
 
-export default function BookingForm(props) {
-  console.log(props.availableTimes);
+export default function BookingForm() {
+
+
+  const [state, dispatch] = useReducer(
+    availableTimesReducer,
+    initializeTimes()
+  );
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -27,58 +34,101 @@ export default function BookingForm(props) {
   const [specialRequests, setSpecialRequests] = useState("");
   const [textUpdates, setTextUpdates] = useState(false);
 
-
-  
-  const [selectedTime, setSelectedTime] = useState(
-    props.availableTimes.map((time, index) => (
-      <option key={index} value={time}>
-        {time}
-      </option>
-    ))
-  );
-
-  
-
   //// useState for Confirm Reservation Modal ////
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleDateChange = (event) => {
-    setDate(event.target.value);
+  // useEffect(() => {
+  //   const fetchTimes = async () => {
+  //     const { date, formData } = state;
+  //     const times = await fetchData(date, formData);
+  //     dispatch({ type: "SET_AVAILABLE_TIMES", payload: times });
+  //   };
 
-    var stringify = event.target.value;
-    props.updateTimes(stringify);
+  //   fetchTimes();
+  // }, [state]);
 
-    setSelectedTime(
-      props.availableTimes.map((times) => <option>{times}</option>)
-    );
-   
+
+  const formData = {
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    phone: phone,
+    date: date,
+    time: time,
+    occasion: occasion,
+    guests: guests,
+    seating:seating,
+    specialRequests: specialRequests,
+    textUpdates: textUpdates,
   };
-
 
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      date: "",
-      time: "",
-      occasion: "",
-      guests: 0,
-      seating: "",
-      specialRequests: "",
-      availableTimes: [...props.availableTimes],
-      textUpdates: false,
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+      date: formData.date,
+      time: formData.time,
+      occasion: formData.occasion,
+      guests: formData.guests,
+      seating: formData.seating,
+      specialRequests: formData.specialRequests,
+      textUpdates: formData.textUpdates,
+      availableTimes: [initializeTimes.availableTimes],
     },
-    onSubmit: (values) => {
-      handleFormSubmit(values);
-      console.log(values);
+    onSubmit: async (values) => {
+     await new Promise((r) => setTimeout(r, 500));
+      submitForm(values.formData);
+
     },
     validationSchema: reservationSchema,
   });
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
+  console.log("Initial Available Times: ", state.availableTimes);
+
+
+  // Format date to  MM/DD/YYY
+  const selectedDate = new Date(formik.values.date);
+
+  const formattedDate = selectedDate.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+
+
+  // Handler for text updates checkbox
+
+  const handleCheckboxChange = (event) => {
+    const { checked } = event.target;
+    setTextUpdates(checked);
+    formik.handleChange({
+      target: {
+        name: event.target.name,
+        value: checked,
+      },
+    });
+  };
+  
+  //// useState to change placeholder color when Hovering over input boxes ////
+  const [hoveredInputId, setHoveredInputId] = useState("");
+
+  function handleMouseEnter(event) {
+    setHoveredInputId(event.target.id);
+    event.target.classList.add("hovered");
+  }
+
+  function handleMouseLeave(event) {
+    setHoveredInputId("");
+    event.target.classList.remove("hovered");
+  }
+
+ 
+
+
+  async function submitForm(formData) {
+    const formSubmitted = await submitAPI(formData);
 
     // Check if any fields have been touched
     if (Object.keys(formik.touched).length === 0) {
@@ -98,8 +148,6 @@ export default function BookingForm(props) {
       });
     }
 
-
-
     // Validate all fields
     await formik.validateForm();
 
@@ -109,54 +157,33 @@ export default function BookingForm(props) {
       console.log("Form has errors");
       setIsOpen(false);
     } else {
+      formSubmitted(true);
       setIsOpen(true);
-      const bookingInfo = {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        phone: phone,
-        date: date,
-        time: time,
-        occasion: occasion,
-        guests: guests,
-        seating: seating,
-        specialRequests: specialRequests,
-        textUpdates: textUpdates,
+      formData = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        date: formData.date,
+        time: formData.time,
+        occasion: formData.occasion,
+        guests: formData.guests,
+        seating: formData.seating,
+        specialRequests: formData.specialRequests,
+        textUpdates: formData.textUpdates,
       };
-      console.log("Booking Info: ", bookingInfo);
+
     }
-  };
-
-  const handleCheckboxChange = (event) => {
-    const { name, checked } = event.target;
-    formik.handleChange({
-      target: {
-        name,
-        value: checked ? true : false,
-      },
-    });
-  };
-
-  //// useState to change placeholder color when Hovering over input boxes ////
-  const [hoveredInputId, setHoveredInputId] = useState("");
-
-  function handleMouseEnter(event) {
-    setHoveredInputId(event.target.id);
-    event.target.classList.add("hovered");
   }
+ 
+  console.log("Form Data: ", formData);
 
-  function handleMouseLeave(event) {
-    setHoveredInputId("");
-    event.target.classList.remove("hovered");
-  }
+ async function loggingFunc() {
+  console.log("Updated Available Times: ", await updateTimes(state, date).availableTimes);
+ }
+  
 
-  const selectedDate = new Date(formik.values.date);
-
-  const formattedDate = selectedDate.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  });
+  loggingFunc();
 
   return (
     <>
@@ -166,10 +193,7 @@ export default function BookingForm(props) {
       >
         <h2 className="res-form-title">Reservation Details</h2>
         {formik.values && (
-          <form
-            onSubmit={handleFormSubmit}
-            aria-labelledby="Reservation Details"
-          >
+          <form onSubmit={submitForm} aria-labelledby="Reservation Details">
             <div className="reservation-form-container">
               <div className="input-label">
                 <label htmlFor="firstName">FIRST NAME</label>
@@ -336,7 +360,12 @@ export default function BookingForm(props) {
                   value={formik.values.date}
                   onChange={(event) => {
                     formik.handleChange(event);
-                    handleDateChange(event);
+                    dispatch({
+                      type: "SET_DATE",
+                      payload: event.target.value,
+                    });
+                    setDate(event.target.value);
+                    console.log("Date event.target.value: ", event.target.value);
                   }}
                   onBlur={formik.handleBlur}
                   className={`${
@@ -362,7 +391,7 @@ export default function BookingForm(props) {
                   aria-describedby="timeError"
                   aria-live="assertive"
                   aria-required="true"
-                  value={formik.values.time}
+                  value={state.time}
                   onChange={(event) => {
                     formik.handleChange(event);
                     setTime(event.target.value);
@@ -375,7 +404,7 @@ export default function BookingForm(props) {
                   }`}
                 >
                   <option value="">Select a Time</option>
-                  {props.availableTimes.map((time) => (
+                  {state.availableTimes.map((time) => (
                     <option key={time} id={time} value={time}>
                       {time}
                     </option>
@@ -610,7 +639,7 @@ export default function BookingForm(props) {
                 Reserve
               </button>
             </div>
-            <ConfirmationModal open={isOpen} firstName={firstName}>
+            <ConfirmationModal open={isOpen}>
               <div className="confirm-modal-container" id="modal">
                 <div className="confirm-header">
                   <div className="home-icon-div">
@@ -639,7 +668,7 @@ export default function BookingForm(props) {
                   </div>
                   <section className="reservation-details">
                     <h2 className="dine-with-you-text">
-                      We look forward to dining with you, {firstName} !
+                      We look forward to dining with you, {formData.firstName} !
                     </h2>
                     <div className="confirm-contact-requests-container">
                       <div className="confirm-and-contact-container">
@@ -654,13 +683,13 @@ export default function BookingForm(props) {
                             <img src={clockEE9972} alt="clock icon" />
                           </div>
                           <div className="confirm-time">
-                            <h3 className="confirmed-text">{time}</h3>
+                            <h3 className="confirmed-text">{formData.time}</h3>
                           </div>
                           <div className="confirm-guests-icon">
                             <img src={guestsEE9972} alt="person icon" />
                           </div>
                           <div className="confirm-guests">
-                            <h3 className="confirmed-text">{guests}</h3>
+                            <h3 className="confirmed-text">{formData.guests}</h3>
                           </div>
                           <div className="confirm-seating-icon">
                             <img
@@ -669,13 +698,13 @@ export default function BookingForm(props) {
                             />
                           </div>
                           <div className="confirm-seating">
-                            <h3 className="confirmed-text">{seating}</h3>
+                            <h3 className="confirmed-text">{formData.seating}</h3>
                           </div>
                           <div className="confirm-occasion-icon">
                             <img src={occasionEE9972} alt="party horn icon" />
                           </div>
                           <div className="confirm-occasion">
-                            <h3 className="confirmed-text">{occasion}</h3>
+                            <h3 className="confirmed-text">{formData.occasion}</h3>
                           </div>
                         </div>
                         <div className="lit-lem-contact-container">
@@ -695,7 +724,7 @@ export default function BookingForm(props) {
                         </h3>
                         <div className="confirm-requests-box">
                           <div className="confirm-requests-box-inner">
-                            <p className="confirmed-text">{specialRequests}</p>
+                            <p className="confirmed-text">{formData.specialRequests}</p>
                           </div>
                         </div>
                       </div>

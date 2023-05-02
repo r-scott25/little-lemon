@@ -39,11 +39,11 @@ function App() {
         />
 
         <Route
-          path="/reservations/customercontact/selectedreservations"
+          path="/reservations/selectedreservations"
           element={<SelectedReservations />}
         />
         <Route
-          path="reservations/customercontact/resconfirm"
+          path="reservations/resconfirm"
           element={<ConfirmationModal />}
         />
       </Routes>

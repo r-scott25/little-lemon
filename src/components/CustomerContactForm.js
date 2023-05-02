@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
 import "./CustomerContactFormStyles.css";
-import { customerContactSchema } from "../Validations/CustomerContactValidation.js";
+import { customerContactSchema } from "../validations/CustomerContactValidation.js";
 import ConfirmationModal from "./ConfirmationModal.js";
 import "./ConfirmationModalStyles.css";
 import Logo from "../assets/Logo.svg";
@@ -391,7 +391,7 @@ function CustomerContactForm(props) {
                           <p>lemon@email.com</p>
                         </div>
                       </div>
-                       
+
                       <div className="confirm-requests">
                         <h3 className="confirm-requests-label">
                           SPECIAL REQUESTS
@@ -404,10 +404,9 @@ function CustomerContactForm(props) {
                       </div>
                     </div>
                   </section>
-                  
                 </div>
               </div>
-            </ConfirmationModal >
+            </ConfirmationModal>
           </div>
         </form>
       </div>

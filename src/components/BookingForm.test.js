@@ -10,6 +10,7 @@ import { MemoryRouter } from "react-router-dom";
 import BookingForm from "./BookingForm";
 import BookingPage from "../routes/BookingPage";
 
+
 describe("BookingForm", () => {
 
 
@@ -30,17 +31,15 @@ describe("BookingForm", () => {
 
 
   test("Should submit the form when all fields are valid", () => {
-    const updateBookingInfo = jest.fn();
-    const dispatchAvailableTimes = jest.fn();
+    const updateTimes = jest.fn();
     const availableTimes = ["11:00 AM", "12:00 PM", "1:00 PM"];
     const bookedTimes = [];
 
     render(
       <MemoryRouter>
         <BookingForm
-          updateBookingInfo={updateBookingInfo}
-          dispatchAvailableTimes={dispatchAvailableTimes}
-          availableTimes={availableTimes}
+           availableTimes={availableTimes}
+           updateTimes={updateTimes}
           bookedTimes={bookedTimes}
         />
       </MemoryRouter>
@@ -74,7 +73,7 @@ describe("BookingForm", () => {
       const submitButton = screen.getByRole("button", { name: /submit/i });
       fireEvent.click(submitButton);
 
-      expect(dispatch).toHaveBeenCalledWith({
+      expect(updateTimes).toHaveBeenCalledWith({
         type: "remove",
         payload: "1:00 PM",
       });
